@@ -30,6 +30,8 @@
     "design.mjs",
     "design.md",
     "README.md",
+    "README.zh-CN.md",
+    "README.ja.md",
     "AGENTS.md",
     "CHANGELOG.md",
     "LICENSE",
