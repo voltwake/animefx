@@ -1,0 +1,12 @@
+# macOS
+.DS_Store
+
+# 运行时与导出产物
+exports/
+previews/validation/
+
+# 依赖(npm 装的第三方包,只作研究/移植参考,不入库)
+node_modules/
+
+# 本地预览服务器配置（按需保留）
+# .claude/launch.json

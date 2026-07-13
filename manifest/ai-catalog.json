@@ -1,0 +1,7655 @@
+{
+  "schemaVersion": 1,
+  "purpose": "Compact retrieval index for AI agents. API parameters remain authoritative in manifest/effects.json.",
+  "effectCount": 88,
+  "effects": [
+    {
+      "id": "camera.shake",
+      "summary": "震屏、冲击、衰减语义的虚拟镜头动效，使用确定性时间轴并可在目标项目设计系统中注入风格。",
+      "role": "text-emphasis",
+      "temporal": "once",
+      "weight": "light",
+      "mood": [
+        "震屏",
+        "冲击",
+        "衰减"
+      ],
+      "runtimes": [
+        "dom"
+      ],
+      "dependencies": [
+        "animejs"
+      ],
+      "directTargets": [
+        "html",
+        "video"
+      ],
+      "adaptationTargets": [
+        "react",
+        "vue",
+        "svelte",
+        "canvas-video"
+      ],
+      "modes": [
+        "reuse",
+        "adapt"
+      ],
+      "bestFor": [
+        "冲击震屏",
+        "印章联动",
+        "确定性抖动"
+      ],
+      "avoidWhen": [],
+      "suites": [],
+      "keywords": [
+        "震屏",
+        "冲击",
+        "衰减",
+        "冲击震屏",
+        "印章联动",
+        "确定性抖动",
+        "文字强调",
+        "重点",
+        "高亮",
+        "指标",
+        "dom",
+        "camera.shake",
+        "camera",
+        "shake"
+      ],
+      "pairsWith": [
+        "sticker.stampPunch"
+      ],
+      "conflictsWith": [],
+      "preconditions": [
+        "seed 必须明确传入"
+      ],
+      "parameterNames": [
+        "intensity",
+        "decay",
+        "seed",
+        "duration",
+        "at"
+      ],
+      "source": {
+        "file": "lib/anime-fx.js",
+        "symbol": "AnimeFX.camera.shake",
+        "supportingFiles": []
+      },
+      "example": "AnimeFX.camera.shake('#target', {})",
+      "preview": "previews/camera.shake.png",
+      "anchorCase": "案例/20-3.0·图文种草.html",
+      "apiTruth": "manifest/effects.json"
+    },
+    {
+      "id": "camera.zoomPan",
+      "summary": "镜头、缩放、平移语义的虚拟镜头动效，使用确定性时间轴并可在目标项目设计系统中注入风格。",
+      "role": "component",
+      "temporal": "once",
+      "weight": "medium",
+      "mood": [
+        "镜头",
+        "缩放",
+        "平移"
+      ],
+      "runtimes": [
+        "dom"
+      ],
+      "dependencies": [
+        "animejs"
+      ],
+      "directTargets": [
+        "html",
+        "video"
+      ],
+      "adaptationTargets": [
+        "react",
+        "vue",
+        "svelte",
+        "canvas-video"
+      ],
+      "modes": [
+        "reuse",
+        "adapt"
+      ],
+      "bestFor": [
+        "整页镜头缩放平移",
+        "虚拟运镜",
+        "页面节奏"
+      ],
+      "avoidWhen": [],
+      "suites": [],
+      "keywords": [
+        "镜头",
+        "缩放",
+        "平移",
+        "整页镜头缩放平移",
+        "虚拟运镜",
+        "页面节奏",
+        "组件",
+        "内容",
+        "卡片",
+        "图表",
+        "dom",
+        "camera.zoomPan",
+        "camera",
+        "zoomPan"
+      ],
+      "pairsWith": [
+        "transition.zoomThrough"
+      ],
+      "conflictsWith": [],
+      "preconditions": [
+        "作用舞台必须有明确尺寸"
+      ],
+      "parameterNames": [
+        "keyframes",
+        "duration",
+        "ease",
+        "at"
+      ],
+      "source": {
+        "file": "lib/anime-fx.js",
+        "symbol": "AnimeFX.camera.zoomPan",
+        "supportingFiles": []
+      },
+      "example": "AnimeFX.camera.zoomPan('#target', {})",
+      "preview": "previews/camera.zoomPan.png",
+      "anchorCase": "案例/19-3.0·App介绍.html",
+      "apiTruth": "manifest/effects.json"
+    },
+    {
+      "id": "canvas.flowField",
+      "summary": "用连续流线形成丝带或声波感背景，适合科技、音乐和数据氛围。",
+      "role": "bg",
+      "temporal": "loop",
+      "weight": "medium",
+      "mood": [
+        "流场",
+        "丝带",
+        "声波"
+      ],
+      "runtimes": [
+        "canvas2d"
+      ],
+      "dependencies": [
+        "animejs"
+      ],
+      "directTargets": [
+        "html",
+        "video"
+      ],
+      "adaptationTargets": [
+        "react",
+        "vue",
+        "svelte",
+        "canvas-video"
+      ],
+      "modes": [
+        "reuse",
+        "adapt"
+      ],
+      "bestFor": [
+        "科技背景",
+        "音乐可视化",
+        "数据流氛围"
+      ],
+      "avoidWhen": [
+        "禁止在渲染回调中使用 Math.random/Date.now"
+      ],
+      "suites": [
+        "techNoir"
+      ],
+      "keywords": [
+        "流场",
+        "丝带",
+        "声波",
+        "科技背景",
+        "音乐可视化",
+        "数据流氛围",
+        "背景",
+        "氛围",
+        "environment",
+        "techNoir",
+        "canvas2d",
+        "canvas.flowField",
+        "canvas",
+        "flowField"
+      ],
+      "pairsWith": [],
+      "conflictsWith": [],
+      "preconditions": [
+        "canvas 必须设置 width/height 属性",
+        "渲染必须只由 driver.t 和 seed 决定"
+      ],
+      "parameterNames": [
+        "lines",
+        "color",
+        "lineWidth",
+        "amp",
+        "speed",
+        "period",
+        "seed",
+        "bg",
+        "at"
+      ],
+      "source": {
+        "file": "lib/anime-fx.js",
+        "symbol": "AnimeFX.canvas.flowField",
+        "supportingFiles": []
+      },
+      "example": "AnimeFX.canvas.flowField('#target', {})",
+      "preview": "previews/canvas.flowField.png",
+      "anchorCase": "案例/18-基础效果锚点.html",
+      "apiTruth": "manifest/effects.json"
+    },
+    {
+      "id": "canvas.particles",
+      "summary": "生成可连线的确定性粒子背景，适合科技、网络和星座语境。",
+      "role": "bg",
+      "temporal": "loop",
+      "weight": "medium",
+      "mood": [
+        "粒子",
+        "星座",
+        "科技"
+      ],
+      "runtimes": [
+        "canvas2d"
+      ],
+      "dependencies": [
+        "animejs"
+      ],
+      "directTargets": [
+        "html",
+        "video"
+      ],
+      "adaptationTargets": [
+        "react",
+        "vue",
+        "svelte",
+        "canvas-video"
+      ],
+      "modes": [
+        "reuse",
+        "adapt"
+      ],
+      "bestFor": [
+        "科技发布页",
+        "网络关系背景",
+        "星空与信号"
+      ],
+      "avoidWhen": [
+        "禁止在渲染回调中使用 Math.random/Date.now"
+      ],
+      "suites": [
+        "techNoir"
+      ],
+      "keywords": [
+        "粒子",
+        "星座",
+        "科技",
+        "科技发布页",
+        "网络关系背景",
+        "星空与信号",
+        "背景",
+        "氛围",
+        "environment",
+        "techNoir",
+        "canvas2d",
+        "canvas.particles",
+        "canvas",
+        "particles"
+      ],
+      "pairsWith": [
+        "text.scrambleIn"
+      ],
+      "conflictsWith": [],
+      "preconditions": [
+        "canvas 必须设置 width/height 属性",
+        "渲染必须只由 driver.t 和 seed 决定"
+      ],
+      "parameterNames": [
+        "count",
+        "color",
+        "radius",
+        "drift",
+        "speed",
+        "seed",
+        "period",
+        "loop",
+        "link",
+        "linkDist",
+        "linkColor",
+        "bg",
+        "at"
+      ],
+      "source": {
+        "file": "lib/anime-fx.js",
+        "symbol": "AnimeFX.canvas.particles",
+        "supportingFiles": []
+      },
+      "example": "AnimeFX.canvas.particles('#target', {})",
+      "preview": "previews/canvas.particles.png",
+      "anchorCase": "案例/18-基础效果锚点.html",
+      "apiTruth": "manifest/effects.json"
+    },
+    {
+      "id": "card.kenBurns",
+      "summary": "让静态图片在整段时长内缓慢平移缩放，维持画面呼吸感。",
+      "role": "component",
+      "temporal": "full-duration",
+      "weight": "light",
+      "mood": [
+        "图片",
+        "运镜",
+        "呼吸"
+      ],
+      "runtimes": [
+        "dom"
+      ],
+      "dependencies": [
+        "animejs"
+      ],
+      "directTargets": [
+        "html",
+        "video"
+      ],
+      "adaptationTargets": [
+        "react",
+        "vue",
+        "svelte",
+        "canvas-video"
+      ],
+      "modes": [
+        "reuse",
+        "adapt"
+      ],
+      "bestFor": [
+        "静态照片视频化",
+        "人物或产品图片",
+        "叙事停留页"
+      ],
+      "avoidWhen": [
+        "不用于 UI 截图或需要精确读取的文字图"
+      ],
+      "suites": [
+        "inkPaper"
+      ],
+      "keywords": [
+        "图片",
+        "运镜",
+        "呼吸",
+        "静态照片视频化",
+        "人物或产品图片",
+        "叙事停留页",
+        "组件",
+        "内容",
+        "卡片",
+        "图表",
+        "inkPaper",
+        "dom",
+        "card.kenBurns",
+        "card",
+        "kenBurns"
+      ],
+      "pairsWith": [],
+      "conflictsWith": [],
+      "preconditions": [
+        "目标应在 overflow:hidden 的图片框内"
+      ],
+      "parameterNames": [
+        "scaleFrom",
+        "scaleTo",
+        "panX",
+        "panY",
+        "duration",
+        "ease",
+        "at",
+        "loop",
+        "alternate"
+      ],
+      "source": {
+        "file": "lib/anime-fx.js",
+        "symbol": "AnimeFX.card.kenBurns",
+        "supportingFiles": []
+      },
+      "example": "AnimeFX.card.kenBurns('#target', {})",
+      "preview": "previews/card.kenBurns.png",
+      "anchorCase": "案例/05-数据·转场·图片.html",
+      "apiTruth": "manifest/effects.json"
+    },
+    {
+      "id": "chart.barGrow",
+      "summary": "让条形图从基线增长，用于排名、对比和指标变化。",
+      "role": "component",
+      "temporal": "once",
+      "weight": "medium",
+      "mood": [
+        "图表",
+        "排名",
+        "对比"
+      ],
+      "runtimes": [
+        "dom"
+      ],
+      "dependencies": [
+        "animejs"
+      ],
+      "directTargets": [
+        "html",
+        "video"
+      ],
+      "adaptationTargets": [
+        "react",
+        "vue",
+        "svelte",
+        "canvas-video"
+      ],
+      "modes": [
+        "reuse",
+        "adapt"
+      ],
+      "bestFor": [
+        "排名比较",
+        "多指标对比",
+        "条形数据图"
+      ],
+      "avoidWhen": [
+        "无数据语义的装饰条禁用"
+      ],
+      "suites": [
+        "techNoir"
+      ],
+      "keywords": [
+        "图表",
+        "排名",
+        "对比",
+        "排名比较",
+        "多指标对比",
+        "条形数据图",
+        "组件",
+        "内容",
+        "卡片",
+        "techNoir",
+        "dom",
+        "chart.barGrow",
+        "chart",
+        "barGrow"
+      ],
+      "pairsWith": [
+        "text.countUp"
+      ],
+      "conflictsWith": [],
+      "preconditions": [
+        "终值尺寸必须由 CSS 给定"
+      ],
+      "parameterNames": [
+        "axis",
+        "step",
+        "duration",
+        "ease",
+        "from",
+        "at"
+      ],
+      "source": {
+        "file": "lib/anime-fx.js",
+        "symbol": "AnimeFX.chart.barGrow",
+        "supportingFiles": []
+      },
+      "example": "AnimeFX.chart.barGrow('#target', {})",
+      "preview": "previews/chart.barGrow.png",
+      "anchorCase": "案例/05-数据·转场·图片.html",
+      "apiTruth": "manifest/effects.json"
+    },
+    {
+      "id": "chart.donutDraw",
+      "summary": "绘制环形进度并显露占比，通常与数字滚动同起同长。",
+      "role": "component",
+      "temporal": "once",
+      "weight": "medium",
+      "mood": [
+        "占比",
+        "环形",
+        "进度"
+      ],
+      "runtimes": [
+        "dom"
+      ],
+      "dependencies": [
+        "animejs"
+      ],
+      "directTargets": [
+        "html",
+        "video"
+      ],
+      "adaptationTargets": [
+        "react",
+        "vue",
+        "svelte",
+        "canvas-video"
+      ],
+      "modes": [
+        "reuse",
+        "adapt"
+      ],
+      "bestFor": [
+        "百分比",
+        "完成度",
+        "环形进度"
+      ],
+      "avoidWhen": [
+        "必须与 countUp 同起同长"
+      ],
+      "suites": [
+        "techNoir",
+        "inkPaper",
+        "appleGlass"
+      ],
+      "keywords": [
+        "占比",
+        "环形",
+        "进度",
+        "百分比",
+        "完成度",
+        "环形进度",
+        "组件",
+        "内容",
+        "卡片",
+        "图表",
+        "techNoir",
+        "inkPaper",
+        "appleGlass",
+        "dom",
+        "chart.donutDraw",
+        "chart",
+        "donutDraw"
+      ],
+      "pairsWith": [
+        "text.countUp"
+      ],
+      "conflictsWith": [],
+      "preconditions": [
+        "目标必须是带 stroke 的 circle/path"
+      ],
+      "parameterNames": [
+        "percent",
+        "duration",
+        "ease",
+        "at"
+      ],
+      "source": {
+        "file": "lib/anime-fx.js",
+        "symbol": "AnimeFX.chart.donutDraw",
+        "supportingFiles": []
+      },
+      "example": "AnimeFX.chart.donutDraw('#target', {})",
+      "preview": "previews/chart.donutDraw.png",
+      "anchorCase": "案例/05-数据·转场·图片.html",
+      "apiTruth": "manifest/effects.json"
+    },
+    {
+      "id": "chart.lineDraw",
+      "summary": "折线、趋势、数据点语义的数据图表动效，使用确定性时间轴并可在目标项目设计系统中注入风格。",
+      "role": "component",
+      "temporal": "once",
+      "weight": "medium",
+      "mood": [
+        "折线",
+        "趋势",
+        "数据点"
+      ],
+      "runtimes": [
+        "svg",
+        "dom"
+      ],
+      "dependencies": [
+        "animejs"
+      ],
+      "directTargets": [
+        "html",
+        "video"
+      ],
+      "adaptationTargets": [
+        "react",
+        "vue",
+        "svelte",
+        "canvas-video"
+      ],
+      "modes": [
+        "reuse",
+        "adapt"
+      ],
+      "bestFor": [
+        "折线趋势描画",
+        "数据点亮起",
+        "趋势图"
+      ],
+      "avoidWhen": [],
+      "suites": [],
+      "keywords": [
+        "折线",
+        "趋势",
+        "数据点",
+        "折线趋势描画",
+        "数据点亮起",
+        "趋势图",
+        "组件",
+        "内容",
+        "卡片",
+        "图表",
+        "svg",
+        "dom",
+        "chart.lineDraw",
+        "chart",
+        "lineDraw"
+      ],
+      "pairsWith": [
+        "text.countUp"
+      ],
+      "conflictsWith": [],
+      "preconditions": [],
+      "parameterNames": [
+        "points",
+        "area",
+        "dotStep",
+        "color",
+        "duration",
+        "at"
+      ],
+      "source": {
+        "file": "lib/anime-fx.js",
+        "symbol": "AnimeFX.chart.lineDraw",
+        "supportingFiles": []
+      },
+      "example": "AnimeFX.chart.lineDraw('#target', {})",
+      "preview": "previews/chart.lineDraw.png",
+      "anchorCase": "案例/19-3.0·App介绍.html",
+      "apiTruth": "manifest/effects.json"
+    },
+    {
+      "id": "chart.pictoCount",
+      "summary": "图标计数、比例、具象化语义的数据图表动效，使用确定性时间轴并可在目标项目设计系统中注入风格。",
+      "role": "component",
+      "temporal": "once",
+      "weight": "light",
+      "mood": [
+        "图标计数",
+        "比例",
+        "具象化"
+      ],
+      "runtimes": [
+        "svg",
+        "dom"
+      ],
+      "dependencies": [
+        "animejs"
+      ],
+      "directTargets": [
+        "html",
+        "video"
+      ],
+      "adaptationTargets": [
+        "react",
+        "vue",
+        "svelte",
+        "canvas-video"
+      ],
+      "modes": [
+        "reuse",
+        "adapt"
+      ],
+      "bestFor": [
+        "图标阵列计数",
+        "比例具象化",
+        "百分比图标"
+      ],
+      "avoidWhen": [],
+      "suites": [],
+      "keywords": [
+        "图标计数",
+        "比例",
+        "具象化",
+        "图标阵列计数",
+        "比例具象化",
+        "百分比图标",
+        "组件",
+        "内容",
+        "卡片",
+        "图表",
+        "svg",
+        "dom",
+        "chart.pictoCount",
+        "chart",
+        "pictoCount"
+      ],
+      "pairsWith": [],
+      "conflictsWith": [],
+      "preconditions": [],
+      "parameterNames": [
+        "total",
+        "value",
+        "icon",
+        "color",
+        "muted",
+        "step",
+        "duration",
+        "at"
+      ],
+      "source": {
+        "file": "lib/anime-fx.js",
+        "symbol": "AnimeFX.chart.pictoCount",
+        "supportingFiles": []
+      },
+      "example": "AnimeFX.chart.pictoCount('#target', {})",
+      "preview": "previews/chart.pictoCount.png",
+      "anchorCase": "案例/21-3.0·Gamma效果.html",
+      "apiTruth": "manifest/effects.json"
+    },
+    {
+      "id": "chart.progressStack",
+      "summary": "进度条、指标、依次填充语义的数据图表动效，使用确定性时间轴并可在目标项目设计系统中注入风格。",
+      "role": "component",
+      "temporal": "once",
+      "weight": "light",
+      "mood": [
+        "进度条",
+        "指标",
+        "依次填充"
+      ],
+      "runtimes": [
+        "dom"
+      ],
+      "dependencies": [
+        "animejs"
+      ],
+      "directTargets": [
+        "html",
+        "video"
+      ],
+      "adaptationTargets": [
+        "react",
+        "vue",
+        "svelte",
+        "canvas-video"
+      ],
+      "modes": [
+        "reuse",
+        "adapt"
+      ],
+      "bestFor": [
+        "多进度条填充",
+        "指标进度",
+        "数值配对"
+      ],
+      "avoidWhen": [],
+      "suites": [],
+      "keywords": [
+        "进度条",
+        "指标",
+        "依次填充",
+        "多进度条填充",
+        "指标进度",
+        "数值配对",
+        "组件",
+        "内容",
+        "卡片",
+        "图表",
+        "dom",
+        "chart.progressStack",
+        "chart",
+        "progressStack"
+      ],
+      "pairsWith": [
+        "text.countUp"
+      ],
+      "conflictsWith": [],
+      "preconditions": [
+        "条形终值由 values 提供"
+      ],
+      "parameterNames": [
+        "values",
+        "step",
+        "duration",
+        "ease",
+        "at"
+      ],
+      "source": {
+        "file": "lib/anime-fx.js",
+        "symbol": "AnimeFX.chart.progressStack",
+        "supportingFiles": []
+      },
+      "example": "AnimeFX.chart.progressStack('#target', {})",
+      "preview": "previews/chart.progressStack.png",
+      "anchorCase": "案例/20-3.0·图文种草.html",
+      "apiTruth": "manifest/effects.json"
+    },
+    {
+      "id": "chart.rankRace",
+      "summary": "排名、条形竞赛、关键帧语义的数据图表动效，使用确定性时间轴并可在目标项目设计系统中注入风格。",
+      "role": "component",
+      "temporal": "once",
+      "weight": "medium",
+      "mood": [
+        "排名",
+        "条形竞赛",
+        "关键帧"
+      ],
+      "runtimes": [
+        "dom"
+      ],
+      "dependencies": [
+        "animejs"
+      ],
+      "directTargets": [
+        "html",
+        "video"
+      ],
+      "adaptationTargets": [
+        "react",
+        "vue",
+        "svelte",
+        "canvas-video"
+      ],
+      "modes": [
+        "reuse",
+        "adapt"
+      ],
+      "bestFor": [
+        "排名条形竞赛",
+        "榜单变化",
+        "关键帧排名"
+      ],
+      "avoidWhen": [],
+      "suites": [],
+      "keywords": [
+        "排名",
+        "条形竞赛",
+        "关键帧",
+        "排名条形竞赛",
+        "榜单变化",
+        "关键帧排名",
+        "组件",
+        "内容",
+        "卡片",
+        "图表",
+        "dom",
+        "chart.rankRace",
+        "chart",
+        "rankRace"
+      ],
+      "pairsWith": [],
+      "conflictsWith": [],
+      "preconditions": [
+        "frames 必须是数值二维数组"
+      ],
+      "parameterNames": [
+        "frames",
+        "duration",
+        "step",
+        "at"
+      ],
+      "source": {
+        "file": "lib/anime-fx.js",
+        "symbol": "AnimeFX.chart.rankRace",
+        "supportingFiles": []
+      },
+      "example": "AnimeFX.chart.rankRace('#target', {})",
+      "preview": "previews/chart.rankRace.png",
+      "anchorCase": "案例/20-3.0·图文种草.html",
+      "apiTruth": "manifest/effects.json"
+    },
+    {
+      "id": "explode.layers",
+      "summary": "把平面素材拆成带纵深的分层爆炸图，适合结构解析和技术标注。",
+      "role": "hero",
+      "temporal": "once",
+      "weight": "heavy",
+      "mood": [
+        "拆解",
+        "2.5D",
+        "技术标注"
+      ],
+      "runtimes": [
+        "dom"
+      ],
+      "dependencies": [
+        "animejs"
+      ],
+      "directTargets": [
+        "html",
+        "video"
+      ],
+      "adaptationTargets": [
+        "react",
+        "vue",
+        "svelte",
+        "canvas-video"
+      ],
+      "modes": [
+        "reuse",
+        "adapt"
+      ],
+      "bestFor": [
+        "产品结构拆解",
+        "技术说明",
+        "2.5D 爆炸图"
+      ],
+      "avoidWhen": [
+        "一屏只能有一个 heavy 主视觉",
+        "页面已经存在另一个 heavy 主视觉"
+      ],
+      "suites": [],
+      "keywords": [
+        "拆解",
+        "2.5D",
+        "技术标注",
+        "产品结构拆解",
+        "技术说明",
+        "2.5D 爆炸图",
+        "主视觉",
+        "hero",
+        "揭晓",
+        "封面",
+        "dom",
+        "explode.layers",
+        "explode",
+        "layers"
+      ],
+      "pairsWith": [],
+      "conflictsWith": [
+        "hero.*"
+      ],
+      "preconditions": [
+        "舞台必须有明确宽高",
+        "子层必须使用 .afx-layer",
+        "层容器必须 overflow:visible"
+      ],
+      "parameterNames": [
+        "layerSel",
+        "labelSel",
+        "spread",
+        "perspective",
+        "tiltX",
+        "tiltY",
+        "from",
+        "step",
+        "duration",
+        "ease",
+        "rise",
+        "center",
+        "at",
+        "loop",
+        "alternate"
+      ],
+      "source": {
+        "file": "lib/anime-fx.js",
+        "symbol": "AnimeFX.explode.layers",
+        "supportingFiles": []
+      },
+      "example": "AnimeFX.explode.layers('#target', {})",
+      "preview": "previews/explode.layers.png",
+      "anchorCase": "案例/02-爆炸图拆解.html",
+      "apiTruth": "manifest/effects.json"
+    },
+    {
+      "id": "grid.ripple",
+      "summary": "让规则网格从中心向外产生确定性涟漪，适合数据和系统背景。",
+      "role": "bg",
+      "temporal": "loop",
+      "weight": "medium",
+      "mood": [
+        "点阵",
+        "涟漪",
+        "数据"
+      ],
+      "runtimes": [
+        "dom"
+      ],
+      "dependencies": [
+        "animejs"
+      ],
+      "directTargets": [
+        "html",
+        "video"
+      ],
+      "adaptationTargets": [
+        "react",
+        "vue",
+        "svelte",
+        "canvas-video"
+      ],
+      "modes": [
+        "reuse",
+        "adapt"
+      ],
+      "bestFor": [
+        "数据系统背景",
+        "中心扩散反馈",
+        "规则点阵"
+      ],
+      "avoidWhen": [
+        "一屏只能有一个 heavy 主视觉",
+        "苹果玻璃套系禁用硬点阵"
+      ],
+      "suites": [
+        "techNoir"
+      ],
+      "keywords": [
+        "点阵",
+        "涟漪",
+        "数据",
+        "数据系统背景",
+        "中心扩散反馈",
+        "规则点阵",
+        "背景",
+        "氛围",
+        "environment",
+        "techNoir",
+        "dom",
+        "grid.ripple",
+        "grid",
+        "ripple"
+      ],
+      "pairsWith": [],
+      "conflictsWith": [],
+      "preconditions": [
+        "舞台必须有明确宽高",
+        "step × 中心到角格数必须大于 duration"
+      ],
+      "parameterNames": [
+        "cols",
+        "rows",
+        "step",
+        "duration",
+        "from",
+        "at",
+        "gap",
+        "radius",
+        "colorFrom",
+        "colorTo",
+        "scale",
+        "opacity",
+        "loop",
+        "alternate",
+        "ease"
+      ],
+      "source": {
+        "file": "lib/anime-fx.js",
+        "symbol": "AnimeFX.grid.ripple",
+        "supportingFiles": []
+      },
+      "example": "AnimeFX.grid.ripple('#target', {})",
+      "preview": "previews/grid.ripple.png",
+      "anchorCase": "案例/18-基础效果锚点.html",
+      "apiTruth": "manifest/effects.json"
+    },
+    {
+      "id": "hero.converge",
+      "summary": "让粒子持续向视觉中心汇聚，形成聚焦和能量收束的主视觉。",
+      "role": "hero",
+      "temporal": "loop",
+      "weight": "heavy",
+      "mood": [
+        "粒子",
+        "汇聚",
+        "聚焦"
+      ],
+      "runtimes": [
+        "dom"
+      ],
+      "dependencies": [
+        "animejs"
+      ],
+      "directTargets": [
+        "html",
+        "video"
+      ],
+      "adaptationTargets": [
+        "react",
+        "vue",
+        "svelte",
+        "canvas-video"
+      ],
+      "modes": [
+        "reuse",
+        "adapt"
+      ],
+      "bestFor": [
+        "能量汇聚",
+        "视觉聚焦",
+        "科技 Hero"
+      ],
+      "avoidWhen": [
+        "禁止在渲染回调中使用 Math.random/Date.now",
+        "页面已经存在另一个 heavy 主视觉"
+      ],
+      "suites": [],
+      "keywords": [
+        "粒子",
+        "汇聚",
+        "聚焦",
+        "能量汇聚",
+        "视觉聚焦",
+        "科技 Hero",
+        "主视觉",
+        "hero",
+        "揭晓",
+        "封面",
+        "dom",
+        "hero.converge",
+        "converge"
+      ],
+      "pairsWith": [],
+      "conflictsWith": [
+        "hero.*"
+      ],
+      "preconditions": [
+        "canvas 必须设置 width/height 属性",
+        "渲染必须只由 driver.t 和 seed 决定"
+      ],
+      "parameterNames": [
+        "count",
+        "color",
+        "radius",
+        "shape",
+        "seed",
+        "period",
+        "mode",
+        "ease",
+        "link",
+        "linkDist",
+        "linkColor",
+        "bg",
+        "at"
+      ],
+      "source": {
+        "file": "lib/anime-fx.js",
+        "symbol": "AnimeFX.hero.converge",
+        "supportingFiles": []
+      },
+      "example": "AnimeFX.hero.converge('#target', {})",
+      "preview": "previews/hero.converge.png",
+      "anchorCase": "案例/18-基础效果锚点.html",
+      "apiTruth": "manifest/effects.json"
+    },
+    {
+      "id": "hero.glassReveal",
+      "summary": "用液态玻璃镜片扫过并折射真实标题，适合高级产品和空间 UI。",
+      "role": "hero",
+      "temporal": "loop",
+      "weight": "heavy",
+      "mood": [
+        "液态玻璃",
+        "折射",
+        "封面"
+      ],
+      "runtimes": [
+        "dom",
+        "css-filter"
+      ],
+      "dependencies": [
+        "animejs"
+      ],
+      "directTargets": [
+        "html",
+        "video"
+      ],
+      "adaptationTargets": [
+        "react",
+        "vue",
+        "svelte",
+        "canvas-video"
+      ],
+      "modes": [
+        "reuse",
+        "adapt"
+      ],
+      "bestFor": [
+        "高级产品标题",
+        "空间 UI",
+        "玻璃折射揭晓"
+      ],
+      "avoidWhen": [
+        "标题区域过小",
+        "已经存在另一个 heavy 主视觉",
+        "一屏只能有一个 heavy 主视觉",
+        "glitch/扫描线语言禁用",
+        "静态封面禁用 drift，必须用 sweep",
+        "页面已经存在另一个 heavy 主视觉"
+      ],
+      "suites": [
+        "appleGlass"
+      ],
+      "keywords": [
+        "液态玻璃",
+        "折射",
+        "封面",
+        "高级产品标题",
+        "空间 UI",
+        "玻璃折射揭晓",
+        "主视觉",
+        "hero",
+        "揭晓",
+        "appleGlass",
+        "dom",
+        "css-filter",
+        "hero.glassReveal",
+        "glassReveal"
+      ],
+      "pairsWith": [
+        "shader.meshGradient"
+      ],
+      "conflictsWith": [
+        "hero.*"
+      ],
+      "preconditions": [
+        "舞台必须有明确宽高",
+        "target 不得 overflow:hidden",
+        "lens 宽/标题 bbox 宽必须在 0.35~0.6"
+      ],
+      "parameterNames": [
+        "preset",
+        "mode",
+        "shape",
+        "lensW",
+        "lensH",
+        "radius",
+        "mapSize",
+        "dispScale",
+        "dispersion",
+        "frost",
+        "specular",
+        "puck",
+        "driftX",
+        "driftY",
+        "period",
+        "loop",
+        "at"
+      ],
+      "source": {
+        "file": "lib/anime-fx.js",
+        "symbol": "AnimeFX.hero.glassReveal",
+        "supportingFiles": []
+      },
+      "example": "AnimeFX.hero.glassReveal('#target', {})",
+      "preview": "previews/hero.glassReveal.png",
+      "anchorCase": "案例/13-Hero·玻璃标题.html",
+      "apiTruth": "manifest/effects.json"
+    },
+    {
+      "id": "hero.gridDetonate",
+      "summary": "把主视觉切成网格瓦片后爆破或重组，适合产品发布与结构揭晓。",
+      "role": "hero",
+      "temporal": "once",
+      "weight": "heavy",
+      "mood": [
+        "网格爆破",
+        "3D",
+        "封面"
+      ],
+      "runtimes": [
+        "dom"
+      ],
+      "dependencies": [
+        "animejs"
+      ],
+      "directTargets": [
+        "html",
+        "video"
+      ],
+      "adaptationTargets": [
+        "react",
+        "vue",
+        "svelte",
+        "canvas-video"
+      ],
+      "modes": [
+        "reuse",
+        "adapt"
+      ],
+      "bestFor": [
+        "产品发布",
+        "海报重组",
+        "结构揭晓"
+      ],
+      "avoidWhen": [
+        "没有明确主图或海报",
+        "安静文化语境",
+        "一屏只能有一个 heavy 主视觉",
+        "页面已经存在另一个 heavy 主视觉"
+      ],
+      "suites": [
+        "techNoir"
+      ],
+      "keywords": [
+        "网格爆破",
+        "3D",
+        "封面",
+        "产品发布",
+        "海报重组",
+        "结构揭晓",
+        "主视觉",
+        "hero",
+        "揭晓",
+        "techNoir",
+        "dom",
+        "hero.gridDetonate",
+        "gridDetonate"
+      ],
+      "pairsWith": [],
+      "conflictsWith": [
+        "hero.*"
+      ],
+      "preconditions": [
+        "舞台必须有明确宽高",
+        "background 必须是有效 CSS 背景"
+      ],
+      "parameterNames": [
+        "cols",
+        "rows",
+        "background",
+        "baseColor",
+        "perspective",
+        "tiltX",
+        "tiltY",
+        "spreadXY",
+        "spreadZ",
+        "rotRange",
+        "from",
+        "step",
+        "duration",
+        "ease",
+        "mode",
+        "loop",
+        "seed",
+        "at",
+        "dimOnBlow"
+      ],
+      "source": {
+        "file": "lib/anime-fx.js",
+        "symbol": "AnimeFX.hero.gridDetonate",
+        "supportingFiles": []
+      },
+      "example": "AnimeFX.hero.gridDetonate('#target', {})",
+      "preview": "previews/hero.gridDetonate.png",
+      "anchorCase": "案例/06-主视觉·网格爆破.html",
+      "apiTruth": "manifest/effects.json"
+    },
+    {
+      "id": "hero.irisBloom",
+      "summary": "用放射叶片完成揭晓或覆盖，适合发布、章节开场和仪式性转场。",
+      "role": "hero",
+      "temporal": "once",
+      "weight": "heavy",
+      "mood": [
+        "光圈",
+        "快门",
+        "转场"
+      ],
+      "runtimes": [
+        "svg",
+        "dom"
+      ],
+      "dependencies": [
+        "animejs"
+      ],
+      "directTargets": [
+        "html",
+        "video"
+      ],
+      "adaptationTargets": [
+        "react",
+        "vue",
+        "svelte",
+        "canvas-video"
+      ],
+      "modes": [
+        "reuse",
+        "adapt"
+      ],
+      "bestFor": [
+        "发布揭幕",
+        "章节开场",
+        "整页覆盖转场"
+      ],
+      "avoidWhen": [
+        "需要长期作为背景",
+        "页面已有另一个 heavy 主视觉",
+        "一屏只能有一个 heavy 主视觉",
+        "页面已经存在另一个 heavy 主视觉"
+      ],
+      "suites": [
+        "techNoir"
+      ],
+      "keywords": [
+        "光圈",
+        "快门",
+        "转场",
+        "发布揭幕",
+        "章节开场",
+        "整页覆盖转场",
+        "主视觉",
+        "hero",
+        "揭晓",
+        "封面",
+        "techNoir",
+        "svg",
+        "dom",
+        "hero.irisBloom",
+        "irisBloom"
+      ],
+      "pairsWith": [],
+      "conflictsWith": [
+        "hero.*"
+      ],
+      "preconditions": [
+        "舞台必须有明确宽高"
+      ],
+      "parameterNames": [
+        "blades",
+        "background",
+        "baseColor",
+        "bladeColor",
+        "bladeAltColor",
+        "center",
+        "startAngle",
+        "twist",
+        "scaleFrom",
+        "scaleTo",
+        "step",
+        "duration",
+        "ease",
+        "mode",
+        "from",
+        "at"
+      ],
+      "source": {
+        "file": "lib/anime-fx.js",
+        "symbol": "AnimeFX.hero.irisBloom",
+        "supportingFiles": []
+      },
+      "example": "AnimeFX.hero.irisBloom('#target', {})",
+      "preview": "previews/hero.irisBloom.png",
+      "anchorCase": "案例/07-主视觉·光圈绽放.html",
+      "apiTruth": "manifest/effects.json"
+    },
+    {
+      "id": "hero.matrixPulse",
+      "summary": "让大面积点阵扩散、波动并收束，适合 AI、系统和信号主视觉。",
+      "role": "hero",
+      "temporal": "loop",
+      "weight": "heavy",
+      "mood": [
+        "点阵",
+        "信号",
+        "系统"
+      ],
+      "runtimes": [
+        "dom"
+      ],
+      "dependencies": [
+        "animejs"
+      ],
+      "directTargets": [
+        "html",
+        "video"
+      ],
+      "adaptationTargets": [
+        "react",
+        "vue",
+        "svelte",
+        "canvas-video"
+      ],
+      "modes": [
+        "reuse",
+        "adapt"
+      ],
+      "bestFor": [
+        "AI 系统发布",
+        "信号点阵",
+        "数据主视觉"
+      ],
+      "avoidWhen": [
+        "一屏只能有一个 heavy 主视觉",
+        "页面已经存在另一个 heavy 主视觉"
+      ],
+      "suites": [
+        "techNoir"
+      ],
+      "keywords": [
+        "点阵",
+        "信号",
+        "系统",
+        "AI 系统发布",
+        "信号点阵",
+        "数据主视觉",
+        "主视觉",
+        "hero",
+        "揭晓",
+        "封面",
+        "techNoir",
+        "dom",
+        "hero.matrixPulse",
+        "matrixPulse"
+      ],
+      "pairsWith": [],
+      "conflictsWith": [
+        "hero.*"
+      ],
+      "preconditions": [
+        "舞台必须有明确宽高"
+      ],
+      "parameterNames": [
+        "cols",
+        "rows",
+        "gap",
+        "dot",
+        "radius",
+        "roundRadius",
+        "bg",
+        "color",
+        "accent",
+        "muted",
+        "from",
+        "axis",
+        "step",
+        "period",
+        "ease",
+        "mode",
+        "loop",
+        "at"
+      ],
+      "source": {
+        "file": "lib/anime-fx.js",
+        "symbol": "AnimeFX.hero.matrixPulse",
+        "supportingFiles": []
+      },
+      "example": "AnimeFX.hero.matrixPulse('#target', {})",
+      "preview": "previews/hero.matrixPulse.png",
+      "anchorCase": "案例/08-主视觉·点阵脉冲.html",
+      "apiTruth": "manifest/effects.json"
+    },
+    {
+      "id": "hero.slatReveal",
+      "summary": "用成组条板遮盖或揭开内容，适合几何、建筑和编辑式转场。",
+      "role": "hero",
+      "temporal": "once",
+      "weight": "heavy",
+      "mood": [
+        "条板",
+        "揭幕",
+        "转场"
+      ],
+      "runtimes": [
+        "dom"
+      ],
+      "dependencies": [
+        "animejs"
+      ],
+      "directTargets": [
+        "html",
+        "video"
+      ],
+      "adaptationTargets": [
+        "react",
+        "vue",
+        "svelte",
+        "canvas-video"
+      ],
+      "modes": [
+        "reuse",
+        "adapt"
+      ],
+      "bestFor": [
+        "编辑式揭幕",
+        "建筑几何",
+        "条板转场"
+      ],
+      "avoidWhen": [
+        "一屏只能有一个 heavy 主视觉",
+        "页面已经存在另一个 heavy 主视觉"
+      ],
+      "suites": [],
+      "keywords": [
+        "条板",
+        "揭幕",
+        "转场",
+        "编辑式揭幕",
+        "建筑几何",
+        "条板转场",
+        "主视觉",
+        "hero",
+        "揭晓",
+        "封面",
+        "dom",
+        "hero.slatReveal",
+        "slatReveal"
+      ],
+      "pairsWith": [],
+      "conflictsWith": [
+        "hero.*"
+      ],
+      "preconditions": [
+        "舞台必须有明确宽高"
+      ],
+      "parameterNames": [
+        "count",
+        "orientation",
+        "background",
+        "baseColor",
+        "from",
+        "step",
+        "duration",
+        "ease",
+        "mode",
+        "at"
+      ],
+      "source": {
+        "file": "lib/anime-fx.js",
+        "symbol": "AnimeFX.hero.slatReveal",
+        "supportingFiles": []
+      },
+      "example": "AnimeFX.hero.slatReveal('#target', {})",
+      "preview": "previews/hero.slatReveal.png",
+      "anchorCase": "案例/18-基础效果锚点.html",
+      "apiTruth": "manifest/effects.json"
+    },
+    {
+      "id": "hero.tunnel",
+      "summary": "用重复环形制造纵深穿越和推进感，适合结尾、倒计时和未来主题。",
+      "role": "hero",
+      "temporal": "loop",
+      "weight": "heavy",
+      "mood": [
+        "隧道",
+        "缩放",
+        "穿越"
+      ],
+      "runtimes": [
+        "dom"
+      ],
+      "dependencies": [
+        "animejs"
+      ],
+      "directTargets": [
+        "html",
+        "video"
+      ],
+      "adaptationTargets": [
+        "react",
+        "vue",
+        "svelte",
+        "canvas-video"
+      ],
+      "modes": [
+        "reuse",
+        "adapt"
+      ],
+      "bestFor": [
+        "未来穿越",
+        "结尾主视觉",
+        "倒计时"
+      ],
+      "avoidWhen": [
+        "一屏只能有一个 heavy 主视觉",
+        "页面已经存在另一个 heavy 主视觉"
+      ],
+      "suites": [
+        "techNoir"
+      ],
+      "keywords": [
+        "隧道",
+        "缩放",
+        "穿越",
+        "未来穿越",
+        "结尾主视觉",
+        "倒计时",
+        "主视觉",
+        "hero",
+        "揭晓",
+        "封面",
+        "techNoir",
+        "dom",
+        "hero.tunnel",
+        "tunnel"
+      ],
+      "pairsWith": [],
+      "conflictsWith": [
+        "hero.*"
+      ],
+      "preconditions": [
+        "舞台必须有明确宽高"
+      ],
+      "parameterNames": [
+        "rings",
+        "base",
+        "maxScale",
+        "color",
+        "accent",
+        "shape",
+        "thickness",
+        "period",
+        "spin",
+        "seed",
+        "bg",
+        "at"
+      ],
+      "source": {
+        "file": "lib/anime-fx.js",
+        "symbol": "AnimeFX.hero.tunnel",
+        "supportingFiles": []
+      },
+      "example": "AnimeFX.hero.tunnel('#target', {})",
+      "preview": "previews/hero.tunnel.png",
+      "anchorCase": "案例/18-基础效果锚点.html",
+      "apiTruth": "manifest/effects.json"
+    },
+    {
+      "id": "image.compareWipe",
+      "summary": "图片、前后对比、改造语义的图片与照片动效，使用确定性时间轴并可在目标项目设计系统中注入风格。",
+      "role": "component",
+      "temporal": "once",
+      "weight": "light",
+      "mood": [
+        "图片",
+        "前后对比",
+        "改造"
+      ],
+      "runtimes": [
+        "dom"
+      ],
+      "dependencies": [
+        "animejs"
+      ],
+      "directTargets": [
+        "html",
+        "video"
+      ],
+      "adaptationTargets": [
+        "react",
+        "vue",
+        "svelte",
+        "canvas-video"
+      ],
+      "modes": [
+        "reuse",
+        "adapt"
+      ],
+      "bestFor": [
+        "改造前后对比",
+        "before after",
+        "图片对照"
+      ],
+      "avoidWhen": [],
+      "suites": [],
+      "keywords": [
+        "图片",
+        "前后对比",
+        "改造",
+        "改造前后对比",
+        "before after",
+        "图片对照",
+        "组件",
+        "内容",
+        "卡片",
+        "图表",
+        "dom",
+        "image.compareWipe",
+        "image",
+        "compareWipe"
+      ],
+      "pairsWith": [],
+      "conflictsWith": [],
+      "preconditions": [
+        "容器前两个子元素分别为 before/after"
+      ],
+      "parameterNames": [
+        "direction",
+        "handle",
+        "percent",
+        "duration",
+        "ease",
+        "at"
+      ],
+      "source": {
+        "file": "lib/anime-fx.js",
+        "symbol": "AnimeFX.image.compareWipe",
+        "supportingFiles": []
+      },
+      "example": "AnimeFX.image.compareWipe('#target', {})",
+      "preview": "previews/image.compareWipe.png",
+      "anchorCase": "案例/20-3.0·图文种草.html",
+      "apiTruth": "manifest/effects.json"
+    },
+    {
+      "id": "image.duotoneShift",
+      "summary": "图片、双色调、全彩语义的图片与照片动效，使用确定性时间轴并可在目标项目设计系统中注入风格。",
+      "role": "component",
+      "temporal": "once",
+      "weight": "light",
+      "mood": [
+        "图片",
+        "双色调",
+        "全彩"
+      ],
+      "runtimes": [
+        "dom"
+      ],
+      "dependencies": [
+        "animejs"
+      ],
+      "directTargets": [
+        "html",
+        "video"
+      ],
+      "adaptationTargets": [
+        "react",
+        "vue",
+        "svelte",
+        "canvas-video"
+      ],
+      "modes": [
+        "reuse",
+        "adapt"
+      ],
+      "bestFor": [
+        "双色调转全彩",
+        "照片入场",
+        "品牌图片"
+      ],
+      "avoidWhen": [],
+      "suites": [],
+      "keywords": [
+        "图片",
+        "双色调",
+        "全彩",
+        "双色调转全彩",
+        "照片入场",
+        "品牌图片",
+        "组件",
+        "内容",
+        "卡片",
+        "图表",
+        "dom",
+        "image.duotoneShift",
+        "image",
+        "duotoneShift"
+      ],
+      "pairsWith": [],
+      "conflictsWith": [],
+      "preconditions": [],
+      "parameterNames": [
+        "colorA",
+        "colorB",
+        "duration",
+        "ease",
+        "at"
+      ],
+      "source": {
+        "file": "lib/anime-fx.js",
+        "symbol": "AnimeFX.image.duotoneShift",
+        "supportingFiles": []
+      },
+      "example": "AnimeFX.image.duotoneShift('#target', {})",
+      "preview": "previews/image.duotoneShift.png",
+      "anchorCase": "案例/21-3.0·Gamma效果.html",
+      "apiTruth": "manifest/effects.json"
+    },
+    {
+      "id": "image.focusPull",
+      "summary": "图片、对焦、模糊语义的图片与照片动效，使用确定性时间轴并可在目标项目设计系统中注入风格。",
+      "role": "component",
+      "temporal": "once",
+      "weight": "light",
+      "mood": [
+        "图片",
+        "对焦",
+        "模糊"
+      ],
+      "runtimes": [
+        "dom"
+      ],
+      "dependencies": [
+        "animejs"
+      ],
+      "directTargets": [
+        "html",
+        "video"
+      ],
+      "adaptationTargets": [
+        "react",
+        "vue",
+        "svelte",
+        "canvas-video"
+      ],
+      "modes": [
+        "reuse",
+        "adapt"
+      ],
+      "bestFor": [
+        "图片对焦入场",
+        "模糊变清晰",
+        "照片强调"
+      ],
+      "avoidWhen": [
+        "大面积高 blur 在低端设备需降级"
+      ],
+      "suites": [],
+      "keywords": [
+        "图片",
+        "对焦",
+        "模糊",
+        "图片对焦入场",
+        "模糊变清晰",
+        "照片强调",
+        "组件",
+        "内容",
+        "卡片",
+        "图表",
+        "dom",
+        "image.focusPull",
+        "image",
+        "focusPull"
+      ],
+      "pairsWith": [],
+      "conflictsWith": [],
+      "preconditions": [],
+      "parameterNames": [
+        "blur",
+        "direction",
+        "duration",
+        "ease",
+        "at"
+      ],
+      "source": {
+        "file": "lib/anime-fx.js",
+        "symbol": "AnimeFX.image.focusPull",
+        "supportingFiles": []
+      },
+      "example": "AnimeFX.image.focusPull('#target', {})",
+      "preview": "previews/image.focusPull.png",
+      "anchorCase": "案例/20-3.0·图文种草.html",
+      "apiTruth": "manifest/effects.json"
+    },
+    {
+      "id": "image.maskReveal",
+      "summary": "图片、遮罩、揭示语义的图片与照片动效，使用确定性时间轴并可在目标项目设计系统中注入风格。",
+      "role": "component",
+      "temporal": "once",
+      "weight": "light",
+      "mood": [
+        "图片",
+        "遮罩",
+        "揭示"
+      ],
+      "runtimes": [
+        "dom"
+      ],
+      "dependencies": [
+        "animejs"
+      ],
+      "directTargets": [
+        "html",
+        "video"
+      ],
+      "adaptationTargets": [
+        "react",
+        "vue",
+        "svelte",
+        "canvas-video"
+      ],
+      "modes": [
+        "reuse",
+        "adapt"
+      ],
+      "bestFor": [
+        "图片遮罩揭示",
+        "照片入场",
+        "图文视频"
+      ],
+      "avoidWhen": [],
+      "suites": [],
+      "keywords": [
+        "图片",
+        "遮罩",
+        "揭示",
+        "图片遮罩揭示",
+        "照片入场",
+        "图文视频",
+        "组件",
+        "内容",
+        "卡片",
+        "图表",
+        "dom",
+        "image.maskReveal",
+        "image",
+        "maskReveal"
+      ],
+      "pairsWith": [],
+      "conflictsWith": [],
+      "preconditions": [
+        "目标必须是有明确尺寸的图片容器"
+      ],
+      "parameterNames": [
+        "mode",
+        "from",
+        "duration",
+        "ease",
+        "at"
+      ],
+      "source": {
+        "file": "lib/anime-fx.js",
+        "symbol": "AnimeFX.image.maskReveal",
+        "supportingFiles": []
+      },
+      "example": "AnimeFX.image.maskReveal('#target', {})",
+      "preview": "previews/image.maskReveal.png",
+      "anchorCase": "案例/19-3.0·App介绍.html",
+      "apiTruth": "manifest/effects.json"
+    },
+    {
+      "id": "image.parallaxLayers",
+      "summary": "图片、分层、视差语义的图片与照片动效，使用确定性时间轴并可在目标项目设计系统中注入风格。",
+      "role": "hero",
+      "temporal": "loop",
+      "weight": "medium",
+      "mood": [
+        "图片",
+        "分层",
+        "视差"
+      ],
+      "runtimes": [
+        "dom"
+      ],
+      "dependencies": [
+        "animejs"
+      ],
+      "directTargets": [
+        "html",
+        "video"
+      ],
+      "adaptationTargets": [
+        "react",
+        "vue",
+        "svelte",
+        "canvas-video"
+      ],
+      "modes": [
+        "reuse",
+        "adapt"
+      ],
+      "bestFor": [
+        "图片分层视差",
+        "产品主视觉",
+        "照片景深"
+      ],
+      "avoidWhen": [
+        "不与另一个 hero 叠加"
+      ],
+      "suites": [],
+      "keywords": [
+        "图片",
+        "分层",
+        "视差",
+        "图片分层视差",
+        "产品主视觉",
+        "照片景深",
+        "主视觉",
+        "hero",
+        "揭晓",
+        "封面",
+        "dom",
+        "image.parallaxLayers",
+        "image",
+        "parallaxLayers"
+      ],
+      "pairsWith": [],
+      "conflictsWith": [
+        "hero.*"
+      ],
+      "preconditions": [
+        "子层必须声明 data-depth"
+      ],
+      "parameterNames": [
+        "period",
+        "amplitude",
+        "seed",
+        "ease",
+        "loop",
+        "at"
+      ],
+      "source": {
+        "file": "lib/anime-fx.js",
+        "symbol": "AnimeFX.image.parallaxLayers",
+        "supportingFiles": []
+      },
+      "example": "AnimeFX.image.parallaxLayers('#target', {})",
+      "preview": "previews/image.parallaxLayers.png",
+      "anchorCase": "案例/19-3.0·App介绍.html",
+      "apiTruth": "manifest/effects.json"
+    },
+    {
+      "id": "image.stackShuffle",
+      "summary": "照片、拍立得、甩牌语义的图片与照片动效，使用确定性时间轴并可在目标项目设计系统中注入风格。",
+      "role": "component",
+      "temporal": "once",
+      "weight": "medium",
+      "mood": [
+        "照片",
+        "拍立得",
+        "甩牌"
+      ],
+      "runtimes": [
+        "dom"
+      ],
+      "dependencies": [
+        "animejs"
+      ],
+      "directTargets": [
+        "html",
+        "video"
+      ],
+      "adaptationTargets": [
+        "react",
+        "vue",
+        "svelte",
+        "canvas-video"
+      ],
+      "modes": [
+        "reuse",
+        "adapt"
+      ],
+      "bestFor": [
+        "拍立得照片堆",
+        "甩牌入场",
+        "图文种草"
+      ],
+      "avoidWhen": [],
+      "suites": [],
+      "keywords": [
+        "照片",
+        "拍立得",
+        "甩牌",
+        "拍立得照片堆",
+        "甩牌入场",
+        "图文种草",
+        "组件",
+        "内容",
+        "卡片",
+        "图表",
+        "dom",
+        "image.stackShuffle",
+        "image",
+        "stackShuffle"
+      ],
+      "pairsWith": [],
+      "conflictsWith": [],
+      "preconditions": [
+        "目标选择器至少命中两张堆叠图片"
+      ],
+      "parameterNames": [
+        "count",
+        "rotateSpread",
+        "step",
+        "distance",
+        "duration",
+        "ease",
+        "at"
+      ],
+      "source": {
+        "file": "lib/anime-fx.js",
+        "symbol": "AnimeFX.image.stackShuffle",
+        "supportingFiles": []
+      },
+      "example": "AnimeFX.image.stackShuffle('#target', {})",
+      "preview": "previews/image.stackShuffle.png",
+      "anchorCase": "案例/20-3.0·图文种草.html",
+      "apiTruth": "manifest/effects.json"
+    },
+    {
+      "id": "shader.colorPanels",
+      "summary": "色板、平面、扫过视觉语言的动态 WebGL 背景，适合低文字密度的沉浸式氛围。",
+      "role": "bg",
+      "temporal": "loop",
+      "weight": "medium",
+      "mood": [
+        "色板",
+        "平面",
+        "扫过"
+      ],
+      "runtimes": [
+        "webgl",
+        "shader"
+      ],
+      "dependencies": [
+        "animejs",
+        "afx-shaders"
+      ],
+      "directTargets": [
+        "html",
+        "video"
+      ],
+      "adaptationTargets": [
+        "react",
+        "vue",
+        "svelte",
+        "canvas-video"
+      ],
+      "modes": [
+        "reuse",
+        "adapt"
+      ],
+      "bestFor": [
+        "色板背景",
+        "平面背景",
+        "扫过背景"
+      ],
+      "avoidWhen": [
+        "不使用时必须 dispose",
+        "不要与另一个 heavy hero 叠加",
+        "单页常驻 shader 建议不超过 1 个"
+      ],
+      "suites": [],
+      "keywords": [
+        "色板",
+        "平面",
+        "扫过",
+        "色板背景",
+        "平面背景",
+        "扫过背景",
+        "背景",
+        "氛围",
+        "environment",
+        "webgl",
+        "shader",
+        "shader.colorPanels",
+        "colorPanels"
+      ],
+      "pairsWith": [],
+      "conflictsWith": [
+        "hero.*"
+      ],
+      "preconditions": [
+        "目标必须有明确宽高",
+        "单页 WebGL context 总数不得超过 8"
+      ],
+      "parameterNames": [
+        "fit",
+        "scale",
+        "rotation",
+        "offsetX",
+        "offsetY",
+        "originX",
+        "originY",
+        "worldWidth",
+        "worldHeight",
+        "speed",
+        "frame",
+        "colors",
+        "colorBack",
+        "angle1",
+        "angle2",
+        "length",
+        "edges",
+        "blur",
+        "fadeIn",
+        "fadeOut",
+        "gradient",
+        "density"
+      ],
+      "source": {
+        "file": "lib/shader-fx-config.js",
+        "symbol": "AnimeFX.shader.colorPanels",
+        "supportingFiles": [
+          "lib/afx-shaders.umd.js"
+        ]
+      },
+      "example": "AnimeFX.shader.colorPanels('#bg', AnimeFX.shader.defaults('colorPanels'))",
+      "preview": "previews/shader.colorPanels.png",
+      "anchorCase": "案例/15-Shader·30风格总览.html",
+      "apiTruth": "manifest/effects.json"
+    },
+    {
+      "id": "shader.dithering",
+      "summary": "抖动网点、像素视觉语言的动态 WebGL 背景，适合低文字密度的沉浸式氛围。",
+      "role": "bg",
+      "temporal": "loop",
+      "weight": "medium",
+      "mood": [
+        "抖动网点",
+        "像素"
+      ],
+      "runtimes": [
+        "webgl",
+        "shader"
+      ],
+      "dependencies": [
+        "animejs",
+        "afx-shaders"
+      ],
+      "directTargets": [
+        "html",
+        "video"
+      ],
+      "adaptationTargets": [
+        "react",
+        "vue",
+        "svelte",
+        "canvas-video"
+      ],
+      "modes": [
+        "reuse",
+        "adapt"
+      ],
+      "bestFor": [
+        "抖动网点背景",
+        "像素背景",
+        "沉浸式 WebGL 氛围"
+      ],
+      "avoidWhen": [
+        "不使用时必须 dispose",
+        "不要与另一个 heavy hero 叠加",
+        "单页常驻 shader 建议不超过 1 个"
+      ],
+      "suites": [],
+      "keywords": [
+        "抖动网点",
+        "像素",
+        "抖动网点背景",
+        "像素背景",
+        "沉浸式 WebGL 氛围",
+        "背景",
+        "氛围",
+        "environment",
+        "webgl",
+        "shader",
+        "shader.dithering",
+        "dithering"
+      ],
+      "pairsWith": [],
+      "conflictsWith": [
+        "hero.*"
+      ],
+      "preconditions": [
+        "目标必须有明确宽高",
+        "单页 WebGL context 总数不得超过 8"
+      ],
+      "parameterNames": [
+        "fit",
+        "scale",
+        "rotation",
+        "offsetX",
+        "offsetY",
+        "originX",
+        "originY",
+        "worldWidth",
+        "worldHeight",
+        "speed",
+        "frame",
+        "colorBack",
+        "colorFront",
+        "shape",
+        "type",
+        "size"
+      ],
+      "source": {
+        "file": "lib/shader-fx-config.js",
+        "symbol": "AnimeFX.shader.dithering",
+        "supportingFiles": [
+          "lib/afx-shaders.umd.js"
+        ]
+      },
+      "example": "AnimeFX.shader.dithering('#bg', AnimeFX.shader.defaults('dithering'))",
+      "preview": "previews/shader.dithering.png",
+      "anchorCase": "案例/15-Shader·30风格总览.html",
+      "apiTruth": "manifest/effects.json"
+    },
+    {
+      "id": "shader.dotOrbit",
+      "summary": "轨道、点阵视觉语言的WebGL 装饰特效，适合局部焦点、边框或有明确主体的装饰。",
+      "role": "component",
+      "temporal": "loop",
+      "weight": "medium",
+      "mood": [
+        "轨道",
+        "点阵"
+      ],
+      "runtimes": [
+        "webgl",
+        "shader"
+      ],
+      "dependencies": [
+        "animejs",
+        "afx-shaders"
+      ],
+      "directTargets": [
+        "html",
+        "video"
+      ],
+      "adaptationTargets": [
+        "react",
+        "vue",
+        "svelte",
+        "canvas-video"
+      ],
+      "modes": [
+        "reuse",
+        "adapt"
+      ],
+      "bestFor": [
+        "轨道装饰特效",
+        "点阵装饰特效",
+        "局部 WebGL 视觉焦点"
+      ],
+      "avoidWhen": [
+        "不使用时必须 dispose",
+        "不要与另一个 heavy hero 叠加",
+        "单页常驻 shader 建议不超过 1 个"
+      ],
+      "suites": [
+        "techNoir"
+      ],
+      "keywords": [
+        "轨道",
+        "点阵",
+        "轨道装饰特效",
+        "点阵装饰特效",
+        "局部 WebGL 视觉焦点",
+        "组件",
+        "内容",
+        "卡片",
+        "图表",
+        "techNoir",
+        "webgl",
+        "shader",
+        "shader.dotOrbit",
+        "dotOrbit"
+      ],
+      "pairsWith": [],
+      "conflictsWith": [
+        "hero.*"
+      ],
+      "preconditions": [
+        "目标必须有明确宽高",
+        "单页 WebGL context 总数不得超过 8"
+      ],
+      "parameterNames": [
+        "fit",
+        "scale",
+        "rotation",
+        "offsetX",
+        "offsetY",
+        "originX",
+        "originY",
+        "worldWidth",
+        "worldHeight",
+        "speed",
+        "frame",
+        "colorBack",
+        "colors",
+        "size",
+        "sizeRange",
+        "spreading",
+        "stepsPerColor"
+      ],
+      "source": {
+        "file": "lib/shader-fx-config.js",
+        "symbol": "AnimeFX.shader.dotOrbit",
+        "supportingFiles": [
+          "lib/afx-shaders.umd.js"
+        ]
+      },
+      "example": "AnimeFX.shader.dotOrbit('#bg', AnimeFX.shader.defaults('dotOrbit'))",
+      "preview": "previews/shader.dotOrbit.png",
+      "anchorCase": "案例/15-Shader·30风格总览.html",
+      "apiTruth": "manifest/effects.json"
+    },
+    {
+      "id": "shader.gemSmoke",
+      "summary": "宝石、烟雾视觉语言的WebGL 装饰特效，适合局部焦点、边框或有明确主体的装饰。",
+      "role": "component",
+      "temporal": "loop",
+      "weight": "medium",
+      "mood": [
+        "宝石",
+        "烟雾"
+      ],
+      "runtimes": [
+        "webgl",
+        "shader"
+      ],
+      "dependencies": [
+        "animejs",
+        "afx-shaders"
+      ],
+      "directTargets": [
+        "html",
+        "video"
+      ],
+      "adaptationTargets": [
+        "react",
+        "vue",
+        "svelte",
+        "canvas-video"
+      ],
+      "modes": [
+        "reuse",
+        "adapt"
+      ],
+      "bestFor": [
+        "宝石装饰特效",
+        "烟雾装饰特效",
+        "局部 WebGL 视觉焦点"
+      ],
+      "avoidWhen": [
+        "不使用时必须 dispose",
+        "不要与另一个 heavy hero 叠加",
+        "单页常驻 shader 建议不超过 1 个"
+      ],
+      "suites": [],
+      "keywords": [
+        "宝石",
+        "烟雾",
+        "宝石装饰特效",
+        "烟雾装饰特效",
+        "局部 WebGL 视觉焦点",
+        "组件",
+        "内容",
+        "卡片",
+        "图表",
+        "webgl",
+        "shader",
+        "shader.gemSmoke",
+        "gemSmoke"
+      ],
+      "pairsWith": [],
+      "conflictsWith": [
+        "hero.*"
+      ],
+      "preconditions": [
+        "目标必须有明确宽高",
+        "单页 WebGL context 总数不得超过 8",
+        "image 必须是可访问 URL/Blob/图像元素"
+      ],
+      "parameterNames": [
+        "fit",
+        "scale",
+        "rotation",
+        "offsetX",
+        "offsetY",
+        "originX",
+        "originY",
+        "worldWidth",
+        "worldHeight",
+        "speed",
+        "frame",
+        "colorBack",
+        "colorInner",
+        "colors",
+        "outerGlow",
+        "innerGlow",
+        "innerDistortion",
+        "outerDistortion",
+        "offset",
+        "angle",
+        "size",
+        "shape"
+      ],
+      "source": {
+        "file": "lib/shader-fx-config.js",
+        "symbol": "AnimeFX.shader.gemSmoke",
+        "supportingFiles": [
+          "lib/afx-shaders.umd.js"
+        ]
+      },
+      "example": "AnimeFX.shader.gemSmoke('#bg', AnimeFX.shader.defaults('gemSmoke'))",
+      "preview": "previews/shader.gemSmoke.png",
+      "anchorCase": "案例/15-Shader·30风格总览.html",
+      "apiTruth": "manifest/effects.json"
+    },
+    {
+      "id": "shader.godRays",
+      "summary": "体积光、神圣视觉语言的WebGL 装饰特效，适合局部焦点、边框或有明确主体的装饰。",
+      "role": "component",
+      "temporal": "loop",
+      "weight": "medium",
+      "mood": [
+        "体积光",
+        "神圣"
+      ],
+      "runtimes": [
+        "webgl",
+        "shader"
+      ],
+      "dependencies": [
+        "animejs",
+        "afx-shaders"
+      ],
+      "directTargets": [
+        "html",
+        "video"
+      ],
+      "adaptationTargets": [
+        "react",
+        "vue",
+        "svelte",
+        "canvas-video"
+      ],
+      "modes": [
+        "reuse",
+        "adapt"
+      ],
+      "bestFor": [
+        "体积光装饰特效",
+        "神圣装饰特效",
+        "局部 WebGL 视觉焦点"
+      ],
+      "avoidWhen": [
+        "不使用时必须 dispose",
+        "不要与另一个 heavy hero 叠加",
+        "单页常驻 shader 建议不超过 1 个"
+      ],
+      "suites": [],
+      "keywords": [
+        "体积光",
+        "神圣",
+        "体积光装饰特效",
+        "神圣装饰特效",
+        "局部 WebGL 视觉焦点",
+        "组件",
+        "内容",
+        "卡片",
+        "图表",
+        "webgl",
+        "shader",
+        "shader.godRays",
+        "godRays"
+      ],
+      "pairsWith": [],
+      "conflictsWith": [
+        "hero.*"
+      ],
+      "preconditions": [
+        "目标必须有明确宽高",
+        "单页 WebGL context 总数不得超过 8"
+      ],
+      "parameterNames": [
+        "fit",
+        "scale",
+        "rotation",
+        "offsetX",
+        "offsetY",
+        "originX",
+        "originY",
+        "worldWidth",
+        "worldHeight",
+        "colorBack",
+        "colorBloom",
+        "colors",
+        "density",
+        "spotty",
+        "midIntensity",
+        "midSize",
+        "intensity",
+        "bloom",
+        "speed",
+        "frame"
+      ],
+      "source": {
+        "file": "lib/shader-fx-config.js",
+        "symbol": "AnimeFX.shader.godRays",
+        "supportingFiles": [
+          "lib/afx-shaders.umd.js"
+        ]
+      },
+      "example": "AnimeFX.shader.godRays('#bg', AnimeFX.shader.defaults('godRays'))",
+      "preview": "previews/shader.godRays.png",
+      "anchorCase": "案例/15-Shader·30风格总览.html",
+      "apiTruth": "manifest/effects.json"
+    },
+    {
+      "id": "shader.grainGradient",
+      "summary": "颗粒、渐变视觉语言的动态 WebGL 背景，适合低文字密度的沉浸式氛围。",
+      "role": "bg",
+      "temporal": "loop",
+      "weight": "medium",
+      "mood": [
+        "颗粒",
+        "渐变"
+      ],
+      "runtimes": [
+        "webgl",
+        "shader"
+      ],
+      "dependencies": [
+        "animejs",
+        "afx-shaders"
+      ],
+      "directTargets": [
+        "html",
+        "video"
+      ],
+      "adaptationTargets": [
+        "react",
+        "vue",
+        "svelte",
+        "canvas-video"
+      ],
+      "modes": [
+        "reuse",
+        "adapt"
+      ],
+      "bestFor": [
+        "颗粒背景",
+        "渐变背景",
+        "沉浸式 WebGL 氛围"
+      ],
+      "avoidWhen": [
+        "不使用时必须 dispose",
+        "不要与另一个 heavy hero 叠加",
+        "单页常驻 shader 建议不超过 1 个"
+      ],
+      "suites": [],
+      "keywords": [
+        "颗粒",
+        "渐变",
+        "颗粒背景",
+        "渐变背景",
+        "沉浸式 WebGL 氛围",
+        "背景",
+        "氛围",
+        "environment",
+        "webgl",
+        "shader",
+        "shader.grainGradient",
+        "grainGradient"
+      ],
+      "pairsWith": [],
+      "conflictsWith": [
+        "hero.*"
+      ],
+      "preconditions": [
+        "目标必须有明确宽高",
+        "单页 WebGL context 总数不得超过 8"
+      ],
+      "parameterNames": [
+        "fit",
+        "scale",
+        "rotation",
+        "offsetX",
+        "offsetY",
+        "originX",
+        "originY",
+        "worldWidth",
+        "worldHeight",
+        "speed",
+        "frame",
+        "colorBack",
+        "colors",
+        "softness",
+        "intensity",
+        "noise",
+        "shape"
+      ],
+      "source": {
+        "file": "lib/shader-fx-config.js",
+        "symbol": "AnimeFX.shader.grainGradient",
+        "supportingFiles": [
+          "lib/afx-shaders.umd.js"
+        ]
+      },
+      "example": "AnimeFX.shader.grainGradient('#bg', AnimeFX.shader.defaults('grainGradient'))",
+      "preview": "previews/shader.grainGradient.png",
+      "anchorCase": "案例/15-Shader·30风格总览.html",
+      "apiTruth": "manifest/effects.json"
+    },
+    {
+      "id": "shader.heatmap",
+      "summary": "热力、数据视觉语言的动态 WebGL 背景，适合低文字密度的沉浸式氛围。",
+      "role": "bg",
+      "temporal": "loop",
+      "weight": "medium",
+      "mood": [
+        "热力",
+        "数据"
+      ],
+      "runtimes": [
+        "webgl",
+        "shader"
+      ],
+      "dependencies": [
+        "animejs",
+        "afx-shaders"
+      ],
+      "directTargets": [
+        "html",
+        "video"
+      ],
+      "adaptationTargets": [
+        "react",
+        "vue",
+        "svelte",
+        "canvas-video"
+      ],
+      "modes": [
+        "reuse",
+        "adapt"
+      ],
+      "bestFor": [
+        "热力数据背景",
+        "科学可视化",
+        "数据氛围"
+      ],
+      "avoidWhen": [
+        "不使用时必须 dispose",
+        "不要与另一个 heavy hero 叠加",
+        "单页常驻 shader 建议不超过 1 个"
+      ],
+      "suites": [],
+      "keywords": [
+        "热力",
+        "数据",
+        "热力数据背景",
+        "科学可视化",
+        "数据氛围",
+        "背景",
+        "氛围",
+        "environment",
+        "webgl",
+        "shader",
+        "shader.heatmap",
+        "heatmap"
+      ],
+      "pairsWith": [],
+      "conflictsWith": [
+        "hero.*"
+      ],
+      "preconditions": [
+        "目标必须有明确宽高",
+        "单页 WebGL context 总数不得超过 8",
+        "image 必须是可访问 URL/Blob/图像元素"
+      ],
+      "parameterNames": [
+        "fit",
+        "scale",
+        "rotation",
+        "offsetX",
+        "offsetY",
+        "originX",
+        "originY",
+        "worldWidth",
+        "worldHeight",
+        "speed",
+        "frame",
+        "contour",
+        "angle",
+        "noise",
+        "innerGlow",
+        "outerGlow",
+        "colorBack",
+        "colors"
+      ],
+      "source": {
+        "file": "lib/shader-fx-config.js",
+        "symbol": "AnimeFX.shader.heatmap",
+        "supportingFiles": [
+          "lib/afx-shaders.umd.js"
+        ]
+      },
+      "example": "AnimeFX.shader.heatmap('#bg', AnimeFX.shader.defaults('heatmap'))",
+      "preview": "previews/shader.heatmap.png",
+      "anchorCase": "案例/15-Shader·30风格总览.html",
+      "apiTruth": "manifest/effects.json"
+    },
+    {
+      "id": "shader.liquidMetal",
+      "summary": "液态金属、高光视觉语言的WebGL 装饰特效，适合局部焦点、边框或有明确主体的装饰。",
+      "role": "component",
+      "temporal": "loop",
+      "weight": "medium",
+      "mood": [
+        "液态金属",
+        "高光"
+      ],
+      "runtimes": [
+        "webgl",
+        "shader"
+      ],
+      "dependencies": [
+        "animejs",
+        "afx-shaders"
+      ],
+      "directTargets": [
+        "html",
+        "video"
+      ],
+      "adaptationTargets": [
+        "react",
+        "vue",
+        "svelte",
+        "canvas-video"
+      ],
+      "modes": [
+        "reuse",
+        "adapt"
+      ],
+      "bestFor": [
+        "液态金属装饰特效",
+        "高光装饰特效",
+        "局部 WebGL 视觉焦点"
+      ],
+      "avoidWhen": [
+        "不使用时必须 dispose",
+        "不要与另一个 heavy hero 叠加",
+        "单页常驻 shader 建议不超过 1 个"
+      ],
+      "suites": [],
+      "keywords": [
+        "液态金属",
+        "高光",
+        "液态金属装饰特效",
+        "高光装饰特效",
+        "局部 WebGL 视觉焦点",
+        "组件",
+        "内容",
+        "卡片",
+        "图表",
+        "webgl",
+        "shader",
+        "shader.liquidMetal",
+        "liquidMetal"
+      ],
+      "pairsWith": [],
+      "conflictsWith": [
+        "hero.*"
+      ],
+      "preconditions": [
+        "目标必须有明确宽高",
+        "单页 WebGL context 总数不得超过 8",
+        "image 必须是可访问 URL/Blob/图像元素"
+      ],
+      "parameterNames": [
+        "fit",
+        "scale",
+        "rotation",
+        "offsetX",
+        "offsetY",
+        "originX",
+        "originY",
+        "worldWidth",
+        "worldHeight",
+        "speed",
+        "frame",
+        "colorBack",
+        "colorTint",
+        "distortion",
+        "repetition",
+        "shiftRed",
+        "shiftBlue",
+        "contour",
+        "softness",
+        "angle",
+        "shape"
+      ],
+      "source": {
+        "file": "lib/shader-fx-config.js",
+        "symbol": "AnimeFX.shader.liquidMetal",
+        "supportingFiles": [
+          "lib/afx-shaders.umd.js"
+        ]
+      },
+      "example": "AnimeFX.shader.liquidMetal('#bg', AnimeFX.shader.defaults('liquidMetal'))",
+      "preview": "previews/shader.liquidMetal.png",
+      "anchorCase": "案例/15-Shader·30风格总览.html",
+      "apiTruth": "manifest/effects.json"
+    },
+    {
+      "id": "shader.meshGradient",
+      "summary": "流体渐变、柔和视觉语言的动态 WebGL 背景，适合低文字密度的沉浸式氛围。",
+      "role": "bg",
+      "temporal": "loop",
+      "weight": "medium",
+      "mood": [
+        "流体渐变",
+        "柔和"
+      ],
+      "runtimes": [
+        "webgl",
+        "shader"
+      ],
+      "dependencies": [
+        "animejs",
+        "afx-shaders"
+      ],
+      "directTargets": [
+        "html",
+        "video"
+      ],
+      "adaptationTargets": [
+        "react",
+        "vue",
+        "svelte",
+        "canvas-video"
+      ],
+      "modes": [
+        "reuse",
+        "adapt"
+      ],
+      "bestFor": [
+        "高级产品背景",
+        "柔和流体渐变",
+        "玻璃界面底图"
+      ],
+      "avoidWhen": [
+        "不使用时必须 dispose",
+        "不要与另一个 heavy hero 叠加",
+        "单页常驻 shader 建议不超过 1 个"
+      ],
+      "suites": [
+        "appleGlass"
+      ],
+      "keywords": [
+        "流体渐变",
+        "柔和",
+        "高级产品背景",
+        "柔和流体渐变",
+        "玻璃界面底图",
+        "背景",
+        "氛围",
+        "environment",
+        "appleGlass",
+        "webgl",
+        "shader",
+        "shader.meshGradient",
+        "meshGradient"
+      ],
+      "pairsWith": [],
+      "conflictsWith": [
+        "hero.*"
+      ],
+      "preconditions": [
+        "目标必须有明确宽高",
+        "单页 WebGL context 总数不得超过 8"
+      ],
+      "parameterNames": [
+        "fit",
+        "scale",
+        "rotation",
+        "offsetX",
+        "offsetY",
+        "originX",
+        "originY",
+        "worldWidth",
+        "worldHeight",
+        "speed",
+        "frame",
+        "colors",
+        "distortion",
+        "swirl",
+        "grainMixer",
+        "grainOverlay"
+      ],
+      "source": {
+        "file": "lib/shader-fx-config.js",
+        "symbol": "AnimeFX.shader.meshGradient",
+        "supportingFiles": [
+          "lib/afx-shaders.umd.js"
+        ]
+      },
+      "example": "AnimeFX.shader.meshGradient('#bg', AnimeFX.shader.defaults('meshGradient'))",
+      "preview": "previews/shader.meshGradient.png",
+      "anchorCase": "案例/15-Shader·30风格总览.html",
+      "apiTruth": "manifest/effects.json"
+    },
+    {
+      "id": "shader.metaballs",
+      "summary": "融球、有机视觉语言的WebGL 装饰特效，适合局部焦点、边框或有明确主体的装饰。",
+      "role": "component",
+      "temporal": "loop",
+      "weight": "medium",
+      "mood": [
+        "融球",
+        "有机"
+      ],
+      "runtimes": [
+        "webgl",
+        "shader"
+      ],
+      "dependencies": [
+        "animejs",
+        "afx-shaders"
+      ],
+      "directTargets": [
+        "html",
+        "video"
+      ],
+      "adaptationTargets": [
+        "react",
+        "vue",
+        "svelte",
+        "canvas-video"
+      ],
+      "modes": [
+        "reuse",
+        "adapt"
+      ],
+      "bestFor": [
+        "融球装饰特效",
+        "有机装饰特效",
+        "局部 WebGL 视觉焦点"
+      ],
+      "avoidWhen": [
+        "不使用时必须 dispose",
+        "不要与另一个 heavy hero 叠加",
+        "单页常驻 shader 建议不超过 1 个"
+      ],
+      "suites": [],
+      "keywords": [
+        "融球",
+        "有机",
+        "融球装饰特效",
+        "有机装饰特效",
+        "局部 WebGL 视觉焦点",
+        "组件",
+        "内容",
+        "卡片",
+        "图表",
+        "webgl",
+        "shader",
+        "shader.metaballs",
+        "metaballs"
+      ],
+      "pairsWith": [],
+      "conflictsWith": [
+        "hero.*"
+      ],
+      "preconditions": [
+        "目标必须有明确宽高",
+        "单页 WebGL context 总数不得超过 8"
+      ],
+      "parameterNames": [
+        "fit",
+        "scale",
+        "rotation",
+        "offsetX",
+        "offsetY",
+        "originX",
+        "originY",
+        "worldWidth",
+        "worldHeight",
+        "speed",
+        "frame",
+        "colorBack",
+        "colors",
+        "count",
+        "size"
+      ],
+      "source": {
+        "file": "lib/shader-fx-config.js",
+        "symbol": "AnimeFX.shader.metaballs",
+        "supportingFiles": [
+          "lib/afx-shaders.umd.js"
+        ]
+      },
+      "example": "AnimeFX.shader.metaballs('#bg', AnimeFX.shader.defaults('metaballs'))",
+      "preview": "previews/shader.metaballs.png",
+      "anchorCase": "案例/15-Shader·30风格总览.html",
+      "apiTruth": "manifest/effects.json"
+    },
+    {
+      "id": "shader.neuroNoise",
+      "summary": "神经、噪声视觉语言的动态 WebGL 背景，适合低文字密度的沉浸式氛围。",
+      "role": "bg",
+      "temporal": "loop",
+      "weight": "medium",
+      "mood": [
+        "神经",
+        "噪声"
+      ],
+      "runtimes": [
+        "webgl",
+        "shader"
+      ],
+      "dependencies": [
+        "animejs",
+        "afx-shaders"
+      ],
+      "directTargets": [
+        "html",
+        "video"
+      ],
+      "adaptationTargets": [
+        "react",
+        "vue",
+        "svelte",
+        "canvas-video"
+      ],
+      "modes": [
+        "reuse",
+        "adapt"
+      ],
+      "bestFor": [
+        "神经背景",
+        "噪声背景",
+        "沉浸式 WebGL 氛围"
+      ],
+      "avoidWhen": [
+        "不使用时必须 dispose",
+        "不要与另一个 heavy hero 叠加",
+        "单页常驻 shader 建议不超过 1 个"
+      ],
+      "suites": [],
+      "keywords": [
+        "神经",
+        "噪声",
+        "神经背景",
+        "噪声背景",
+        "沉浸式 WebGL 氛围",
+        "背景",
+        "氛围",
+        "environment",
+        "webgl",
+        "shader",
+        "shader.neuroNoise",
+        "neuroNoise"
+      ],
+      "pairsWith": [],
+      "conflictsWith": [
+        "hero.*"
+      ],
+      "preconditions": [
+        "目标必须有明确宽高",
+        "单页 WebGL context 总数不得超过 8"
+      ],
+      "parameterNames": [
+        "fit",
+        "scale",
+        "rotation",
+        "offsetX",
+        "offsetY",
+        "originX",
+        "originY",
+        "worldWidth",
+        "worldHeight",
+        "speed",
+        "frame",
+        "colorFront",
+        "colorMid",
+        "colorBack",
+        "brightness",
+        "contrast"
+      ],
+      "source": {
+        "file": "lib/shader-fx-config.js",
+        "symbol": "AnimeFX.shader.neuroNoise",
+        "supportingFiles": [
+          "lib/afx-shaders.umd.js"
+        ]
+      },
+      "example": "AnimeFX.shader.neuroNoise('#bg', AnimeFX.shader.defaults('neuroNoise'))",
+      "preview": "previews/shader.neuroNoise.png",
+      "anchorCase": "案例/15-Shader·30风格总览.html",
+      "apiTruth": "manifest/effects.json"
+    },
+    {
+      "id": "shader.perlinNoise",
+      "summary": "Perlin、噪声视觉语言的动态 WebGL 背景，适合低文字密度的沉浸式氛围。",
+      "role": "bg",
+      "temporal": "loop",
+      "weight": "medium",
+      "mood": [
+        "Perlin",
+        "噪声"
+      ],
+      "runtimes": [
+        "webgl",
+        "shader"
+      ],
+      "dependencies": [
+        "animejs",
+        "afx-shaders"
+      ],
+      "directTargets": [
+        "html",
+        "video"
+      ],
+      "adaptationTargets": [
+        "react",
+        "vue",
+        "svelte",
+        "canvas-video"
+      ],
+      "modes": [
+        "reuse",
+        "adapt"
+      ],
+      "bestFor": [
+        "Perlin背景",
+        "噪声背景",
+        "沉浸式 WebGL 氛围"
+      ],
+      "avoidWhen": [
+        "不使用时必须 dispose",
+        "不要与另一个 heavy hero 叠加",
+        "单页常驻 shader 建议不超过 1 个"
+      ],
+      "suites": [],
+      "keywords": [
+        "Perlin",
+        "噪声",
+        "Perlin背景",
+        "噪声背景",
+        "沉浸式 WebGL 氛围",
+        "背景",
+        "氛围",
+        "environment",
+        "webgl",
+        "shader",
+        "shader.perlinNoise",
+        "perlinNoise"
+      ],
+      "pairsWith": [],
+      "conflictsWith": [
+        "hero.*"
+      ],
+      "preconditions": [
+        "目标必须有明确宽高",
+        "单页 WebGL context 总数不得超过 8"
+      ],
+      "parameterNames": [
+        "fit",
+        "scale",
+        "rotation",
+        "offsetX",
+        "offsetY",
+        "originX",
+        "originY",
+        "worldWidth",
+        "worldHeight",
+        "speed",
+        "frame",
+        "colorBack",
+        "colorFront",
+        "proportion",
+        "softness",
+        "octaveCount",
+        "persistence",
+        "lacunarity"
+      ],
+      "source": {
+        "file": "lib/shader-fx-config.js",
+        "symbol": "AnimeFX.shader.perlinNoise",
+        "supportingFiles": [
+          "lib/afx-shaders.umd.js"
+        ]
+      },
+      "example": "AnimeFX.shader.perlinNoise('#bg', AnimeFX.shader.defaults('perlinNoise'))",
+      "preview": "previews/shader.perlinNoise.png",
+      "anchorCase": "案例/15-Shader·30风格总览.html",
+      "apiTruth": "manifest/effects.json"
+    },
+    {
+      "id": "shader.pulsingBorder",
+      "summary": "边框、脉冲视觉语言的WebGL 装饰特效，适合局部焦点、边框或有明确主体的装饰。",
+      "role": "component",
+      "temporal": "loop",
+      "weight": "medium",
+      "mood": [
+        "边框",
+        "脉冲"
+      ],
+      "runtimes": [
+        "webgl",
+        "shader"
+      ],
+      "dependencies": [
+        "animejs",
+        "afx-shaders"
+      ],
+      "directTargets": [
+        "html",
+        "video"
+      ],
+      "adaptationTargets": [
+        "react",
+        "vue",
+        "svelte",
+        "canvas-video"
+      ],
+      "modes": [
+        "reuse",
+        "adapt"
+      ],
+      "bestFor": [
+        "边框装饰特效",
+        "脉冲装饰特效",
+        "局部 WebGL 视觉焦点"
+      ],
+      "avoidWhen": [
+        "不使用时必须 dispose",
+        "不要与另一个 heavy hero 叠加",
+        "单页常驻 shader 建议不超过 1 个"
+      ],
+      "suites": [],
+      "keywords": [
+        "边框",
+        "脉冲",
+        "边框装饰特效",
+        "脉冲装饰特效",
+        "局部 WebGL 视觉焦点",
+        "组件",
+        "内容",
+        "卡片",
+        "图表",
+        "webgl",
+        "shader",
+        "shader.pulsingBorder",
+        "pulsingBorder"
+      ],
+      "pairsWith": [],
+      "conflictsWith": [
+        "hero.*"
+      ],
+      "preconditions": [
+        "目标必须有明确宽高",
+        "单页 WebGL context 总数不得超过 8"
+      ],
+      "parameterNames": [
+        "fit",
+        "scale",
+        "rotation",
+        "offsetX",
+        "offsetY",
+        "originX",
+        "originY",
+        "worldWidth",
+        "worldHeight",
+        "speed",
+        "frame",
+        "colorBack",
+        "colors",
+        "roundness",
+        "thickness",
+        "margin",
+        "marginLeft",
+        "marginRight",
+        "marginTop",
+        "marginBottom",
+        "aspectRatio",
+        "softness",
+        "intensity",
+        "bloom",
+        "spots",
+        "spotSize",
+        "pulse",
+        "smoke",
+        "smokeSize"
+      ],
+      "source": {
+        "file": "lib/shader-fx-config.js",
+        "symbol": "AnimeFX.shader.pulsingBorder",
+        "supportingFiles": [
+          "lib/afx-shaders.umd.js"
+        ]
+      },
+      "example": "AnimeFX.shader.pulsingBorder('#bg', AnimeFX.shader.defaults('pulsingBorder'))",
+      "preview": "previews/shader.pulsingBorder.png",
+      "anchorCase": "案例/15-Shader·30风格总览.html",
+      "apiTruth": "manifest/effects.json"
+    },
+    {
+      "id": "shader.simplexNoise",
+      "summary": "Simplex、噪声视觉语言的动态 WebGL 背景，适合低文字密度的沉浸式氛围。",
+      "role": "bg",
+      "temporal": "loop",
+      "weight": "medium",
+      "mood": [
+        "Simplex",
+        "噪声"
+      ],
+      "runtimes": [
+        "webgl",
+        "shader"
+      ],
+      "dependencies": [
+        "animejs",
+        "afx-shaders"
+      ],
+      "directTargets": [
+        "html",
+        "video"
+      ],
+      "adaptationTargets": [
+        "react",
+        "vue",
+        "svelte",
+        "canvas-video"
+      ],
+      "modes": [
+        "reuse",
+        "adapt"
+      ],
+      "bestFor": [
+        "Simplex背景",
+        "噪声背景",
+        "沉浸式 WebGL 氛围"
+      ],
+      "avoidWhen": [
+        "不使用时必须 dispose",
+        "不要与另一个 heavy hero 叠加",
+        "单页常驻 shader 建议不超过 1 个"
+      ],
+      "suites": [],
+      "keywords": [
+        "Simplex",
+        "噪声",
+        "Simplex背景",
+        "噪声背景",
+        "沉浸式 WebGL 氛围",
+        "背景",
+        "氛围",
+        "environment",
+        "webgl",
+        "shader",
+        "shader.simplexNoise",
+        "simplexNoise"
+      ],
+      "pairsWith": [],
+      "conflictsWith": [
+        "hero.*"
+      ],
+      "preconditions": [
+        "目标必须有明确宽高",
+        "单页 WebGL context 总数不得超过 8"
+      ],
+      "parameterNames": [
+        "fit",
+        "scale",
+        "rotation",
+        "offsetX",
+        "offsetY",
+        "originX",
+        "originY",
+        "worldWidth",
+        "worldHeight",
+        "speed",
+        "frame",
+        "colors",
+        "stepsPerColor",
+        "softness"
+      ],
+      "source": {
+        "file": "lib/shader-fx-config.js",
+        "symbol": "AnimeFX.shader.simplexNoise",
+        "supportingFiles": [
+          "lib/afx-shaders.umd.js"
+        ]
+      },
+      "example": "AnimeFX.shader.simplexNoise('#bg', AnimeFX.shader.defaults('simplexNoise'))",
+      "preview": "previews/shader.simplexNoise.png",
+      "anchorCase": "案例/15-Shader·30风格总览.html",
+      "apiTruth": "manifest/effects.json"
+    },
+    {
+      "id": "shader.smokeRing",
+      "summary": "烟圈、氛围视觉语言的WebGL 装饰特效，适合局部焦点、边框或有明确主体的装饰。",
+      "role": "component",
+      "temporal": "loop",
+      "weight": "medium",
+      "mood": [
+        "烟圈",
+        "氛围"
+      ],
+      "runtimes": [
+        "webgl",
+        "shader"
+      ],
+      "dependencies": [
+        "animejs",
+        "afx-shaders"
+      ],
+      "directTargets": [
+        "html",
+        "video"
+      ],
+      "adaptationTargets": [
+        "react",
+        "vue",
+        "svelte",
+        "canvas-video"
+      ],
+      "modes": [
+        "reuse",
+        "adapt"
+      ],
+      "bestFor": [
+        "烟圈装饰特效",
+        "氛围装饰特效",
+        "局部 WebGL 视觉焦点"
+      ],
+      "avoidWhen": [
+        "不使用时必须 dispose",
+        "不要与另一个 heavy hero 叠加",
+        "单页常驻 shader 建议不超过 1 个"
+      ],
+      "suites": [],
+      "keywords": [
+        "烟圈",
+        "氛围",
+        "烟圈装饰特效",
+        "氛围装饰特效",
+        "局部 WebGL 视觉焦点",
+        "组件",
+        "内容",
+        "卡片",
+        "图表",
+        "webgl",
+        "shader",
+        "shader.smokeRing",
+        "smokeRing"
+      ],
+      "pairsWith": [],
+      "conflictsWith": [
+        "hero.*"
+      ],
+      "preconditions": [
+        "目标必须有明确宽高",
+        "单页 WebGL context 总数不得超过 8"
+      ],
+      "parameterNames": [
+        "fit",
+        "scale",
+        "rotation",
+        "offsetX",
+        "offsetY",
+        "originX",
+        "originY",
+        "worldWidth",
+        "worldHeight",
+        "speed",
+        "frame",
+        "colorBack",
+        "colors",
+        "noiseScale",
+        "noiseIterations",
+        "radius",
+        "thickness",
+        "innerShape"
+      ],
+      "source": {
+        "file": "lib/shader-fx-config.js",
+        "symbol": "AnimeFX.shader.smokeRing",
+        "supportingFiles": [
+          "lib/afx-shaders.umd.js"
+        ]
+      },
+      "example": "AnimeFX.shader.smokeRing('#bg', AnimeFX.shader.defaults('smokeRing'))",
+      "preview": "previews/shader.smokeRing.png",
+      "anchorCase": "案例/15-Shader·30风格总览.html",
+      "apiTruth": "manifest/effects.json"
+    },
+    {
+      "id": "shader.spiral",
+      "summary": "螺旋、旋转视觉语言的WebGL 装饰特效，适合局部焦点、边框或有明确主体的装饰。",
+      "role": "component",
+      "temporal": "loop",
+      "weight": "medium",
+      "mood": [
+        "螺旋",
+        "旋转"
+      ],
+      "runtimes": [
+        "webgl",
+        "shader"
+      ],
+      "dependencies": [
+        "animejs",
+        "afx-shaders"
+      ],
+      "directTargets": [
+        "html",
+        "video"
+      ],
+      "adaptationTargets": [
+        "react",
+        "vue",
+        "svelte",
+        "canvas-video"
+      ],
+      "modes": [
+        "reuse",
+        "adapt"
+      ],
+      "bestFor": [
+        "螺旋装饰特效",
+        "旋转装饰特效",
+        "局部 WebGL 视觉焦点"
+      ],
+      "avoidWhen": [
+        "不使用时必须 dispose",
+        "不要与另一个 heavy hero 叠加",
+        "单页常驻 shader 建议不超过 1 个"
+      ],
+      "suites": [],
+      "keywords": [
+        "螺旋",
+        "旋转",
+        "螺旋装饰特效",
+        "旋转装饰特效",
+        "局部 WebGL 视觉焦点",
+        "组件",
+        "内容",
+        "卡片",
+        "图表",
+        "webgl",
+        "shader",
+        "shader.spiral",
+        "spiral"
+      ],
+      "pairsWith": [],
+      "conflictsWith": [
+        "hero.*"
+      ],
+      "preconditions": [
+        "目标必须有明确宽高",
+        "单页 WebGL context 总数不得超过 8"
+      ],
+      "parameterNames": [
+        "fit",
+        "scale",
+        "rotation",
+        "offsetX",
+        "offsetY",
+        "originX",
+        "originY",
+        "worldWidth",
+        "worldHeight",
+        "colorBack",
+        "colorFront",
+        "density",
+        "distortion",
+        "strokeWidth",
+        "strokeTaper",
+        "strokeCap",
+        "noise",
+        "noiseFrequency",
+        "softness",
+        "speed",
+        "frame"
+      ],
+      "source": {
+        "file": "lib/shader-fx-config.js",
+        "symbol": "AnimeFX.shader.spiral",
+        "supportingFiles": [
+          "lib/afx-shaders.umd.js"
+        ]
+      },
+      "example": "AnimeFX.shader.spiral('#bg', AnimeFX.shader.defaults('spiral'))",
+      "preview": "previews/shader.spiral.png",
+      "anchorCase": "案例/15-Shader·30风格总览.html",
+      "apiTruth": "manifest/effects.json"
+    },
+    {
+      "id": "shader.swirl",
+      "summary": "漩涡、流体视觉语言的WebGL 装饰特效，适合局部焦点、边框或有明确主体的装饰。",
+      "role": "component",
+      "temporal": "loop",
+      "weight": "medium",
+      "mood": [
+        "漩涡",
+        "流体"
+      ],
+      "runtimes": [
+        "webgl",
+        "shader"
+      ],
+      "dependencies": [
+        "animejs",
+        "afx-shaders"
+      ],
+      "directTargets": [
+        "html",
+        "video"
+      ],
+      "adaptationTargets": [
+        "react",
+        "vue",
+        "svelte",
+        "canvas-video"
+      ],
+      "modes": [
+        "reuse",
+        "adapt"
+      ],
+      "bestFor": [
+        "漩涡装饰特效",
+        "流体装饰特效",
+        "局部 WebGL 视觉焦点"
+      ],
+      "avoidWhen": [
+        "不使用时必须 dispose",
+        "不要与另一个 heavy hero 叠加",
+        "单页常驻 shader 建议不超过 1 个"
+      ],
+      "suites": [],
+      "keywords": [
+        "漩涡",
+        "流体",
+        "漩涡装饰特效",
+        "流体装饰特效",
+        "局部 WebGL 视觉焦点",
+        "组件",
+        "内容",
+        "卡片",
+        "图表",
+        "webgl",
+        "shader",
+        "shader.swirl",
+        "swirl"
+      ],
+      "pairsWith": [],
+      "conflictsWith": [
+        "hero.*"
+      ],
+      "preconditions": [
+        "目标必须有明确宽高",
+        "单页 WebGL context 总数不得超过 8"
+      ],
+      "parameterNames": [
+        "fit",
+        "scale",
+        "rotation",
+        "offsetX",
+        "offsetY",
+        "originX",
+        "originY",
+        "worldWidth",
+        "worldHeight",
+        "speed",
+        "frame",
+        "colorBack",
+        "colors",
+        "bandCount",
+        "twist",
+        "center",
+        "proportion",
+        "softness",
+        "noiseFrequency",
+        "noise"
+      ],
+      "source": {
+        "file": "lib/shader-fx-config.js",
+        "symbol": "AnimeFX.shader.swirl",
+        "supportingFiles": [
+          "lib/afx-shaders.umd.js"
+        ]
+      },
+      "example": "AnimeFX.shader.swirl('#bg', AnimeFX.shader.defaults('swirl'))",
+      "preview": "previews/shader.swirl.png",
+      "anchorCase": "案例/15-Shader·30风格总览.html",
+      "apiTruth": "manifest/effects.json"
+    },
+    {
+      "id": "shader.voronoi",
+      "summary": "Voronoi、晶胞视觉语言的动态 WebGL 背景，适合低文字密度的沉浸式氛围。",
+      "role": "bg",
+      "temporal": "loop",
+      "weight": "medium",
+      "mood": [
+        "Voronoi",
+        "晶胞"
+      ],
+      "runtimes": [
+        "webgl",
+        "shader"
+      ],
+      "dependencies": [
+        "animejs",
+        "afx-shaders"
+      ],
+      "directTargets": [
+        "html",
+        "video"
+      ],
+      "adaptationTargets": [
+        "react",
+        "vue",
+        "svelte",
+        "canvas-video"
+      ],
+      "modes": [
+        "reuse",
+        "adapt"
+      ],
+      "bestFor": [
+        "Voronoi背景",
+        "晶胞背景",
+        "沉浸式 WebGL 氛围"
+      ],
+      "avoidWhen": [
+        "不使用时必须 dispose",
+        "不要与另一个 heavy hero 叠加",
+        "单页常驻 shader 建议不超过 1 个"
+      ],
+      "suites": [],
+      "keywords": [
+        "Voronoi",
+        "晶胞",
+        "Voronoi背景",
+        "晶胞背景",
+        "沉浸式 WebGL 氛围",
+        "背景",
+        "氛围",
+        "environment",
+        "webgl",
+        "shader",
+        "shader.voronoi",
+        "voronoi"
+      ],
+      "pairsWith": [],
+      "conflictsWith": [
+        "hero.*"
+      ],
+      "preconditions": [
+        "目标必须有明确宽高",
+        "单页 WebGL context 总数不得超过 8"
+      ],
+      "parameterNames": [
+        "fit",
+        "scale",
+        "rotation",
+        "offsetX",
+        "offsetY",
+        "originX",
+        "originY",
+        "worldWidth",
+        "worldHeight",
+        "speed",
+        "frame",
+        "colors",
+        "stepsPerColor",
+        "colorGlow",
+        "colorGap",
+        "distortion",
+        "gap",
+        "glow"
+      ],
+      "source": {
+        "file": "lib/shader-fx-config.js",
+        "symbol": "AnimeFX.shader.voronoi",
+        "supportingFiles": [
+          "lib/afx-shaders.umd.js"
+        ]
+      },
+      "example": "AnimeFX.shader.voronoi('#bg', AnimeFX.shader.defaults('voronoi'))",
+      "preview": "previews/shader.voronoi.png",
+      "anchorCase": "案例/15-Shader·30风格总览.html",
+      "apiTruth": "manifest/effects.json"
+    },
+    {
+      "id": "shader.warp",
+      "summary": "扭曲、色场视觉语言的动态 WebGL 背景，适合低文字密度的沉浸式氛围。",
+      "role": "bg",
+      "temporal": "loop",
+      "weight": "medium",
+      "mood": [
+        "扭曲",
+        "色场"
+      ],
+      "runtimes": [
+        "webgl",
+        "shader"
+      ],
+      "dependencies": [
+        "animejs",
+        "afx-shaders"
+      ],
+      "directTargets": [
+        "html",
+        "video"
+      ],
+      "adaptationTargets": [
+        "react",
+        "vue",
+        "svelte",
+        "canvas-video"
+      ],
+      "modes": [
+        "reuse",
+        "adapt"
+      ],
+      "bestFor": [
+        "扭曲背景",
+        "色场背景",
+        "沉浸式 WebGL 氛围"
+      ],
+      "avoidWhen": [
+        "不使用时必须 dispose",
+        "不要与另一个 heavy hero 叠加",
+        "单页常驻 shader 建议不超过 1 个"
+      ],
+      "suites": [
+        "techNoir"
+      ],
+      "keywords": [
+        "扭曲",
+        "色场",
+        "扭曲背景",
+        "色场背景",
+        "沉浸式 WebGL 氛围",
+        "背景",
+        "氛围",
+        "environment",
+        "techNoir",
+        "webgl",
+        "shader",
+        "shader.warp",
+        "warp"
+      ],
+      "pairsWith": [],
+      "conflictsWith": [
+        "hero.*"
+      ],
+      "preconditions": [
+        "目标必须有明确宽高",
+        "单页 WebGL context 总数不得超过 8"
+      ],
+      "parameterNames": [
+        "fit",
+        "scale",
+        "rotation",
+        "offsetX",
+        "offsetY",
+        "originX",
+        "originY",
+        "worldWidth",
+        "worldHeight",
+        "speed",
+        "frame",
+        "colors",
+        "proportion",
+        "softness",
+        "distortion",
+        "swirl",
+        "swirlIterations",
+        "shapeScale",
+        "shape"
+      ],
+      "source": {
+        "file": "lib/shader-fx-config.js",
+        "symbol": "AnimeFX.shader.warp",
+        "supportingFiles": [
+          "lib/afx-shaders.umd.js"
+        ]
+      },
+      "example": "AnimeFX.shader.warp('#bg', AnimeFX.shader.defaults('warp'))",
+      "preview": "previews/shader.warp.png",
+      "anchorCase": "案例/15-Shader·30风格总览.html",
+      "apiTruth": "manifest/effects.json"
+    },
+    {
+      "id": "shader.water",
+      "summary": "水面、焦散视觉语言的动态 WebGL 背景，适合低文字密度的沉浸式氛围。",
+      "role": "bg",
+      "temporal": "loop",
+      "weight": "medium",
+      "mood": [
+        "水面",
+        "焦散"
+      ],
+      "runtimes": [
+        "webgl",
+        "shader"
+      ],
+      "dependencies": [
+        "animejs",
+        "afx-shaders"
+      ],
+      "directTargets": [
+        "html",
+        "video"
+      ],
+      "adaptationTargets": [
+        "react",
+        "vue",
+        "svelte",
+        "canvas-video"
+      ],
+      "modes": [
+        "reuse",
+        "adapt"
+      ],
+      "bestFor": [
+        "水面背景",
+        "焦散背景",
+        "沉浸式 WebGL 氛围"
+      ],
+      "avoidWhen": [
+        "不使用时必须 dispose",
+        "不要与另一个 heavy hero 叠加",
+        "单页常驻 shader 建议不超过 1 个"
+      ],
+      "suites": [],
+      "keywords": [
+        "水面",
+        "焦散",
+        "水面背景",
+        "焦散背景",
+        "沉浸式 WebGL 氛围",
+        "背景",
+        "氛围",
+        "environment",
+        "webgl",
+        "shader",
+        "shader.water",
+        "water"
+      ],
+      "pairsWith": [],
+      "conflictsWith": [
+        "hero.*"
+      ],
+      "preconditions": [
+        "目标必须有明确宽高",
+        "单页 WebGL context 总数不得超过 8",
+        "image 必须是可访问 URL/Blob/图像元素"
+      ],
+      "parameterNames": [
+        "fit",
+        "scale",
+        "rotation",
+        "offsetX",
+        "offsetY",
+        "originX",
+        "originY",
+        "worldWidth",
+        "worldHeight",
+        "speed",
+        "frame",
+        "colorBack",
+        "colorHighlight",
+        "highlights",
+        "layering",
+        "edges",
+        "waves",
+        "caustic",
+        "size"
+      ],
+      "source": {
+        "file": "lib/shader-fx-config.js",
+        "symbol": "AnimeFX.shader.water",
+        "supportingFiles": [
+          "lib/afx-shaders.umd.js"
+        ]
+      },
+      "example": "AnimeFX.shader.water('#bg', AnimeFX.shader.defaults('water'))",
+      "preview": "previews/shader.water.png",
+      "anchorCase": "案例/15-Shader·30风格总览.html",
+      "apiTruth": "manifest/effects.json"
+    },
+    {
+      "id": "shape.morphSquareCircle",
+      "summary": "在方形与圆形之间循环形变，适合图标、状态和轻量装饰。",
+      "role": "component",
+      "temporal": "loop",
+      "weight": "light",
+      "mood": [
+        "方圆",
+        "形变",
+        "图标"
+      ],
+      "runtimes": [
+        "dom"
+      ],
+      "dependencies": [
+        "animejs"
+      ],
+      "directTargets": [
+        "html",
+        "video"
+      ],
+      "adaptationTargets": [
+        "react",
+        "vue",
+        "svelte",
+        "canvas-video"
+      ],
+      "modes": [
+        "reuse",
+        "adapt"
+      ],
+      "bestFor": [
+        "图标状态",
+        "轻量装饰",
+        "几何循环"
+      ],
+      "avoidWhen": [
+        "不当整页背景"
+      ],
+      "suites": [],
+      "keywords": [
+        "方圆",
+        "形变",
+        "图标",
+        "图标状态",
+        "轻量装饰",
+        "几何循环",
+        "组件",
+        "内容",
+        "卡片",
+        "图表",
+        "dom",
+        "shape.morphSquareCircle",
+        "shape",
+        "morphSquareCircle"
+      ],
+      "pairsWith": [],
+      "conflictsWith": [],
+      "preconditions": [
+        "目标必须有明确宽高"
+      ],
+      "parameterNames": [
+        "duration",
+        "rotate",
+        "scale",
+        "ease",
+        "loop",
+        "alternate",
+        "at"
+      ],
+      "source": {
+        "file": "lib/anime-fx.js",
+        "symbol": "AnimeFX.shape.morphSquareCircle",
+        "supportingFiles": []
+      },
+      "example": "AnimeFX.shape.morphSquareCircle('#target', {})",
+      "preview": "previews/shape.morphSquareCircle.png",
+      "anchorCase": "案例/18-基础效果锚点.html",
+      "apiTruth": "manifest/effects.json"
+    },
+    {
+      "id": "stagger.cardsSpring",
+      "summary": "让多张卡片以错落弹簧节奏进入，适合卡片墙和功能模块。",
+      "role": "component",
+      "temporal": "once",
+      "weight": "medium",
+      "mood": [
+        "卡片",
+        "弹簧",
+        "错落"
+      ],
+      "runtimes": [
+        "dom"
+      ],
+      "dependencies": [
+        "animejs"
+      ],
+      "directTargets": [
+        "html",
+        "video"
+      ],
+      "adaptationTargets": [
+        "react",
+        "vue",
+        "svelte",
+        "canvas-video"
+      ],
+      "modes": [
+        "reuse",
+        "adapt"
+      ],
+      "bestFor": [
+        "功能卡片",
+        "作品列表",
+        "模块化界面"
+      ],
+      "avoidWhen": [
+        "不要让多个文字大招同时抢阅读顺序",
+        "庄重水墨场景禁用强回弹"
+      ],
+      "suites": [],
+      "keywords": [
+        "卡片",
+        "弹簧",
+        "错落",
+        "功能卡片",
+        "作品列表",
+        "模块化界面",
+        "组件",
+        "内容",
+        "图表",
+        "dom",
+        "stagger.cardsSpring",
+        "stagger",
+        "cardsSpring"
+      ],
+      "pairsWith": [],
+      "conflictsWith": [],
+      "preconditions": [
+        "目标元素必须存在且排版已完成"
+      ],
+      "parameterNames": [
+        "from",
+        "step",
+        "y",
+        "scale",
+        "stiffness",
+        "damping",
+        "mass",
+        "at"
+      ],
+      "source": {
+        "file": "lib/anime-fx.js",
+        "symbol": "AnimeFX.stagger.cardsSpring",
+        "supportingFiles": []
+      },
+      "example": "AnimeFX.stagger.cardsSpring('#target', {})",
+      "preview": "previews/stagger.cardsSpring.png",
+      "anchorCase": "案例/05-数据·转场·图片.html",
+      "apiTruth": "manifest/effects.json"
+    },
+    {
+      "id": "stagger.cascadeOut",
+      "summary": "按逆序逐项收走清单或元素，适合有秩序的列表离场。",
+      "role": "text-exit",
+      "temporal": "once",
+      "weight": "light",
+      "mood": [
+        "清单",
+        "逆序",
+        "离场"
+      ],
+      "runtimes": [
+        "dom"
+      ],
+      "dependencies": [
+        "animejs"
+      ],
+      "directTargets": [
+        "html",
+        "video"
+      ],
+      "adaptationTargets": [
+        "react",
+        "vue",
+        "svelte",
+        "canvas-video"
+      ],
+      "modes": [
+        "reuse",
+        "adapt"
+      ],
+      "bestFor": [
+        "清单离场",
+        "步骤收束",
+        "逐项移除"
+      ],
+      "avoidWhen": [
+        "不要让多个文字大招同时抢阅读顺序"
+      ],
+      "suites": [
+        "techNoir",
+        "inkPaper"
+      ],
+      "keywords": [
+        "清单",
+        "逆序",
+        "离场",
+        "清单离场",
+        "步骤收束",
+        "逐项移除",
+        "文字离场",
+        "退出",
+        "消失",
+        "收走",
+        "techNoir",
+        "inkPaper",
+        "dom",
+        "stagger.cascadeOut",
+        "stagger",
+        "cascadeOut"
+      ],
+      "pairsWith": [
+        "stagger.listCascade"
+      ],
+      "conflictsWith": [],
+      "preconditions": [
+        "目标元素必须存在且排版已完成"
+      ],
+      "parameterNames": [
+        "from",
+        "step",
+        "x",
+        "y",
+        "duration",
+        "ease",
+        "at"
+      ],
+      "source": {
+        "file": "lib/anime-fx.js",
+        "symbol": "AnimeFX.stagger.cascadeOut",
+        "supportingFiles": []
+      },
+      "example": "AnimeFX.stagger.cascadeOut('#target', {})",
+      "preview": "previews/stagger.cascadeOut.png",
+      "anchorCase": "案例/16-文字·清单出场.html",
+      "apiTruth": "manifest/effects.json"
+    },
+    {
+      "id": "stagger.listCascade",
+      "summary": "按顺序逐项显露清单，适合步骤、干货和功能列表。",
+      "role": "component",
+      "temporal": "once",
+      "weight": "light",
+      "mood": [
+        "清单",
+        "顺序",
+        "干货"
+      ],
+      "runtimes": [
+        "dom"
+      ],
+      "dependencies": [
+        "animejs"
+      ],
+      "directTargets": [
+        "html",
+        "video"
+      ],
+      "adaptationTargets": [
+        "react",
+        "vue",
+        "svelte",
+        "canvas-video"
+      ],
+      "modes": [
+        "reuse",
+        "adapt"
+      ],
+      "bestFor": [
+        "功能清单",
+        "步骤说明",
+        "知识列表"
+      ],
+      "avoidWhen": [
+        "不要让多个文字大招同时抢阅读顺序"
+      ],
+      "suites": [
+        "techNoir",
+        "inkPaper"
+      ],
+      "keywords": [
+        "清单",
+        "顺序",
+        "干货",
+        "功能清单",
+        "步骤说明",
+        "知识列表",
+        "组件",
+        "内容",
+        "卡片",
+        "图表",
+        "techNoir",
+        "inkPaper",
+        "dom",
+        "stagger.listCascade",
+        "stagger",
+        "listCascade"
+      ],
+      "pairsWith": [
+        "stagger.cascadeOut"
+      ],
+      "conflictsWith": [],
+      "preconditions": [
+        "目标元素必须存在且排版已完成"
+      ],
+      "parameterNames": [
+        "from",
+        "step",
+        "x",
+        "y",
+        "duration",
+        "ease",
+        "at"
+      ],
+      "source": {
+        "file": "lib/anime-fx.js",
+        "symbol": "AnimeFX.stagger.listCascade",
+        "supportingFiles": []
+      },
+      "example": "AnimeFX.stagger.listCascade('#target', {})",
+      "preview": "previews/stagger.listCascade.png",
+      "anchorCase": "案例/05-数据·转场·图片.html",
+      "apiTruth": "manifest/effects.json"
+    },
+    {
+      "id": "stagger.wave",
+      "summary": "让阵列元素持续形成波浪节奏，适合轻量背景和状态矩阵。",
+      "role": "bg",
+      "temporal": "loop",
+      "weight": "light",
+      "mood": [
+        "波浪",
+        "节奏",
+        "阵列"
+      ],
+      "runtimes": [
+        "dom"
+      ],
+      "dependencies": [
+        "animejs"
+      ],
+      "directTargets": [
+        "html",
+        "video"
+      ],
+      "adaptationTargets": [
+        "react",
+        "vue",
+        "svelte",
+        "canvas-video"
+      ],
+      "modes": [
+        "reuse",
+        "adapt"
+      ],
+      "bestFor": [
+        "阵列背景",
+        "状态矩阵",
+        "轻量节奏"
+      ],
+      "avoidWhen": [
+        "不要让多个文字大招同时抢阅读顺序"
+      ],
+      "suites": [],
+      "keywords": [
+        "波浪",
+        "节奏",
+        "阵列",
+        "阵列背景",
+        "状态矩阵",
+        "轻量节奏",
+        "背景",
+        "氛围",
+        "environment",
+        "dom",
+        "stagger.wave",
+        "stagger",
+        "wave"
+      ],
+      "pairsWith": [],
+      "conflictsWith": [],
+      "preconditions": [
+        "目标元素必须存在且排版已完成"
+      ],
+      "parameterNames": [
+        "prop",
+        "range",
+        "waveEase",
+        "from",
+        "step",
+        "duration",
+        "loop",
+        "alternate",
+        "ease",
+        "at"
+      ],
+      "source": {
+        "file": "lib/anime-fx.js",
+        "symbol": "AnimeFX.stagger.wave",
+        "supportingFiles": []
+      },
+      "example": "AnimeFX.stagger.wave('#target', {})",
+      "preview": "previews/stagger.wave.png",
+      "anchorCase": "案例/05-数据·转场·图片.html",
+      "apiTruth": "manifest/effects.json"
+    },
+    {
+      "id": "sticker.arrowDraw",
+      "summary": "手绘、箭头、指向语义的贴纸与装饰动效，使用确定性时间轴并可在目标项目设计系统中注入风格。",
+      "role": "text-emphasis",
+      "temporal": "once",
+      "weight": "light",
+      "mood": [
+        "手绘",
+        "箭头",
+        "指向"
+      ],
+      "runtimes": [
+        "svg",
+        "dom"
+      ],
+      "dependencies": [
+        "animejs"
+      ],
+      "directTargets": [
+        "html",
+        "video"
+      ],
+      "adaptationTargets": [
+        "react",
+        "vue",
+        "svelte",
+        "canvas-video"
+      ],
+      "modes": [
+        "reuse",
+        "adapt"
+      ],
+      "bestFor": [
+        "手绘箭头指向",
+        "目标标注",
+        "图文装饰"
+      ],
+      "avoidWhen": [],
+      "suites": [],
+      "keywords": [
+        "手绘",
+        "箭头",
+        "指向",
+        "手绘箭头指向",
+        "目标标注",
+        "图文装饰",
+        "文字强调",
+        "重点",
+        "高亮",
+        "指标",
+        "svg",
+        "dom",
+        "sticker.arrowDraw",
+        "sticker",
+        "arrowDraw"
+      ],
+      "pairsWith": [
+        "text.annotate"
+      ],
+      "conflictsWith": [],
+      "preconditions": [],
+      "parameterNames": [
+        "from",
+        "to",
+        "curve",
+        "color",
+        "seed",
+        "duration",
+        "at"
+      ],
+      "source": {
+        "file": "lib/anime-fx.js",
+        "symbol": "AnimeFX.sticker.arrowDraw",
+        "supportingFiles": []
+      },
+      "example": "AnimeFX.sticker.arrowDraw('#target', {})",
+      "preview": "previews/sticker.arrowDraw.png",
+      "anchorCase": "案例/19-3.0·App介绍.html",
+      "apiTruth": "manifest/effects.json"
+    },
+    {
+      "id": "sticker.emojiBurst",
+      "summary": "表情、庆祝、粒子语义的贴纸与装饰动效，使用确定性时间轴并可在目标项目设计系统中注入风格。",
+      "role": "text-emphasis",
+      "temporal": "once",
+      "weight": "medium",
+      "mood": [
+        "表情",
+        "庆祝",
+        "粒子"
+      ],
+      "runtimes": [
+        "canvas2d"
+      ],
+      "dependencies": [
+        "animejs"
+      ],
+      "directTargets": [
+        "html",
+        "video"
+      ],
+      "adaptationTargets": [
+        "react",
+        "vue",
+        "svelte",
+        "canvas-video"
+      ],
+      "modes": [
+        "reuse",
+        "adapt"
+      ],
+      "bestFor": [
+        "点赞表情爆发",
+        "庆祝粒子",
+        "互动反馈"
+      ],
+      "avoidWhen": [
+        "禁止在渲染回调中使用 Math.random/Date.now"
+      ],
+      "suites": [],
+      "keywords": [
+        "表情",
+        "庆祝",
+        "粒子",
+        "点赞表情爆发",
+        "庆祝粒子",
+        "互动反馈",
+        "文字强调",
+        "重点",
+        "高亮",
+        "指标",
+        "canvas2d",
+        "sticker.emojiBurst",
+        "sticker",
+        "emojiBurst"
+      ],
+      "pairsWith": [],
+      "conflictsWith": [],
+      "preconditions": [
+        "canvas 必须设置 width/height 属性",
+        "渲染必须只由 driver.t 和 seed 决定",
+        "目标必须是带 width/height 的 canvas"
+      ],
+      "parameterNames": [
+        "emojis",
+        "count",
+        "seed",
+        "duration",
+        "gravity",
+        "color",
+        "size",
+        "at"
+      ],
+      "source": {
+        "file": "lib/anime-fx.js",
+        "symbol": "AnimeFX.sticker.emojiBurst",
+        "supportingFiles": []
+      },
+      "example": "AnimeFX.sticker.emojiBurst('#target', {})",
+      "preview": "previews/sticker.emojiBurst.png",
+      "anchorCase": "案例/20-3.0·图文种草.html",
+      "apiTruth": "manifest/effects.json"
+    },
+    {
+      "id": "sticker.popIn",
+      "summary": "贴纸、弹跳、果冻语义的贴纸与装饰动效，使用确定性时间轴并可在目标项目设计系统中注入风格。",
+      "role": "text-emphasis",
+      "temporal": "once",
+      "weight": "light",
+      "mood": [
+        "贴纸",
+        "弹跳",
+        "果冻"
+      ],
+      "runtimes": [
+        "dom"
+      ],
+      "dependencies": [
+        "animejs"
+      ],
+      "directTargets": [
+        "html",
+        "video"
+      ],
+      "adaptationTargets": [
+        "react",
+        "vue",
+        "svelte",
+        "canvas-video"
+      ],
+      "modes": [
+        "reuse",
+        "adapt"
+      ],
+      "bestFor": [
+        "贴纸弹跳入场",
+        "emoji 强调",
+        "果冻标签"
+      ],
+      "avoidWhen": [],
+      "suites": [],
+      "keywords": [
+        "贴纸",
+        "弹跳",
+        "果冻",
+        "贴纸弹跳入场",
+        "emoji 强调",
+        "果冻标签",
+        "文字强调",
+        "重点",
+        "高亮",
+        "指标",
+        "dom",
+        "sticker.popIn",
+        "sticker",
+        "popIn"
+      ],
+      "pairsWith": [],
+      "conflictsWith": [],
+      "preconditions": [
+        "目标元素必须存在"
+      ],
+      "parameterNames": [
+        "rotate",
+        "overshoot",
+        "duration",
+        "ease",
+        "at"
+      ],
+      "source": {
+        "file": "lib/anime-fx.js",
+        "symbol": "AnimeFX.sticker.popIn",
+        "supportingFiles": []
+      },
+      "example": "AnimeFX.sticker.popIn('#target', {})",
+      "preview": "previews/sticker.popIn.png",
+      "anchorCase": "案例/19-3.0·App介绍.html",
+      "apiTruth": "manifest/effects.json"
+    },
+    {
+      "id": "sticker.stampPunch",
+      "summary": "印章、砸下、冲击语义的贴纸与装饰动效，使用确定性时间轴并可在目标项目设计系统中注入风格。",
+      "role": "text-emphasis",
+      "temporal": "once",
+      "weight": "medium",
+      "mood": [
+        "印章",
+        "砸下",
+        "冲击"
+      ],
+      "runtimes": [
+        "dom"
+      ],
+      "dependencies": [
+        "animejs"
+      ],
+      "directTargets": [
+        "html",
+        "video"
+      ],
+      "adaptationTargets": [
+        "react",
+        "vue",
+        "svelte",
+        "canvas-video"
+      ],
+      "modes": [
+        "reuse",
+        "adapt"
+      ],
+      "bestFor": [
+        "印章砸下",
+        "已验证标签",
+        "冲击强调"
+      ],
+      "avoidWhen": [],
+      "suites": [],
+      "keywords": [
+        "印章",
+        "砸下",
+        "冲击",
+        "印章砸下",
+        "已验证标签",
+        "冲击强调",
+        "文字强调",
+        "重点",
+        "高亮",
+        "指标",
+        "dom",
+        "sticker.stampPunch",
+        "sticker",
+        "stampPunch"
+      ],
+      "pairsWith": [
+        "camera.shake"
+      ],
+      "conflictsWith": [],
+      "preconditions": [],
+      "parameterNames": [
+        "rotate",
+        "impact",
+        "duration",
+        "shake",
+        "at"
+      ],
+      "source": {
+        "file": "lib/anime-fx.js",
+        "symbol": "AnimeFX.sticker.stampPunch",
+        "supportingFiles": []
+      },
+      "example": "AnimeFX.sticker.stampPunch('#target', {})",
+      "preview": "previews/sticker.stampPunch.png",
+      "anchorCase": "案例/20-3.0·图文种草.html",
+      "apiTruth": "manifest/effects.json"
+    },
+    {
+      "id": "sticker.tapeStick",
+      "summary": "胶带、手帐、图片语义的贴纸与装饰动效，使用确定性时间轴并可在目标项目设计系统中注入风格。",
+      "role": "component",
+      "temporal": "once",
+      "weight": "light",
+      "mood": [
+        "胶带",
+        "手帐",
+        "图片"
+      ],
+      "runtimes": [
+        "dom"
+      ],
+      "dependencies": [
+        "animejs"
+      ],
+      "directTargets": [
+        "html",
+        "video"
+      ],
+      "adaptationTargets": [
+        "react",
+        "vue",
+        "svelte",
+        "canvas-video"
+      ],
+      "modes": [
+        "reuse",
+        "adapt"
+      ],
+      "bestFor": [
+        "胶带贴图",
+        "手帐图片",
+        "卡片装饰"
+      ],
+      "avoidWhen": [],
+      "suites": [],
+      "keywords": [
+        "胶带",
+        "手帐",
+        "图片",
+        "胶带贴图",
+        "手帐图片",
+        "卡片装饰",
+        "组件",
+        "内容",
+        "卡片",
+        "图表",
+        "dom",
+        "sticker.tapeStick",
+        "sticker",
+        "tapeStick"
+      ],
+      "pairsWith": [],
+      "conflictsWith": [],
+      "preconditions": [],
+      "parameterNames": [
+        "angle",
+        "texture",
+        "width",
+        "height",
+        "duration",
+        "at"
+      ],
+      "source": {
+        "file": "lib/anime-fx.js",
+        "symbol": "AnimeFX.sticker.tapeStick",
+        "supportingFiles": []
+      },
+      "example": "AnimeFX.sticker.tapeStick('#target', {})",
+      "preview": "previews/sticker.tapeStick.png",
+      "anchorCase": "案例/21-3.0·Gamma效果.html",
+      "apiTruth": "manifest/effects.json"
+    },
+    {
+      "id": "svg.draw",
+      "summary": "沿 SVG 路径完成描边书写，适合图标、印章、签名和装饰线。",
+      "role": "component",
+      "temporal": "once",
+      "weight": "light",
+      "mood": [
+        "手写",
+        "线条",
+        "图标"
+      ],
+      "runtimes": [
+        "svg",
+        "dom"
+      ],
+      "dependencies": [
+        "animejs"
+      ],
+      "directTargets": [
+        "html",
+        "video"
+      ],
+      "adaptationTargets": [
+        "react",
+        "vue",
+        "svelte",
+        "canvas-video"
+      ],
+      "modes": [
+        "reuse",
+        "adapt"
+      ],
+      "bestFor": [
+        "签名描边",
+        "印章线条",
+        "图标绘制"
+      ],
+      "avoidWhen": [
+        "无描边形状禁用"
+      ],
+      "suites": [
+        "techNoir",
+        "inkPaper"
+      ],
+      "keywords": [
+        "手写",
+        "线条",
+        "图标",
+        "签名描边",
+        "印章线条",
+        "图标绘制",
+        "组件",
+        "内容",
+        "卡片",
+        "图表",
+        "techNoir",
+        "inkPaper",
+        "svg",
+        "dom",
+        "svg.draw",
+        "draw"
+      ],
+      "pairsWith": [],
+      "conflictsWith": [],
+      "preconditions": [
+        "目标必须是带 stroke 的 SVG path/line"
+      ],
+      "parameterNames": [
+        "at",
+        "duration",
+        "ease"
+      ],
+      "source": {
+        "file": "lib/anime-fx.js",
+        "symbol": "AnimeFX.svg.draw",
+        "supportingFiles": []
+      },
+      "example": "AnimeFX.svg.draw('#target', {})",
+      "preview": "previews/svg.draw.png",
+      "anchorCase": "案例/18-基础效果锚点.html",
+      "apiTruth": "manifest/effects.json"
+    },
+    {
+      "id": "svg.morph",
+      "summary": "在兼容 SVG 路径之间循环形变，适合图标和抽象符号。",
+      "role": "component",
+      "temporal": "loop",
+      "weight": "medium",
+      "mood": [
+        "形变",
+        "SVG",
+        "图标"
+      ],
+      "runtimes": [
+        "svg",
+        "dom"
+      ],
+      "dependencies": [
+        "animejs"
+      ],
+      "directTargets": [
+        "html",
+        "video"
+      ],
+      "adaptationTargets": [
+        "react",
+        "vue",
+        "svelte",
+        "canvas-video"
+      ],
+      "modes": [
+        "reuse",
+        "adapt"
+      ],
+      "bestFor": [
+        "图标切换",
+        "品牌符号",
+        "抽象循环"
+      ],
+      "avoidWhen": [
+        "路径拓扑差异过大时会穿帮"
+      ],
+      "suites": [],
+      "keywords": [
+        "形变",
+        "SVG",
+        "图标",
+        "图标切换",
+        "品牌符号",
+        "抽象循环",
+        "组件",
+        "内容",
+        "卡片",
+        "图表",
+        "svg",
+        "dom",
+        "svg.morph",
+        "morph"
+      ],
+      "pairsWith": [],
+      "conflictsWith": [],
+      "preconditions": [
+        "源/目标 path 必须兼容 morph"
+      ],
+      "parameterNames": [
+        "at",
+        "duration",
+        "ease",
+        "loop",
+        "alternate"
+      ],
+      "source": {
+        "file": "lib/anime-fx.js",
+        "symbol": "AnimeFX.svg.morph",
+        "supportingFiles": []
+      },
+      "example": "AnimeFX.svg.morph('#from', '#to', {})",
+      "preview": "previews/svg.morph.png",
+      "anchorCase": "案例/18-基础效果锚点.html",
+      "apiTruth": "manifest/effects.json"
+    },
+    {
+      "id": "text.annotate",
+      "summary": "圈注、手绘、下划线语义的文字动效，使用确定性时间轴并可在目标项目设计系统中注入风格。",
+      "role": "text-emphasis",
+      "temporal": "once",
+      "weight": "light",
+      "mood": [
+        "圈注",
+        "手绘",
+        "下划线"
+      ],
+      "runtimes": [
+        "svg",
+        "dom"
+      ],
+      "dependencies": [
+        "animejs"
+      ],
+      "directTargets": [
+        "html",
+        "video"
+      ],
+      "adaptationTargets": [
+        "react",
+        "vue",
+        "svelte",
+        "canvas-video"
+      ],
+      "modes": [
+        "reuse",
+        "adapt"
+      ],
+      "bestFor": [
+        "手绘圈注",
+        "波浪下划线",
+        "小红书划重点"
+      ],
+      "avoidWhen": [
+        "不要让多个文字大招同时抢阅读顺序"
+      ],
+      "suites": [],
+      "keywords": [
+        "圈注",
+        "手绘",
+        "下划线",
+        "手绘圈注",
+        "波浪下划线",
+        "小红书划重点",
+        "文字强调",
+        "重点",
+        "高亮",
+        "指标",
+        "svg",
+        "dom",
+        "text.annotate",
+        "text",
+        "annotate"
+      ],
+      "pairsWith": [
+        "sticker.arrowDraw"
+      ],
+      "conflictsWith": [],
+      "preconditions": [
+        "目标元素必须存在且排版已完成"
+      ],
+      "parameterNames": [
+        "style",
+        "color",
+        "roughness",
+        "seed",
+        "duration",
+        "at"
+      ],
+      "source": {
+        "file": "lib/anime-fx.js",
+        "symbol": "AnimeFX.text.annotate",
+        "supportingFiles": []
+      },
+      "example": "AnimeFX.text.annotate('#target', {})",
+      "preview": "previews/text.annotate.png",
+      "anchorCase": "案例/19-3.0·App介绍.html",
+      "apiTruth": "manifest/effects.json"
+    },
+    {
+      "id": "text.charsReveal",
+      "summary": "按字符依次显露文字，中文标题和精致编辑排版优先使用。",
+      "role": "text-enter",
+      "temporal": "once",
+      "weight": "light",
+      "mood": [
+        "中文",
+        "逐字",
+        "精致"
+      ],
+      "runtimes": [
+        "dom"
+      ],
+      "dependencies": [
+        "animejs"
+      ],
+      "directTargets": [
+        "html",
+        "video"
+      ],
+      "adaptationTargets": [
+        "react",
+        "vue",
+        "svelte",
+        "canvas-video"
+      ],
+      "modes": [
+        "reuse",
+        "adapt"
+      ],
+      "bestFor": [
+        "中文标题",
+        "编辑式标题",
+        "逐字入场"
+      ],
+      "avoidWhen": [
+        "不要让多个文字大招同时抢阅读顺序"
+      ],
+      "suites": [
+        "techNoir",
+        "inkPaper",
+        "appleGlass"
+      ],
+      "keywords": [
+        "中文",
+        "逐字",
+        "精致",
+        "中文标题",
+        "编辑式标题",
+        "逐字入场",
+        "文字入场",
+        "标题入场",
+        "出现",
+        "techNoir",
+        "inkPaper",
+        "appleGlass",
+        "dom",
+        "text.charsReveal",
+        "text",
+        "charsReveal"
+      ],
+      "pairsWith": [],
+      "conflictsWith": [],
+      "preconditions": [
+        "目标元素必须存在且排版已完成",
+        "目标必须包含可拆分字符"
+      ],
+      "parameterNames": [
+        "from",
+        "step",
+        "duration",
+        "ease",
+        "y",
+        "rotate",
+        "at"
+      ],
+      "source": {
+        "file": "lib/anime-fx.js",
+        "symbol": "AnimeFX.text.charsReveal",
+        "supportingFiles": []
+      },
+      "example": "AnimeFX.text.charsReveal('#target', {})",
+      "preview": "previews/text.charsReveal.png",
+      "anchorCase": "案例/01-效果总览画廊.html",
+      "apiTruth": "manifest/effects.json"
+    },
+    {
+      "id": "text.countUp",
+      "summary": "把数字从起点滚动到目标值，适合百分比、金额和指标强调。",
+      "role": "text-emphasis",
+      "temporal": "once",
+      "weight": "light",
+      "mood": [
+        "数据",
+        "增长",
+        "指标"
+      ],
+      "runtimes": [
+        "dom"
+      ],
+      "dependencies": [
+        "animejs"
+      ],
+      "directTargets": [
+        "html",
+        "video"
+      ],
+      "adaptationTargets": [
+        "react",
+        "vue",
+        "svelte",
+        "canvas-video"
+      ],
+      "modes": [
+        "reuse",
+        "adapt"
+      ],
+      "bestFor": [
+        "数字动画",
+        "百分比与金额",
+        "增长指标"
+      ],
+      "avoidWhen": [
+        "不要让多个文字大招同时抢阅读顺序",
+        "非数值文案禁用"
+      ],
+      "suites": [
+        "techNoir",
+        "inkPaper",
+        "appleGlass"
+      ],
+      "keywords": [
+        "数据",
+        "增长",
+        "指标",
+        "数字动画",
+        "百分比与金额",
+        "增长指标",
+        "文字强调",
+        "重点",
+        "高亮",
+        "techNoir",
+        "inkPaper",
+        "appleGlass",
+        "dom",
+        "text.countUp",
+        "text",
+        "countUp"
+      ],
+      "pairsWith": [
+        "chart.donutDraw",
+        "chart.barGrow"
+      ],
+      "conflictsWith": [],
+      "preconditions": [
+        "目标元素必须存在且排版已完成"
+      ],
+      "parameterNames": [
+        "from",
+        "to",
+        "duration",
+        "ease",
+        "decimals",
+        "prefix",
+        "suffix",
+        "separator",
+        "at"
+      ],
+      "source": {
+        "file": "lib/anime-fx.js",
+        "symbol": "AnimeFX.text.countUp",
+        "supportingFiles": []
+      },
+      "example": "AnimeFX.text.countUp('#target', {})",
+      "preview": "previews/text.countUp.png",
+      "anchorCase": "案例/01-效果总览画廊.html",
+      "apiTruth": "manifest/effects.json"
+    },
+    {
+      "id": "text.exitFade",
+      "summary": "让文本或组件平滑淡出并轻微位移，是通用且克制的离场方式。",
+      "role": "text-exit",
+      "temporal": "once",
+      "weight": "light",
+      "mood": [
+        "通用",
+        "淡出",
+        "离场"
+      ],
+      "runtimes": [
+        "dom"
+      ],
+      "dependencies": [
+        "animejs"
+      ],
+      "directTargets": [
+        "html",
+        "video"
+      ],
+      "adaptationTargets": [
+        "react",
+        "vue",
+        "svelte",
+        "canvas-video"
+      ],
+      "modes": [
+        "reuse",
+        "adapt"
+      ],
+      "bestFor": [
+        "通用离场",
+        "克制淡出",
+        "组件收尾"
+      ],
+      "avoidWhen": [
+        "不要让多个文字大招同时抢阅读顺序"
+      ],
+      "suites": [
+        "techNoir",
+        "inkPaper",
+        "appleGlass"
+      ],
+      "keywords": [
+        "通用",
+        "淡出",
+        "离场",
+        "通用离场",
+        "克制淡出",
+        "组件收尾",
+        "文字离场",
+        "退出",
+        "消失",
+        "收走",
+        "techNoir",
+        "inkPaper",
+        "appleGlass",
+        "dom",
+        "text.exitFade",
+        "text",
+        "exitFade"
+      ],
+      "pairsWith": [],
+      "conflictsWith": [],
+      "preconditions": [
+        "目标元素必须存在且排版已完成"
+      ],
+      "parameterNames": [
+        "y",
+        "duration",
+        "ease",
+        "step",
+        "from",
+        "at"
+      ],
+      "source": {
+        "file": "lib/anime-fx.js",
+        "symbol": "AnimeFX.text.exitFade",
+        "supportingFiles": []
+      },
+      "example": "AnimeFX.text.exitFade('#target', {})",
+      "preview": "previews/text.exitFade.png",
+      "anchorCase": "案例/16-文字·清单出场.html",
+      "apiTruth": "manifest/effects.json"
+    },
+    {
+      "id": "text.highlightSweep",
+      "summary": "用横向色块扫过关键词，适合标注重点和二次强调。",
+      "role": "text-emphasis",
+      "temporal": "once",
+      "weight": "light",
+      "mood": [
+        "高亮",
+        "标注",
+        "重点"
+      ],
+      "runtimes": [
+        "dom"
+      ],
+      "dependencies": [
+        "animejs"
+      ],
+      "directTargets": [
+        "html",
+        "video"
+      ],
+      "adaptationTargets": [
+        "react",
+        "vue",
+        "svelte",
+        "canvas-video"
+      ],
+      "modes": [
+        "reuse",
+        "adapt"
+      ],
+      "bestFor": [
+        "关键词强调",
+        "结论标注",
+        "重点扫色"
+      ],
+      "avoidWhen": [
+        "不要让多个文字大招同时抢阅读顺序",
+        "一页最多强调一处主句"
+      ],
+      "suites": [
+        "techNoir",
+        "inkPaper",
+        "appleGlass"
+      ],
+      "keywords": [
+        "高亮",
+        "标注",
+        "重点",
+        "关键词强调",
+        "结论标注",
+        "重点扫色",
+        "文字强调",
+        "指标",
+        "techNoir",
+        "inkPaper",
+        "appleGlass",
+        "dom",
+        "text.highlightSweep",
+        "text",
+        "highlightSweep"
+      ],
+      "pairsWith": [],
+      "conflictsWith": [],
+      "preconditions": [
+        "目标元素必须存在且排版已完成"
+      ],
+      "parameterNames": [
+        "color",
+        "height",
+        "vpos",
+        "duration",
+        "ease",
+        "at"
+      ],
+      "source": {
+        "file": "lib/anime-fx.js",
+        "symbol": "AnimeFX.text.highlightSweep",
+        "supportingFiles": []
+      },
+      "example": "AnimeFX.text.highlightSweep('#target', {})",
+      "preview": "previews/text.highlightSweep.png",
+      "anchorCase": "案例/01-效果总览画廊.html",
+      "apiTruth": "manifest/effects.json"
+    },
+    {
+      "id": "text.kineticBeat",
+      "summary": "卡点、放大、节拍语义的文字动效，使用确定性时间轴并可在目标项目设计系统中注入风格。",
+      "role": "text-emphasis",
+      "temporal": "once",
+      "weight": "medium",
+      "mood": [
+        "卡点",
+        "放大",
+        "节拍"
+      ],
+      "runtimes": [
+        "dom"
+      ],
+      "dependencies": [
+        "animejs"
+      ],
+      "directTargets": [
+        "html",
+        "video"
+      ],
+      "adaptationTargets": [
+        "react",
+        "vue",
+        "svelte",
+        "canvas-video"
+      ],
+      "modes": [
+        "reuse",
+        "adapt"
+      ],
+      "bestFor": [
+        "关键词卡点放大",
+        "音乐节拍文字",
+        "标题弹跳"
+      ],
+      "avoidWhen": [
+        "不要让多个文字大招同时抢阅读顺序"
+      ],
+      "suites": [],
+      "keywords": [
+        "卡点",
+        "放大",
+        "节拍",
+        "关键词卡点放大",
+        "音乐节拍文字",
+        "标题弹跳",
+        "文字强调",
+        "重点",
+        "高亮",
+        "指标",
+        "dom",
+        "text.kineticBeat",
+        "text",
+        "kineticBeat"
+      ],
+      "pairsWith": [],
+      "conflictsWith": [],
+      "preconditions": [
+        "目标元素必须存在且排版已完成"
+      ],
+      "parameterNames": [
+        "beats",
+        "scale",
+        "duration",
+        "at"
+      ],
+      "source": {
+        "file": "lib/anime-fx.js",
+        "symbol": "AnimeFX.text.kineticBeat",
+        "supportingFiles": []
+      },
+      "example": "AnimeFX.text.kineticBeat('#target', {})",
+      "preview": "previews/text.kineticBeat.png",
+      "anchorCase": "案例/20-3.0·图文种草.html",
+      "apiTruth": "manifest/effects.json"
+    },
+    {
+      "id": "text.linesReveal",
+      "summary": "字幕、段落、逐行语义的文字动效，使用确定性时间轴并可在目标项目设计系统中注入风格。",
+      "role": "text-enter",
+      "temporal": "once",
+      "weight": "light",
+      "mood": [
+        "字幕",
+        "段落",
+        "逐行"
+      ],
+      "runtimes": [
+        "dom"
+      ],
+      "dependencies": [
+        "animejs"
+      ],
+      "directTargets": [
+        "html",
+        "video"
+      ],
+      "adaptationTargets": [
+        "react",
+        "vue",
+        "svelte",
+        "canvas-video"
+      ],
+      "modes": [
+        "reuse",
+        "adapt"
+      ],
+      "bestFor": [
+        "字幕逐行出现",
+        "长文案入场",
+        "段落显露"
+      ],
+      "avoidWhen": [
+        "不要让多个文字大招同时抢阅读顺序"
+      ],
+      "suites": [],
+      "keywords": [
+        "字幕",
+        "段落",
+        "逐行",
+        "字幕逐行出现",
+        "长文案入场",
+        "段落显露",
+        "文字入场",
+        "标题入场",
+        "出现",
+        "dom",
+        "text.linesReveal",
+        "text",
+        "linesReveal"
+      ],
+      "pairsWith": [],
+      "conflictsWith": [],
+      "preconditions": [
+        "目标元素必须存在且排版已完成"
+      ],
+      "parameterNames": [
+        "step",
+        "mask",
+        "y",
+        "duration",
+        "ease",
+        "at"
+      ],
+      "source": {
+        "file": "lib/anime-fx.js",
+        "symbol": "AnimeFX.text.linesReveal",
+        "supportingFiles": []
+      },
+      "example": "AnimeFX.text.linesReveal('#target', {})",
+      "preview": "previews/text.linesReveal.png",
+      "anchorCase": "案例/20-3.0·图文种草.html",
+      "apiTruth": "manifest/effects.json"
+    },
+    {
+      "id": "text.numberOdometer",
+      "summary": "数字、滚轮、金融语义的文字动效，使用确定性时间轴并可在目标项目设计系统中注入风格。",
+      "role": "component",
+      "temporal": "once",
+      "weight": "light",
+      "mood": [
+        "数字",
+        "滚轮",
+        "金融"
+      ],
+      "runtimes": [
+        "dom"
+      ],
+      "dependencies": [
+        "animejs"
+      ],
+      "directTargets": [
+        "html",
+        "video"
+      ],
+      "adaptationTargets": [
+        "react",
+        "vue",
+        "svelte",
+        "canvas-video"
+      ],
+      "modes": [
+        "reuse",
+        "adapt"
+      ],
+      "bestFor": [
+        "机械滚轮数字",
+        "金融计数",
+        "逐位数字翻动"
+      ],
+      "avoidWhen": [
+        "不要让多个文字大招同时抢阅读顺序"
+      ],
+      "suites": [],
+      "keywords": [
+        "数字",
+        "滚轮",
+        "金融",
+        "机械滚轮数字",
+        "金融计数",
+        "逐位数字翻动",
+        "组件",
+        "内容",
+        "卡片",
+        "图表",
+        "dom",
+        "text.numberOdometer",
+        "text",
+        "numberOdometer"
+      ],
+      "pairsWith": [],
+      "conflictsWith": [],
+      "preconditions": [
+        "目标元素必须存在且排版已完成"
+      ],
+      "parameterNames": [
+        "from",
+        "to",
+        "duration",
+        "decimals",
+        "ease",
+        "at"
+      ],
+      "source": {
+        "file": "lib/anime-fx.js",
+        "symbol": "AnimeFX.text.numberOdometer",
+        "supportingFiles": []
+      },
+      "example": "AnimeFX.text.numberOdometer('#target', {})",
+      "preview": "previews/text.numberOdometer.png",
+      "anchorCase": "案例/21-3.0·Gamma效果.html",
+      "apiTruth": "manifest/effects.json"
+    },
+    {
+      "id": "text.scrambleCycle",
+      "summary": "让多个词在解码字符中循环切换，适合科技标签和状态轮播。",
+      "role": "text-emphasis",
+      "temporal": "loop",
+      "weight": "medium",
+      "mood": [
+        "词语轮播",
+        "解码"
+      ],
+      "runtimes": [
+        "dom"
+      ],
+      "dependencies": [
+        "animejs"
+      ],
+      "directTargets": [
+        "html",
+        "video"
+      ],
+      "adaptationTargets": [
+        "react",
+        "vue",
+        "svelte",
+        "canvas-video"
+      ],
+      "modes": [
+        "reuse",
+        "adapt"
+      ],
+      "bestFor": [
+        "科技状态词",
+        "英文标签轮播",
+        "系统解码"
+      ],
+      "avoidWhen": [
+        "中文长句",
+        "安静文化语境",
+        "不要让多个文字大招同时抢阅读顺序",
+        "不用于长段中文阅读"
+      ],
+      "suites": [
+        "techNoir"
+      ],
+      "keywords": [
+        "词语轮播",
+        "解码",
+        "科技状态词",
+        "英文标签轮播",
+        "系统解码",
+        "文字强调",
+        "重点",
+        "高亮",
+        "指标",
+        "techNoir",
+        "dom",
+        "text.scrambleCycle",
+        "text",
+        "scrambleCycle"
+      ],
+      "pairsWith": [],
+      "conflictsWith": [],
+      "preconditions": [
+        "目标元素必须存在且排版已完成",
+        "words 必须是非空字符串数组",
+        "seed 必须明确传入"
+      ],
+      "parameterNames": [
+        "chars",
+        "revealRate",
+        "seed",
+        "scrambleDur",
+        "hold",
+        "at",
+        "loop"
+      ],
+      "source": {
+        "file": "lib/anime-fx.js",
+        "symbol": "AnimeFX.text.scrambleCycle",
+        "supportingFiles": []
+      },
+      "example": "AnimeFX.text.scrambleCycle('#text', ['A','B'], {seed:7})",
+      "preview": "previews/text.scrambleCycle.png",
+      "anchorCase": "案例/01-效果总览画廊.html",
+      "apiTruth": "manifest/effects.json"
+    },
+    {
+      "id": "text.scrambleIn",
+      "summary": "从确定性乱码解码到目标文本，适合英文、数字和科技信号。",
+      "role": "text-enter",
+      "temporal": "once",
+      "weight": "medium",
+      "mood": [
+        "解码",
+        "科技",
+        "数字"
+      ],
+      "runtimes": [
+        "dom"
+      ],
+      "dependencies": [
+        "animejs"
+      ],
+      "directTargets": [
+        "html",
+        "video"
+      ],
+      "adaptationTargets": [
+        "react",
+        "vue",
+        "svelte",
+        "canvas-video"
+      ],
+      "modes": [
+        "reuse",
+        "adapt"
+      ],
+      "bestFor": [
+        "英文标题",
+        "数字编号",
+        "科技解码"
+      ],
+      "avoidWhen": [
+        "中文主标题",
+        "文学与水墨语境",
+        "不要让多个文字大招同时抢阅读顺序",
+        "水墨/玻璃套系禁用 glitch 乱码"
+      ],
+      "suites": [
+        "techNoir"
+      ],
+      "keywords": [
+        "解码",
+        "科技",
+        "数字",
+        "英文标题",
+        "数字编号",
+        "科技解码",
+        "文字入场",
+        "标题入场",
+        "出现",
+        "techNoir",
+        "dom",
+        "text.scrambleIn",
+        "text",
+        "scrambleIn"
+      ],
+      "pairsWith": [
+        "canvas.particles"
+      ],
+      "conflictsWith": [],
+      "preconditions": [
+        "目标元素必须存在且排版已完成",
+        "seed 必须明确传入"
+      ],
+      "parameterNames": [
+        "chars",
+        "revealRate",
+        "settleDuration",
+        "seed",
+        "duration",
+        "at",
+        "loop",
+        "loopDelay",
+        "text"
+      ],
+      "source": {
+        "file": "lib/anime-fx.js",
+        "symbol": "AnimeFX.text.scrambleIn",
+        "supportingFiles": []
+      },
+      "example": "AnimeFX.text.scrambleIn('#target', {})",
+      "preview": "previews/text.scrambleIn.png",
+      "anchorCase": "案例/01-效果总览画廊.html",
+      "apiTruth": "manifest/effects.json"
+    },
+    {
+      "id": "text.scrambleOut",
+      "summary": "把文字确定性扰乱后消失，适合科技信号终止和系统离场。",
+      "role": "text-exit",
+      "temporal": "once",
+      "weight": "medium",
+      "mood": [
+        "解码",
+        "信号终止",
+        "科技"
+      ],
+      "runtimes": [
+        "dom"
+      ],
+      "dependencies": [
+        "animejs"
+      ],
+      "directTargets": [
+        "html",
+        "video"
+      ],
+      "adaptationTargets": [
+        "react",
+        "vue",
+        "svelte",
+        "canvas-video"
+      ],
+      "modes": [
+        "reuse",
+        "adapt"
+      ],
+      "bestFor": [
+        "科技文字离场",
+        "信号终止",
+        "解码消散"
+      ],
+      "avoidWhen": [
+        "中文主标题",
+        "柔和产品语境",
+        "不要让多个文字大招同时抢阅读顺序",
+        "水墨/玻璃套系禁用"
+      ],
+      "suites": [
+        "techNoir"
+      ],
+      "keywords": [
+        "解码",
+        "信号终止",
+        "科技",
+        "科技文字离场",
+        "解码消散",
+        "文字离场",
+        "退出",
+        "消失",
+        "收走",
+        "techNoir",
+        "dom",
+        "text.scrambleOut",
+        "text",
+        "scrambleOut"
+      ],
+      "pairsWith": [],
+      "conflictsWith": [],
+      "preconditions": [
+        "目标元素必须存在且排版已完成",
+        "seed 必传"
+      ],
+      "parameterNames": [
+        "chars",
+        "seed",
+        "duration",
+        "ease",
+        "at",
+        "text"
+      ],
+      "source": {
+        "file": "lib/anime-fx.js",
+        "symbol": "AnimeFX.text.scrambleOut",
+        "supportingFiles": []
+      },
+      "example": "AnimeFX.text.scrambleOut('#text', {seed:7})",
+      "preview": "previews/text.scrambleOut.png",
+      "anchorCase": "案例/16-文字·清单出场.html",
+      "apiTruth": "manifest/effects.json"
+    },
+    {
+      "id": "text.typeCursor",
+      "summary": "打字机、光标、键入语义的文字动效，使用确定性时间轴并可在目标项目设计系统中注入风格。",
+      "role": "text-enter",
+      "temporal": "once",
+      "weight": "light",
+      "mood": [
+        "打字机",
+        "光标",
+        "键入"
+      ],
+      "runtimes": [
+        "dom"
+      ],
+      "dependencies": [
+        "animejs"
+      ],
+      "directTargets": [
+        "html",
+        "video"
+      ],
+      "adaptationTargets": [
+        "react",
+        "vue",
+        "svelte",
+        "canvas-video"
+      ],
+      "modes": [
+        "reuse",
+        "adapt"
+      ],
+      "bestFor": [
+        "打字机光标",
+        "文字键入",
+        "删除重打"
+      ],
+      "avoidWhen": [
+        "不要让多个文字大招同时抢阅读顺序"
+      ],
+      "suites": [],
+      "keywords": [
+        "打字机",
+        "光标",
+        "键入",
+        "打字机光标",
+        "文字键入",
+        "删除重打",
+        "文字入场",
+        "标题入场",
+        "出现",
+        "dom",
+        "text.typeCursor",
+        "text",
+        "typeCursor"
+      ],
+      "pairsWith": [],
+      "conflictsWith": [],
+      "preconditions": [
+        "目标元素必须存在且排版已完成"
+      ],
+      "parameterNames": [
+        "speed",
+        "cursor",
+        "deleteTo",
+        "hold",
+        "duration",
+        "at"
+      ],
+      "source": {
+        "file": "lib/anime-fx.js",
+        "symbol": "AnimeFX.text.typeCursor",
+        "supportingFiles": []
+      },
+      "example": "AnimeFX.text.typeCursor('#target', {})",
+      "preview": "previews/text.typeCursor.png",
+      "anchorCase": "案例/19-3.0·App介绍.html",
+      "apiTruth": "manifest/effects.json"
+    },
+    {
+      "id": "text.wordsAppear",
+      "summary": "按词组克制地显露文案，适合英文副标题和短句。",
+      "role": "text-enter",
+      "temporal": "once",
+      "weight": "light",
+      "mood": [
+        "标题",
+        "逐词",
+        "克制"
+      ],
+      "runtimes": [
+        "dom"
+      ],
+      "dependencies": [
+        "animejs"
+      ],
+      "directTargets": [
+        "html",
+        "video"
+      ],
+      "adaptationTargets": [
+        "react",
+        "vue",
+        "svelte",
+        "canvas-video"
+      ],
+      "modes": [
+        "reuse",
+        "adapt"
+      ],
+      "bestFor": [
+        "英文副标题",
+        "短句入场",
+        "克制文案"
+      ],
+      "avoidWhen": [
+        "不要让多个文字大招同时抢阅读顺序"
+      ],
+      "suites": [
+        "techNoir",
+        "inkPaper",
+        "appleGlass"
+      ],
+      "keywords": [
+        "标题",
+        "逐词",
+        "克制",
+        "英文副标题",
+        "短句入场",
+        "克制文案",
+        "文字入场",
+        "标题入场",
+        "出现",
+        "techNoir",
+        "inkPaper",
+        "appleGlass",
+        "dom",
+        "text.wordsAppear",
+        "text",
+        "wordsAppear"
+      ],
+      "pairsWith": [],
+      "conflictsWith": [],
+      "preconditions": [
+        "目标元素必须存在且排版已完成",
+        "目标必须包含可拆分词组"
+      ],
+      "parameterNames": [
+        "step",
+        "duration",
+        "ease",
+        "y",
+        "at"
+      ],
+      "source": {
+        "file": "lib/anime-fx.js",
+        "symbol": "AnimeFX.text.wordsAppear",
+        "supportingFiles": []
+      },
+      "example": "AnimeFX.text.wordsAppear('#target', {})",
+      "preview": "previews/text.wordsAppear.png",
+      "anchorCase": "案例/01-效果总览画廊.html",
+      "apiTruth": "manifest/effects.json"
+    },
+    {
+      "id": "three.inkFluid",
+      "summary": "用 GPU 流体模拟墨色扩散，适合沉浸式水墨背景但成本较高。",
+      "role": "bg",
+      "temporal": "loop",
+      "weight": "heavy",
+      "mood": [
+        "GPU 流体",
+        "水墨",
+        "扩散"
+      ],
+      "runtimes": [
+        "three",
+        "webgl"
+      ],
+      "dependencies": [
+        "animejs",
+        "three"
+      ],
+      "directTargets": [
+        "html",
+        "video"
+      ],
+      "adaptationTargets": [
+        "react",
+        "vue",
+        "svelte",
+        "canvas-video"
+      ],
+      "modes": [
+        "reuse",
+        "adapt"
+      ],
+      "bestFor": [
+        "沉浸式水墨",
+        "GPU 流体背景",
+        "艺术主视觉"
+      ],
+      "avoidWhen": [
+        "WebGL 预算紧张",
+        "页面已有其他 heavy 或多个 WebGL 场景",
+        "不使用时必须 dispose",
+        "不要与另一个 heavy hero 叠加",
+        "页面已经存在另一个 heavy 主视觉"
+      ],
+      "suites": [],
+      "keywords": [
+        "GPU 流体",
+        "水墨",
+        "扩散",
+        "沉浸式水墨",
+        "GPU 流体背景",
+        "艺术主视觉",
+        "背景",
+        "氛围",
+        "environment",
+        "three",
+        "webgl",
+        "three.inkFluid",
+        "inkFluid"
+      ],
+      "pairsWith": [],
+      "conflictsWith": [],
+      "preconditions": [
+        "目标必须有明确宽高",
+        "单页 WebGL context 总数不得超过 8"
+      ],
+      "parameterNames": [
+        "bg",
+        "color",
+        "curl",
+        "ink",
+        "fade",
+        "velFade",
+        "flow",
+        "splatForce",
+        "fps",
+        "simRes",
+        "dyeRes",
+        "pressIter",
+        "seed",
+        "period",
+        "pixelRatio",
+        "interactive",
+        "at"
+      ],
+      "source": {
+        "file": "lib/anime-fx.js",
+        "symbol": "AnimeFX.three.inkFluid",
+        "supportingFiles": []
+      },
+      "example": "AnimeFX.three.inkFluid('#canvas', THREE, {})",
+      "preview": "previews/three.inkFluid.png",
+      "anchorCase": "案例/12-背景·墨流漂移.html",
+      "apiTruth": "manifest/effects.json"
+    },
+    {
+      "id": "three.orbitGrid",
+      "summary": "用 Three.js 晶格和轨道运动建立 3D 技术空间背景。",
+      "role": "bg",
+      "temporal": "loop",
+      "weight": "heavy",
+      "mood": [
+        "3D",
+        "晶格",
+        "轨道"
+      ],
+      "runtimes": [
+        "three",
+        "webgl"
+      ],
+      "dependencies": [
+        "animejs",
+        "three"
+      ],
+      "directTargets": [
+        "html",
+        "video"
+      ],
+      "adaptationTargets": [
+        "react",
+        "vue",
+        "svelte",
+        "canvas-video"
+      ],
+      "modes": [
+        "reuse",
+        "adapt"
+      ],
+      "bestFor": [
+        "3D 技术空间",
+        "晶格轨道",
+        "科技背景"
+      ],
+      "avoidWhen": [
+        "移动端性能预算紧张",
+        "页面已有 heavy Hero",
+        "不使用时必须 dispose",
+        "不要与另一个 heavy hero 叠加",
+        "页面已经存在另一个 heavy 主视觉"
+      ],
+      "suites": [
+        "techNoir"
+      ],
+      "keywords": [
+        "3D",
+        "晶格",
+        "轨道",
+        "3D 技术空间",
+        "晶格轨道",
+        "科技背景",
+        "背景",
+        "氛围",
+        "environment",
+        "techNoir",
+        "three",
+        "webgl",
+        "three.orbitGrid",
+        "orbitGrid"
+      ],
+      "pairsWith": [],
+      "conflictsWith": [],
+      "preconditions": [
+        "目标必须有明确宽高",
+        "单页 WebGL context 总数不得超过 8"
+      ],
+      "parameterNames": [
+        "cols",
+        "rows",
+        "depth",
+        "spacing",
+        "cube",
+        "bg",
+        "color",
+        "accent",
+        "muted",
+        "cameraZ",
+        "fov",
+        "period",
+        "seed",
+        "pixelRatio",
+        "at"
+      ],
+      "source": {
+        "file": "lib/anime-fx.js",
+        "symbol": "AnimeFX.three.orbitGrid",
+        "supportingFiles": []
+      },
+      "example": "AnimeFX.three.orbitGrid('#canvas', THREE, {})",
+      "preview": "previews/three.orbitGrid.png",
+      "anchorCase": "案例/09-Three·轨道晶格.html",
+      "apiTruth": "manifest/effects.json"
+    },
+    {
+      "id": "three.particleMorph",
+      "summary": "让大量粒子在多个 3D 形态之间过渡，适合强主视觉背景。",
+      "role": "bg",
+      "temporal": "loop",
+      "weight": "heavy",
+      "mood": [
+        "3D",
+        "粒子",
+        "形态"
+      ],
+      "runtimes": [
+        "three",
+        "webgl"
+      ],
+      "dependencies": [
+        "animejs",
+        "three"
+      ],
+      "directTargets": [
+        "html",
+        "video"
+      ],
+      "adaptationTargets": [
+        "react",
+        "vue",
+        "svelte",
+        "canvas-video"
+      ],
+      "modes": [
+        "reuse",
+        "adapt"
+      ],
+      "bestFor": [
+        "粒子形态主视觉",
+        "品牌图形变换",
+        "3D 揭晓"
+      ],
+      "avoidWhen": [
+        "移动端性能预算紧张",
+        "只需要轻量装饰",
+        "不使用时必须 dispose",
+        "不要与另一个 heavy hero 叠加",
+        "页面已经存在另一个 heavy 主视觉"
+      ],
+      "suites": [],
+      "keywords": [
+        "3D",
+        "粒子",
+        "形态",
+        "粒子形态主视觉",
+        "品牌图形变换",
+        "3D 揭晓",
+        "背景",
+        "氛围",
+        "environment",
+        "three",
+        "webgl",
+        "three.particleMorph",
+        "particleMorph"
+      ],
+      "pairsWith": [],
+      "conflictsWith": [],
+      "preconditions": [
+        "目标必须有明确宽高",
+        "单页 WebGL context 总数不得超过 8"
+      ],
+      "parameterNames": [
+        "count",
+        "size",
+        "bg",
+        "color",
+        "accent",
+        "cameraZ",
+        "fov",
+        "period",
+        "spin",
+        "seed",
+        "pixelRatio",
+        "at"
+      ],
+      "source": {
+        "file": "lib/anime-fx.js",
+        "symbol": "AnimeFX.three.particleMorph",
+        "supportingFiles": []
+      },
+      "example": "AnimeFX.three.particleMorph('#canvas', THREE, {})",
+      "preview": "previews/three.particleMorph.png",
+      "anchorCase": "案例/10-Three·粒子形态场.html",
+      "apiTruth": "manifest/effects.json"
+    },
+    {
+      "id": "three.waveField",
+      "summary": "用 3D 点阵地形形成持续波场，适合数据、地形和系统空间。",
+      "role": "bg",
+      "temporal": "loop",
+      "weight": "heavy",
+      "mood": [
+        "3D",
+        "点阵",
+        "地形波"
+      ],
+      "runtimes": [
+        "three",
+        "webgl"
+      ],
+      "dependencies": [
+        "animejs",
+        "three"
+      ],
+      "directTargets": [
+        "html",
+        "video"
+      ],
+      "adaptationTargets": [
+        "react",
+        "vue",
+        "svelte",
+        "canvas-video"
+      ],
+      "modes": [
+        "reuse",
+        "adapt"
+      ],
+      "bestFor": [
+        "3D 数据地形",
+        "点阵波场",
+        "系统背景"
+      ],
+      "avoidWhen": [
+        "移动端性能预算紧张",
+        "页面已有 heavy Hero",
+        "不使用时必须 dispose",
+        "不要与另一个 heavy hero 叠加",
+        "页面已经存在另一个 heavy 主视觉"
+      ],
+      "suites": [
+        "inkPaper"
+      ],
+      "keywords": [
+        "3D",
+        "点阵",
+        "地形波",
+        "3D 数据地形",
+        "点阵波场",
+        "系统背景",
+        "背景",
+        "氛围",
+        "environment",
+        "inkPaper",
+        "three",
+        "webgl",
+        "three.waveField",
+        "waveField"
+      ],
+      "pairsWith": [],
+      "conflictsWith": [],
+      "preconditions": [
+        "目标必须有明确宽高",
+        "单页 WebGL context 总数不得超过 8"
+      ],
+      "parameterNames": [
+        "cols",
+        "rows",
+        "gap",
+        "size",
+        "bg",
+        "color",
+        "accent",
+        "camera",
+        "fov",
+        "amp",
+        "period",
+        "fog",
+        "pixelRatio",
+        "at"
+      ],
+      "source": {
+        "file": "lib/anime-fx.js",
+        "symbol": "AnimeFX.three.waveField",
+        "supportingFiles": []
+      },
+      "example": "AnimeFX.three.waveField('#canvas', THREE, {})",
+      "preview": "previews/three.waveField.png",
+      "anchorCase": "案例/11-Three·点阵波场.html",
+      "apiTruth": "manifest/effects.json"
+    },
+    {
+      "id": "transition.blurDissolve",
+      "summary": "模糊、溶解、安静语义的页面转场动效，使用确定性时间轴并可在目标项目设计系统中注入风格。",
+      "role": "transition",
+      "temporal": "once",
+      "weight": "light",
+      "mood": [
+        "模糊",
+        "溶解",
+        "安静"
+      ],
+      "runtimes": [
+        "dom"
+      ],
+      "dependencies": [
+        "animejs"
+      ],
+      "directTargets": [
+        "html",
+        "video"
+      ],
+      "adaptationTargets": [
+        "react",
+        "vue",
+        "svelte",
+        "canvas-video"
+      ],
+      "modes": [
+        "reuse",
+        "adapt"
+      ],
+      "bestFor": [
+        "安静模糊溶解",
+        "柔和页面切换",
+        "交叉淡化"
+      ],
+      "avoidWhen": [],
+      "suites": [],
+      "keywords": [
+        "模糊",
+        "溶解",
+        "安静",
+        "安静模糊溶解",
+        "柔和页面切换",
+        "交叉淡化",
+        "转场",
+        "切页",
+        "过渡",
+        "dom",
+        "transition.blurDissolve",
+        "transition",
+        "blurDissolve"
+      ],
+      "pairsWith": [],
+      "conflictsWith": [],
+      "preconditions": [
+        "容器前两个子元素为前后页面"
+      ],
+      "parameterNames": [
+        "blur",
+        "overlap",
+        "duration",
+        "ease",
+        "at"
+      ],
+      "source": {
+        "file": "lib/anime-fx.js",
+        "symbol": "AnimeFX.transition.blurDissolve",
+        "supportingFiles": []
+      },
+      "example": "AnimeFX.transition.blurDissolve('#target', {})",
+      "preview": "previews/transition.blurDissolve.png",
+      "anchorCase": "案例/20-3.0·图文种草.html",
+      "apiTruth": "manifest/effects.json"
+    },
+    {
+      "id": "transition.glassRise",
+      "summary": "让液态玻璃卡片从底部升起承接新内容，适合高级产品页面。",
+      "role": "transition",
+      "temporal": "once",
+      "weight": "heavy",
+      "mood": [
+        "液态玻璃",
+        "卡片",
+        "苹果感"
+      ],
+      "runtimes": [
+        "dom",
+        "css-filter"
+      ],
+      "dependencies": [
+        "animejs"
+      ],
+      "directTargets": [
+        "html",
+        "video"
+      ],
+      "adaptationTargets": [
+        "react",
+        "vue",
+        "svelte",
+        "canvas-video"
+      ],
+      "modes": [
+        "reuse",
+        "adapt"
+      ],
+      "bestFor": [
+        "玻璃卡片承接",
+        "高级产品页面",
+        "空间 UI 转场"
+      ],
+      "avoidWhen": [
+        "文字需要始终完全静止",
+        "不支持 backdrop-filter 的目标",
+        "一屏只能有一个 heavy 主视觉",
+        "glitch/扫描线语言禁用",
+        "页面已经存在另一个 heavy 主视觉"
+      ],
+      "suites": [
+        "appleGlass"
+      ],
+      "keywords": [
+        "液态玻璃",
+        "卡片",
+        "苹果感",
+        "玻璃卡片承接",
+        "高级产品页面",
+        "空间 UI 转场",
+        "转场",
+        "切页",
+        "过渡",
+        "appleGlass",
+        "dom",
+        "css-filter",
+        "transition.glassRise",
+        "transition",
+        "glassRise"
+      ],
+      "pairsWith": [
+        "shader.meshGradient"
+      ],
+      "conflictsWith": [
+        "hero.*"
+      ],
+      "preconditions": [
+        "舞台必须有明确宽高",
+        "舞台背后必须有可折射内容"
+      ],
+      "parameterNames": [
+        "preset",
+        "from",
+        "cardW",
+        "cardH",
+        "radius",
+        "frost",
+        "saturate",
+        "tint",
+        "dispScale",
+        "dispersion",
+        "specular",
+        "content",
+        "contentClass",
+        "align",
+        "pad",
+        "period",
+        "ease",
+        "mode",
+        "loop",
+        "restX",
+        "restY",
+        "at"
+      ],
+      "source": {
+        "file": "lib/anime-fx.js",
+        "symbol": "AnimeFX.transition.glassRise",
+        "supportingFiles": []
+      },
+      "example": "AnimeFX.transition.glassRise('#target', {})",
+      "preview": "previews/transition.glassRise.png",
+      "anchorCase": "案例/14-转场·玻璃卡片.html",
+      "apiTruth": "manifest/effects.json"
+    },
+    {
+      "id": "transition.maskMorph",
+      "summary": "遮罩、形变、SVG语义的页面转场动效，使用确定性时间轴并可在目标项目设计系统中注入风格。",
+      "role": "transition",
+      "temporal": "once",
+      "weight": "medium",
+      "mood": [
+        "遮罩",
+        "形变",
+        "SVG"
+      ],
+      "runtimes": [
+        "svg",
+        "dom"
+      ],
+      "dependencies": [
+        "animejs"
+      ],
+      "directTargets": [
+        "html",
+        "video"
+      ],
+      "adaptationTargets": [
+        "react",
+        "vue",
+        "svelte",
+        "canvas-video"
+      ],
+      "modes": [
+        "reuse",
+        "adapt"
+      ],
+      "bestFor": [
+        "形状遮罩转场",
+        "圆形扩展切页",
+        "SVG 形变"
+      ],
+      "avoidWhen": [],
+      "suites": [],
+      "keywords": [
+        "遮罩",
+        "形变",
+        "SVG",
+        "形状遮罩转场",
+        "圆形扩展切页",
+        "SVG 形变",
+        "转场",
+        "切页",
+        "过渡",
+        "svg",
+        "dom",
+        "transition.maskMorph",
+        "transition",
+        "maskMorph"
+      ],
+      "pairsWith": [],
+      "conflictsWith": [],
+      "preconditions": [
+        "shapeFrom/shapeTo 必须是兼容 clip-path"
+      ],
+      "parameterNames": [
+        "shapeFrom",
+        "shapeTo",
+        "duration",
+        "ease",
+        "at"
+      ],
+      "source": {
+        "file": "lib/anime-fx.js",
+        "symbol": "AnimeFX.transition.maskMorph",
+        "supportingFiles": []
+      },
+      "example": "AnimeFX.transition.maskMorph('#target', {})",
+      "preview": "previews/transition.maskMorph.png",
+      "anchorCase": "案例/20-3.0·图文种草.html",
+      "apiTruth": "manifest/effects.json"
+    },
+    {
+      "id": "transition.slatSweep",
+      "summary": "百叶窗、扫过、切页语义的页面转场动效，使用确定性时间轴并可在目标项目设计系统中注入风格。",
+      "role": "transition",
+      "temporal": "once",
+      "weight": "light",
+      "mood": [
+        "百叶窗",
+        "扫过",
+        "切页"
+      ],
+      "runtimes": [
+        "dom"
+      ],
+      "dependencies": [
+        "animejs"
+      ],
+      "directTargets": [
+        "html",
+        "video"
+      ],
+      "adaptationTargets": [
+        "react",
+        "vue",
+        "svelte",
+        "canvas-video"
+      ],
+      "modes": [
+        "reuse",
+        "adapt"
+      ],
+      "bestFor": [
+        "百叶窗转场",
+        "条板扫过切页",
+        "几何切换"
+      ],
+      "avoidWhen": [],
+      "suites": [],
+      "keywords": [
+        "百叶窗",
+        "扫过",
+        "切页",
+        "百叶窗转场",
+        "条板扫过切页",
+        "几何切换",
+        "转场",
+        "过渡",
+        "dom",
+        "transition.slatSweep",
+        "transition",
+        "slatSweep"
+      ],
+      "pairsWith": [],
+      "conflictsWith": [],
+      "preconditions": [],
+      "parameterNames": [
+        "count",
+        "direction",
+        "cover",
+        "step",
+        "duration",
+        "ease",
+        "at"
+      ],
+      "source": {
+        "file": "lib/anime-fx.js",
+        "symbol": "AnimeFX.transition.slatSweep",
+        "supportingFiles": []
+      },
+      "example": "AnimeFX.transition.slatSweep('#target', {})",
+      "preview": "previews/transition.slatSweep.png",
+      "anchorCase": "案例/21-3.0·Gamma效果.html",
+      "apiTruth": "manifest/effects.json"
+    },
+    {
+      "id": "transition.swipePush",
+      "summary": "滑动、推屏、手势语义的页面转场动效，使用确定性时间轴并可在目标项目设计系统中注入风格。",
+      "role": "transition",
+      "temporal": "once",
+      "weight": "light",
+      "mood": [
+        "滑动",
+        "推屏",
+        "手势"
+      ],
+      "runtimes": [
+        "dom"
+      ],
+      "dependencies": [
+        "animejs"
+      ],
+      "directTargets": [
+        "html",
+        "video"
+      ],
+      "adaptationTargets": [
+        "react",
+        "vue",
+        "svelte",
+        "canvas-video"
+      ],
+      "modes": [
+        "reuse",
+        "adapt"
+      ],
+      "bestFor": [
+        "页面滑动推屏",
+        "App 手势转场",
+        "横向切页"
+      ],
+      "avoidWhen": [],
+      "suites": [],
+      "keywords": [
+        "滑动",
+        "推屏",
+        "手势",
+        "页面滑动推屏",
+        "App 手势转场",
+        "横向切页",
+        "转场",
+        "切页",
+        "过渡",
+        "dom",
+        "transition.swipePush",
+        "transition",
+        "swipePush"
+      ],
+      "pairsWith": [
+        "ui.gestureSwipe"
+      ],
+      "conflictsWith": [],
+      "preconditions": [
+        "容器前两个子元素为前后页面"
+      ],
+      "parameterNames": [
+        "direction",
+        "overshoot",
+        "duration",
+        "ease",
+        "at"
+      ],
+      "source": {
+        "file": "lib/anime-fx.js",
+        "symbol": "AnimeFX.transition.swipePush",
+        "supportingFiles": []
+      },
+      "example": "AnimeFX.transition.swipePush('#target', {})",
+      "preview": "previews/transition.swipePush.png",
+      "anchorCase": "案例/19-3.0·App介绍.html",
+      "apiTruth": "manifest/effects.json"
+    },
+    {
+      "id": "transition.whipPan",
+      "summary": "甩镜、运动模糊、卡点语义的页面转场动效，使用确定性时间轴并可在目标项目设计系统中注入风格。",
+      "role": "transition",
+      "temporal": "once",
+      "weight": "medium",
+      "mood": [
+        "甩镜",
+        "运动模糊",
+        "卡点"
+      ],
+      "runtimes": [
+        "dom"
+      ],
+      "dependencies": [
+        "animejs"
+      ],
+      "directTargets": [
+        "html",
+        "video"
+      ],
+      "adaptationTargets": [
+        "react",
+        "vue",
+        "svelte",
+        "canvas-video"
+      ],
+      "modes": [
+        "reuse",
+        "adapt"
+      ],
+      "bestFor": [
+        "快速甩镜转场",
+        "视频卡点",
+        "运动模糊切页"
+      ],
+      "avoidWhen": [],
+      "suites": [],
+      "keywords": [
+        "甩镜",
+        "运动模糊",
+        "卡点",
+        "快速甩镜转场",
+        "视频卡点",
+        "运动模糊切页",
+        "转场",
+        "切页",
+        "过渡",
+        "dom",
+        "transition.whipPan",
+        "transition",
+        "whipPan"
+      ],
+      "pairsWith": [],
+      "conflictsWith": [],
+      "preconditions": [
+        "容器前两个子元素为前后页面"
+      ],
+      "parameterNames": [
+        "direction",
+        "smear",
+        "duration",
+        "ease",
+        "at"
+      ],
+      "source": {
+        "file": "lib/anime-fx.js",
+        "symbol": "AnimeFX.transition.whipPan",
+        "supportingFiles": []
+      },
+      "example": "AnimeFX.transition.whipPan('#target', {})",
+      "preview": "previews/transition.whipPan.png",
+      "anchorCase": "案例/21-3.0·Gamma效果.html",
+      "apiTruth": "manifest/effects.json"
+    },
+    {
+      "id": "transition.wipe",
+      "summary": "用整块颜色干净地覆盖或揭示页面，是通用的平面转场。",
+      "role": "transition",
+      "temporal": "once",
+      "weight": "medium",
+      "mood": [
+        "擦除",
+        "揭示",
+        "干净"
+      ],
+      "runtimes": [
+        "dom"
+      ],
+      "dependencies": [
+        "animejs"
+      ],
+      "directTargets": [
+        "html",
+        "video"
+      ],
+      "adaptationTargets": [
+        "react",
+        "vue",
+        "svelte",
+        "canvas-video"
+      ],
+      "modes": [
+        "reuse",
+        "adapt"
+      ],
+      "bestFor": [
+        "通用页面转场",
+        "平面覆盖",
+        "干净揭示"
+      ],
+      "avoidWhen": [
+        "未指定与页面协调的 cover 色",
+        "需要空间或 3D 转场",
+        "深色卡禁用默认白色 cover"
+      ],
+      "suites": [
+        "inkPaper"
+      ],
+      "keywords": [
+        "擦除",
+        "揭示",
+        "干净",
+        "通用页面转场",
+        "平面覆盖",
+        "干净揭示",
+        "转场",
+        "切页",
+        "过渡",
+        "inkPaper",
+        "dom",
+        "transition.wipe",
+        "transition",
+        "wipe"
+      ],
+      "pairsWith": [],
+      "conflictsWith": [],
+      "preconditions": [
+        "cover 必须与卡片底色一致"
+      ],
+      "parameterNames": [
+        "dir",
+        "duration",
+        "ease",
+        "at",
+        "cover"
+      ],
+      "source": {
+        "file": "lib/anime-fx.js",
+        "symbol": "AnimeFX.transition.wipe",
+        "supportingFiles": []
+      },
+      "example": "AnimeFX.transition.wipe('#target', {})",
+      "preview": "previews/transition.wipe.png",
+      "anchorCase": "案例/05-数据·转场·图片.html",
+      "apiTruth": "manifest/effects.json"
+    },
+    {
+      "id": "transition.zoomThrough",
+      "summary": "缩放、穿越、镜头语义的页面转场动效，使用确定性时间轴并可在目标项目设计系统中注入风格。",
+      "role": "transition",
+      "temporal": "once",
+      "weight": "medium",
+      "mood": [
+        "缩放",
+        "穿越",
+        "镜头"
+      ],
+      "runtimes": [
+        "dom"
+      ],
+      "dependencies": [
+        "animejs"
+      ],
+      "directTargets": [
+        "html",
+        "video"
+      ],
+      "adaptationTargets": [
+        "react",
+        "vue",
+        "svelte",
+        "canvas-video"
+      ],
+      "modes": [
+        "reuse",
+        "adapt"
+      ],
+      "bestFor": [
+        "穿越元素转场",
+        "镜头缩放切页",
+        "产品细节"
+      ],
+      "avoidWhen": [],
+      "suites": [],
+      "keywords": [
+        "缩放",
+        "穿越",
+        "镜头",
+        "穿越元素转场",
+        "镜头缩放切页",
+        "产品细节",
+        "转场",
+        "切页",
+        "过渡",
+        "dom",
+        "transition.zoomThrough",
+        "transition",
+        "zoomThrough"
+      ],
+      "pairsWith": [
+        "camera.zoomPan"
+      ],
+      "conflictsWith": [],
+      "preconditions": [
+        "舞台必须有明确宽高"
+      ],
+      "parameterNames": [
+        "anchor",
+        "scale",
+        "duration",
+        "ease",
+        "at"
+      ],
+      "source": {
+        "file": "lib/anime-fx.js",
+        "symbol": "AnimeFX.transition.zoomThrough",
+        "supportingFiles": []
+      },
+      "example": "AnimeFX.transition.zoomThrough('#target', {})",
+      "preview": "previews/transition.zoomThrough.png",
+      "anchorCase": "案例/19-3.0·App介绍.html",
+      "apiTruth": "manifest/effects.json"
+    },
+    {
+      "id": "ui.chatPlayback",
+      "summary": "聊天、气泡、回放语义的产品 UI 演示动效，使用确定性时间轴并可在目标项目设计系统中注入风格。",
+      "role": "component",
+      "temporal": "once",
+      "weight": "medium",
+      "mood": [
+        "聊天",
+        "气泡",
+        "回放"
+      ],
+      "runtimes": [
+        "dom"
+      ],
+      "dependencies": [
+        "animejs"
+      ],
+      "directTargets": [
+        "html",
+        "video"
+      ],
+      "adaptationTargets": [
+        "react",
+        "vue",
+        "svelte",
+        "canvas-video"
+      ],
+      "modes": [
+        "reuse",
+        "adapt"
+      ],
+      "bestFor": [
+        "聊天气泡回放",
+        "社交产品演示",
+        "对话逐条出现"
+      ],
+      "avoidWhen": [],
+      "suites": [],
+      "keywords": [
+        "聊天",
+        "气泡",
+        "回放",
+        "聊天气泡回放",
+        "社交产品演示",
+        "对话逐条出现",
+        "组件",
+        "内容",
+        "卡片",
+        "图表",
+        "dom",
+        "ui.chatPlayback",
+        "ui",
+        "chatPlayback"
+      ],
+      "pairsWith": [],
+      "conflictsWith": [],
+      "preconditions": [
+        "messages 必须是字符串数组"
+      ],
+      "parameterNames": [
+        "messages",
+        "typing",
+        "step",
+        "duration",
+        "at"
+      ],
+      "source": {
+        "file": "lib/anime-fx.js",
+        "symbol": "AnimeFX.ui.chatPlayback",
+        "supportingFiles": []
+      },
+      "example": "AnimeFX.ui.chatPlayback('#target', {})",
+      "preview": "previews/ui.chatPlayback.png",
+      "anchorCase": "案例/20-3.0·图文种草.html",
+      "apiTruth": "manifest/effects.json"
+    },
+    {
+      "id": "ui.cursorClick",
+      "summary": "光标、点击、网页演示语义的产品 UI 演示动效，使用确定性时间轴并可在目标项目设计系统中注入风格。",
+      "role": "text-emphasis",
+      "temporal": "once",
+      "weight": "light",
+      "mood": [
+        "光标",
+        "点击",
+        "网页演示"
+      ],
+      "runtimes": [
+        "dom"
+      ],
+      "dependencies": [
+        "animejs"
+      ],
+      "directTargets": [
+        "html",
+        "video"
+      ],
+      "adaptationTargets": [
+        "react",
+        "vue",
+        "svelte",
+        "canvas-video"
+      ],
+      "modes": [
+        "reuse",
+        "adapt"
+      ],
+      "bestFor": [
+        "网页光标点击",
+        "桌面产品演示",
+        "点击轨迹"
+      ],
+      "avoidWhen": [],
+      "suites": [],
+      "keywords": [
+        "光标",
+        "点击",
+        "网页演示",
+        "网页光标点击",
+        "桌面产品演示",
+        "点击轨迹",
+        "文字强调",
+        "重点",
+        "高亮",
+        "指标",
+        "dom",
+        "ui.cursorClick",
+        "ui",
+        "cursorClick"
+      ],
+      "pairsWith": [],
+      "conflictsWith": [],
+      "preconditions": [],
+      "parameterNames": [
+        "path",
+        "clicks",
+        "duration",
+        "color",
+        "at"
+      ],
+      "source": {
+        "file": "lib/anime-fx.js",
+        "symbol": "AnimeFX.ui.cursorClick",
+        "supportingFiles": []
+      },
+      "example": "AnimeFX.ui.cursorClick('#target', {})",
+      "preview": "previews/ui.cursorClick.png",
+      "anchorCase": "案例/21-3.0·Gamma效果.html",
+      "apiTruth": "manifest/effects.json"
+    },
+    {
+      "id": "ui.gestureSwipe",
+      "summary": "手势、滑动、触点语义的产品 UI 演示动效，使用确定性时间轴并可在目标项目设计系统中注入风格。",
+      "role": "text-emphasis",
+      "temporal": "once",
+      "weight": "light",
+      "mood": [
+        "手势",
+        "滑动",
+        "触点"
+      ],
+      "runtimes": [
+        "dom"
+      ],
+      "dependencies": [
+        "animejs"
+      ],
+      "directTargets": [
+        "html",
+        "video"
+      ],
+      "adaptationTargets": [
+        "react",
+        "vue",
+        "svelte",
+        "canvas-video"
+      ],
+      "modes": [
+        "reuse",
+        "adapt"
+      ],
+      "bestFor": [
+        "演示手机滑动操作",
+        "手势轨迹",
+        "触点提示"
+      ],
+      "avoidWhen": [],
+      "suites": [],
+      "keywords": [
+        "手势",
+        "滑动",
+        "触点",
+        "演示手机滑动操作",
+        "手势轨迹",
+        "触点提示",
+        "文字强调",
+        "重点",
+        "高亮",
+        "指标",
+        "dom",
+        "ui.gestureSwipe",
+        "ui",
+        "gestureSwipe"
+      ],
+      "pairsWith": [
+        "transition.swipePush"
+      ],
+      "conflictsWith": [],
+      "preconditions": [],
+      "parameterNames": [
+        "path",
+        "repeat",
+        "duration",
+        "color",
+        "at"
+      ],
+      "source": {
+        "file": "lib/anime-fx.js",
+        "symbol": "AnimeFX.ui.gestureSwipe",
+        "supportingFiles": []
+      },
+      "example": "AnimeFX.ui.gestureSwipe('#target', {})",
+      "preview": "previews/ui.gestureSwipe.png",
+      "anchorCase": "案例/19-3.0·App介绍.html",
+      "apiTruth": "manifest/effects.json"
+    },
+    {
+      "id": "ui.notifyDrop",
+      "summary": "通知、横幅、掉落语义的产品 UI 演示动效，使用确定性时间轴并可在目标项目设计系统中注入风格。",
+      "role": "component",
+      "temporal": "once",
+      "weight": "light",
+      "mood": [
+        "通知",
+        "横幅",
+        "掉落"
+      ],
+      "runtimes": [
+        "dom"
+      ],
+      "dependencies": [
+        "animejs"
+      ],
+      "directTargets": [
+        "html",
+        "video"
+      ],
+      "adaptationTargets": [
+        "react",
+        "vue",
+        "svelte",
+        "canvas-video"
+      ],
+      "modes": [
+        "reuse",
+        "adapt"
+      ],
+      "bestFor": [
+        "系统通知掉落",
+        "消息横幅",
+        "App 通知演示"
+      ],
+      "avoidWhen": [],
+      "suites": [],
+      "keywords": [
+        "通知",
+        "横幅",
+        "掉落",
+        "系统通知掉落",
+        "消息横幅",
+        "App 通知演示",
+        "组件",
+        "内容",
+        "卡片",
+        "图表",
+        "dom",
+        "ui.notifyDrop",
+        "ui",
+        "notifyDrop"
+      ],
+      "pairsWith": [],
+      "conflictsWith": [],
+      "preconditions": [
+        "舞台必须有明确宽高"
+      ],
+      "parameterNames": [
+        "hold",
+        "icon",
+        "text",
+        "duration",
+        "at"
+      ],
+      "source": {
+        "file": "lib/anime-fx.js",
+        "symbol": "AnimeFX.ui.notifyDrop",
+        "supportingFiles": []
+      },
+      "example": "AnimeFX.ui.notifyDrop('#target', {})",
+      "preview": "previews/ui.notifyDrop.png",
+      "anchorCase": "案例/20-3.0·图文种草.html",
+      "apiTruth": "manifest/effects.json"
+    },
+    {
+      "id": "ui.phoneFrame",
+      "summary": "手机框、App、产品演示语义的产品 UI 演示动效，使用确定性时间轴并可在目标项目设计系统中注入风格。",
+      "role": "hero",
+      "temporal": "once",
+      "weight": "medium",
+      "mood": [
+        "手机框",
+        "App",
+        "产品演示"
+      ],
+      "runtimes": [
+        "dom"
+      ],
+      "dependencies": [
+        "animejs"
+      ],
+      "directTargets": [
+        "html",
+        "video"
+      ],
+      "adaptationTargets": [
+        "react",
+        "vue",
+        "svelte",
+        "canvas-video"
+      ],
+      "modes": [
+        "reuse",
+        "adapt"
+      ],
+      "bestFor": [
+        "手机框产品演示",
+        "App 截图展示",
+        "移动端 Hero"
+      ],
+      "avoidWhen": [],
+      "suites": [],
+      "keywords": [
+        "手机框",
+        "App",
+        "产品演示",
+        "手机框产品演示",
+        "App 截图展示",
+        "移动端 Hero",
+        "主视觉",
+        "hero",
+        "揭晓",
+        "封面",
+        "dom",
+        "ui.phoneFrame",
+        "ui",
+        "phoneFrame"
+      ],
+      "pairsWith": [],
+      "conflictsWith": [
+        "hero.*"
+      ],
+      "preconditions": [
+        "目标必须有明确宽高"
+      ],
+      "parameterNames": [
+        "screens",
+        "switchFx",
+        "radius",
+        "duration",
+        "at"
+      ],
+      "source": {
+        "file": "lib/anime-fx.js",
+        "symbol": "AnimeFX.ui.phoneFrame",
+        "supportingFiles": []
+      },
+      "example": "AnimeFX.ui.phoneFrame('#target', {})",
+      "preview": "previews/ui.phoneFrame.png",
+      "anchorCase": "案例/19-3.0·App介绍.html",
+      "apiTruth": "manifest/effects.json"
+    }
+  ]
+}

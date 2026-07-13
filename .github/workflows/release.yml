@@ -1,0 +1,35 @@
+# 公开仓发布工作流：push v* tag 时发布 npm（带 provenance）。
+# 完整校验套件在私有工作仓 CI 里跑过之后才会同步到本仓，这里只做冒烟验证。
+name: Release
+on:
+  push:
+    tags: ['v*']
+permissions:
+  contents: write
+  id-token: write
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          registry-url: https://registry.npmjs.org
+      - run: npm ci
+      - name: Verify tag matches package version
+        run: |
+          TAG="${GITHUB_REF_NAME#v}"
+          VER="$(node -p "require('./package.json').version")"
+          [ "$TAG" = "$VER" ] || { echo "tag $TAG != package.json $VER"; exit 1; }
+      - name: Smoke test package entry
+        run: |
+          node -e "import('./index.mjs').then(m=>{if(typeof m.default?.text?.charsReveal!=='function')process.exit(1);console.log('entry ok')})"
+          node skills/anime-fx-reference/scripts/search-effects.mjs --query "title reveal" --limit 1 >/dev/null && echo "cli ok"
+      - run: npm publish --provenance --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - name: Create GitHub Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh release create "$GITHUB_REF_NAME" --title "$GITHUB_REF_NAME" --generate-notes

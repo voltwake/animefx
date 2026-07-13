@@ -1,0 +1,6525 @@
+{
+  "schemaVersion": 1,
+  "effectCount": 88,
+  "effects": [
+    {
+      "id": "camera.shake",
+      "role": "text-emphasis",
+      "temporal": "once",
+      "weight": "light",
+      "mood": [
+        "震屏",
+        "冲击",
+        "衰减"
+      ],
+      "palette": "both",
+      "colorRoles": {},
+      "preconditions": [
+        "seed 必须明确传入"
+      ],
+      "antiPatterns": [],
+      "pairsWith": [
+        "sticker.stampPunch"
+      ],
+      "conflictsWith": [],
+      "params": {
+        "intensity": {
+          "type": "number",
+          "default": 12
+        },
+        "decay": {
+          "type": "number",
+          "default": 3
+        },
+        "seed": {
+          "type": "number",
+          "default": 7
+        },
+        "duration": {
+          "type": "number",
+          "default": 620
+        },
+        "at": {
+          "type": "number",
+          "default": 0
+        }
+      },
+      "example": "AnimeFX.camera.shake('#target', {})",
+      "preview": "previews/camera.shake.png",
+      "anchorCase": "案例/20-3.0·图文种草.html"
+    },
+    {
+      "id": "camera.zoomPan",
+      "role": "component",
+      "temporal": "once",
+      "weight": "medium",
+      "mood": [
+        "镜头",
+        "缩放",
+        "平移"
+      ],
+      "palette": "both",
+      "colorRoles": {},
+      "preconditions": [
+        "作用舞台必须有明确尺寸"
+      ],
+      "antiPatterns": [],
+      "pairsWith": [
+        "transition.zoomThrough"
+      ],
+      "conflictsWith": [],
+      "params": {
+        "keyframes": {
+          "type": "array",
+          "default": [
+            {
+              "at": 0,
+              "x": 0,
+              "y": 0,
+              "scale": 1
+            },
+            {
+              "at": 1,
+              "x": -4,
+              "y": 3,
+              "scale": 1.18
+            }
+          ]
+        },
+        "duration": {
+          "type": "number",
+          "default": 2600
+        },
+        "ease": {
+          "type": "string",
+          "default": "inOutSine"
+        },
+        "at": {
+          "type": "number",
+          "default": 0
+        }
+      },
+      "example": "AnimeFX.camera.zoomPan('#target', {})",
+      "preview": "previews/camera.zoomPan.png",
+      "anchorCase": "案例/19-3.0·App介绍.html"
+    },
+    {
+      "id": "canvas.flowField",
+      "role": "bg",
+      "temporal": "loop",
+      "weight": "medium",
+      "mood": [
+        "流场",
+        "丝带",
+        "声波"
+      ],
+      "palette": "both",
+      "colorRoles": {
+        "color": "accent",
+        "bg": "bg"
+      },
+      "preconditions": [
+        "canvas 必须设置 width/height 属性",
+        "渲染必须只由 driver.t 和 seed 决定"
+      ],
+      "antiPatterns": [
+        "禁止在渲染回调中使用 Math.random/Date.now"
+      ],
+      "pairsWith": [],
+      "conflictsWith": [],
+      "params": {
+        "lines": {
+          "type": "number",
+          "default": 9
+        },
+        "color": {
+          "type": "string",
+          "default": "rgba(229,37,29,.5)"
+        },
+        "lineWidth": {
+          "type": "number",
+          "default": 2
+        },
+        "amp": {
+          "type": "number",
+          "default": 60
+        },
+        "speed": {
+          "type": "number",
+          "default": 1
+        },
+        "period": {
+          "type": "number",
+          "default": 8000
+        },
+        "seed": {
+          "type": "number",
+          "default": 3
+        },
+        "bg": {
+          "type": "any",
+          "default": null
+        },
+        "at": {
+          "type": "number",
+          "default": 0
+        }
+      },
+      "example": "AnimeFX.canvas.flowField('#target', {})",
+      "preview": "previews/canvas.flowField.png",
+      "anchorCase": "案例/18-基础效果锚点.html"
+    },
+    {
+      "id": "canvas.particles",
+      "role": "bg",
+      "temporal": "loop",
+      "weight": "medium",
+      "mood": [
+        "粒子",
+        "星座",
+        "科技"
+      ],
+      "palette": "both",
+      "colorRoles": {
+        "color": "accent",
+        "linkColor": "muted",
+        "bg": "bg"
+      },
+      "preconditions": [
+        "canvas 必须设置 width/height 属性",
+        "渲染必须只由 driver.t 和 seed 决定"
+      ],
+      "antiPatterns": [
+        "禁止在渲染回调中使用 Math.random/Date.now"
+      ],
+      "pairsWith": [
+        "text.scrambleIn"
+      ],
+      "conflictsWith": [],
+      "params": {
+        "count": {
+          "type": "number",
+          "default": 80
+        },
+        "color": {
+          "type": "string",
+          "default": "#E5251D"
+        },
+        "radius": {
+          "type": "array",
+          "default": [
+            1,
+            5
+          ]
+        },
+        "drift": {
+          "type": "number",
+          "default": 46
+        },
+        "speed": {
+          "type": "number",
+          "default": 1
+        },
+        "seed": {
+          "type": "number",
+          "default": 1
+        },
+        "period": {
+          "type": "number",
+          "default": 6000
+        },
+        "loop": {
+          "type": "boolean",
+          "default": true
+        },
+        "link": {
+          "type": "boolean",
+          "default": false
+        },
+        "linkDist": {
+          "type": "number",
+          "default": 140
+        },
+        "linkColor": {
+          "type": "string",
+          "default": "rgba(229,37,29,.18)"
+        },
+        "bg": {
+          "type": "any",
+          "default": null
+        },
+        "at": {
+          "type": "number",
+          "default": 0
+        }
+      },
+      "example": "AnimeFX.canvas.particles('#target', {})",
+      "preview": "previews/canvas.particles.png",
+      "anchorCase": "案例/18-基础效果锚点.html"
+    },
+    {
+      "id": "card.kenBurns",
+      "role": "component",
+      "temporal": "full-duration",
+      "weight": "light",
+      "mood": [
+        "图片",
+        "运镜",
+        "呼吸"
+      ],
+      "palette": "both",
+      "colorRoles": {},
+      "preconditions": [
+        "目标应在 overflow:hidden 的图片框内"
+      ],
+      "antiPatterns": [
+        "不用于 UI 截图或需要精确读取的文字图"
+      ],
+      "pairsWith": [],
+      "conflictsWith": [],
+      "params": {
+        "scaleFrom": {
+          "type": "number",
+          "default": 1
+        },
+        "scaleTo": {
+          "type": "number",
+          "default": 1.12
+        },
+        "panX": {
+          "type": "number",
+          "default": 0
+        },
+        "panY": {
+          "type": "number",
+          "default": -14
+        },
+        "duration": {
+          "type": "number",
+          "default": 6000
+        },
+        "ease": {
+          "type": "string",
+          "default": "inOutSine"
+        },
+        "at": {
+          "type": "number",
+          "default": 0
+        },
+        "loop": {
+          "type": "number",
+          "default": 0
+        },
+        "alternate": {
+          "type": "boolean",
+          "default": false
+        }
+      },
+      "example": "AnimeFX.card.kenBurns('#target', {})",
+      "preview": "previews/card.kenBurns.png",
+      "anchorCase": "案例/05-数据·转场·图片.html"
+    },
+    {
+      "id": "chart.barGrow",
+      "role": "component",
+      "temporal": "once",
+      "weight": "medium",
+      "mood": [
+        "图表",
+        "排名",
+        "对比"
+      ],
+      "palette": "both",
+      "colorRoles": {},
+      "preconditions": [
+        "终值尺寸必须由 CSS 给定"
+      ],
+      "antiPatterns": [
+        "无数据语义的装饰条禁用"
+      ],
+      "pairsWith": [
+        "text.countUp"
+      ],
+      "conflictsWith": [],
+      "params": {
+        "axis": {
+          "type": "string",
+          "default": "x",
+          "enum": [
+            "x",
+            "y"
+          ]
+        },
+        "step": {
+          "type": "number",
+          "default": 120
+        },
+        "duration": {
+          "type": "number",
+          "default": 900
+        },
+        "ease": {
+          "type": "string",
+          "default": "outExpo"
+        },
+        "from": {
+          "type": "string",
+          "default": "first"
+        },
+        "at": {
+          "type": "number",
+          "default": 0
+        }
+      },
+      "example": "AnimeFX.chart.barGrow('#target', {})",
+      "preview": "previews/chart.barGrow.png",
+      "anchorCase": "案例/05-数据·转场·图片.html"
+    },
+    {
+      "id": "chart.donutDraw",
+      "role": "component",
+      "temporal": "once",
+      "weight": "medium",
+      "mood": [
+        "占比",
+        "环形",
+        "进度"
+      ],
+      "palette": "both",
+      "colorRoles": {},
+      "preconditions": [
+        "目标必须是带 stroke 的 circle/path"
+      ],
+      "antiPatterns": [
+        "必须与 countUp 同起同长"
+      ],
+      "pairsWith": [
+        "text.countUp"
+      ],
+      "conflictsWith": [],
+      "params": {
+        "percent": {
+          "type": "number",
+          "default": 75
+        },
+        "duration": {
+          "type": "number",
+          "default": 1200
+        },
+        "ease": {
+          "type": "string",
+          "default": "out(3)"
+        },
+        "at": {
+          "type": "number",
+          "default": 0
+        }
+      },
+      "example": "AnimeFX.chart.donutDraw('#target', {})",
+      "preview": "previews/chart.donutDraw.png",
+      "anchorCase": "案例/05-数据·转场·图片.html"
+    },
+    {
+      "id": "chart.lineDraw",
+      "role": "component",
+      "temporal": "once",
+      "weight": "medium",
+      "mood": [
+        "折线",
+        "趋势",
+        "数据点"
+      ],
+      "palette": "both",
+      "colorRoles": {
+        "color": "accent"
+      },
+      "preconditions": [],
+      "antiPatterns": [],
+      "pairsWith": [
+        "text.countUp"
+      ],
+      "conflictsWith": [],
+      "params": {
+        "points": {
+          "type": "array",
+          "default": [
+            [
+              8,
+              82
+            ],
+            [
+              28,
+              58
+            ],
+            [
+              48,
+              68
+            ],
+            [
+              68,
+              30
+            ],
+            [
+              92,
+              18
+            ]
+          ]
+        },
+        "area": {
+          "type": "boolean",
+          "default": true
+        },
+        "dotStep": {
+          "type": "number",
+          "default": 110
+        },
+        "color": {
+          "type": "string",
+          "default": "#536170"
+        },
+        "duration": {
+          "type": "number",
+          "default": 1200
+        },
+        "at": {
+          "type": "number",
+          "default": 0
+        }
+      },
+      "example": "AnimeFX.chart.lineDraw('#target', {})",
+      "preview": "previews/chart.lineDraw.png",
+      "anchorCase": "案例/19-3.0·App介绍.html"
+    },
+    {
+      "id": "chart.pictoCount",
+      "role": "component",
+      "temporal": "once",
+      "weight": "light",
+      "mood": [
+        "图标计数",
+        "比例",
+        "具象化"
+      ],
+      "palette": "both",
+      "colorRoles": {
+        "color": "accent",
+        "muted": "muted"
+      },
+      "preconditions": [],
+      "antiPatterns": [],
+      "pairsWith": [],
+      "conflictsWith": [],
+      "params": {
+        "total": {
+          "type": "number",
+          "default": 10
+        },
+        "value": {
+          "type": "number",
+          "default": 7
+        },
+        "icon": {
+          "type": "string",
+          "default": "●"
+        },
+        "color": {
+          "type": "string",
+          "default": "#536170"
+        },
+        "muted": {
+          "type": "string",
+          "default": "#c8cdd3"
+        },
+        "step": {
+          "type": "number",
+          "default": 70
+        },
+        "duration": {
+          "type": "number",
+          "default": 420
+        },
+        "at": {
+          "type": "number",
+          "default": 0
+        }
+      },
+      "example": "AnimeFX.chart.pictoCount('#target', {})",
+      "preview": "previews/chart.pictoCount.png",
+      "anchorCase": "案例/21-3.0·Gamma效果.html"
+    },
+    {
+      "id": "chart.progressStack",
+      "role": "component",
+      "temporal": "once",
+      "weight": "light",
+      "mood": [
+        "进度条",
+        "指标",
+        "依次填充"
+      ],
+      "palette": "both",
+      "colorRoles": {},
+      "preconditions": [
+        "条形终值由 values 提供"
+      ],
+      "antiPatterns": [],
+      "pairsWith": [
+        "text.countUp"
+      ],
+      "conflictsWith": [],
+      "params": {
+        "values": {
+          "type": "array",
+          "default": [
+            86,
+            72,
+            54
+          ]
+        },
+        "step": {
+          "type": "number",
+          "default": 160
+        },
+        "duration": {
+          "type": "number",
+          "default": 1100
+        },
+        "ease": {
+          "type": "string",
+          "default": "outExpo"
+        },
+        "at": {
+          "type": "number",
+          "default": 0
+        }
+      },
+      "example": "AnimeFX.chart.progressStack('#target', {})",
+      "preview": "previews/chart.progressStack.png",
+      "anchorCase": "案例/20-3.0·图文种草.html"
+    },
+    {
+      "id": "chart.rankRace",
+      "role": "component",
+      "temporal": "once",
+      "weight": "medium",
+      "mood": [
+        "排名",
+        "条形竞赛",
+        "关键帧"
+      ],
+      "palette": "both",
+      "colorRoles": {},
+      "preconditions": [
+        "frames 必须是数值二维数组"
+      ],
+      "antiPatterns": [],
+      "pairsWith": [],
+      "conflictsWith": [],
+      "params": {
+        "frames": {
+          "type": "array",
+          "default": [
+            [
+              82,
+              66,
+              48
+            ],
+            [
+              58,
+              92,
+              72
+            ],
+            [
+              74,
+              68,
+              96
+            ]
+          ]
+        },
+        "duration": {
+          "type": "number",
+          "default": 2400
+        },
+        "step": {
+          "type": "number",
+          "default": 800
+        },
+        "at": {
+          "type": "number",
+          "default": 0
+        }
+      },
+      "example": "AnimeFX.chart.rankRace('#target', {})",
+      "preview": "previews/chart.rankRace.png",
+      "anchorCase": "案例/20-3.0·图文种草.html"
+    },
+    {
+      "id": "explode.layers",
+      "role": "hero",
+      "temporal": "once",
+      "weight": "heavy",
+      "mood": [
+        "拆解",
+        "2.5D",
+        "技术标注"
+      ],
+      "palette": "both",
+      "colorRoles": {},
+      "preconditions": [
+        "舞台必须有明确宽高",
+        "子层必须使用 .afx-layer",
+        "层容器必须 overflow:visible"
+      ],
+      "antiPatterns": [
+        "一屏只能有一个 heavy 主视觉"
+      ],
+      "pairsWith": [],
+      "conflictsWith": [
+        "hero.*"
+      ],
+      "params": {
+        "layerSel": {
+          "type": "string",
+          "default": ".afx-layer"
+        },
+        "labelSel": {
+          "type": "string",
+          "default": ".afx-label"
+        },
+        "spread": {
+          "type": "number",
+          "default": 90
+        },
+        "perspective": {
+          "type": "number",
+          "default": 1500
+        },
+        "tiltX": {
+          "type": "number",
+          "default": 16
+        },
+        "tiltY": {
+          "type": "number",
+          "default": -24
+        },
+        "from": {
+          "type": "string",
+          "default": "first"
+        },
+        "step": {
+          "type": "number",
+          "default": 95
+        },
+        "duration": {
+          "type": "number",
+          "default": 1100
+        },
+        "ease": {
+          "type": "string",
+          "default": "outExpo"
+        },
+        "rise": {
+          "type": "number",
+          "default": 0
+        },
+        "center": {
+          "type": "boolean",
+          "default": true
+        },
+        "at": {
+          "type": "number",
+          "default": 0
+        },
+        "loop": {
+          "type": "number",
+          "default": 0
+        },
+        "alternate": {
+          "type": "boolean",
+          "default": false
+        }
+      },
+      "example": "AnimeFX.explode.layers('#target', {})",
+      "preview": "previews/explode.layers.png",
+      "anchorCase": "案例/02-爆炸图拆解.html"
+    },
+    {
+      "id": "grid.ripple",
+      "role": "bg",
+      "temporal": "loop",
+      "weight": "medium",
+      "mood": [
+        "点阵",
+        "涟漪",
+        "数据"
+      ],
+      "palette": "both",
+      "colorRoles": {
+        "colorFrom": "muted",
+        "colorTo": "accent"
+      },
+      "preconditions": [
+        "舞台必须有明确宽高",
+        "step × 中心到角格数必须大于 duration"
+      ],
+      "antiPatterns": [
+        "一屏只能有一个 heavy 主视觉",
+        "苹果玻璃套系禁用硬点阵"
+      ],
+      "pairsWith": [],
+      "conflictsWith": [],
+      "params": {
+        "cols": {
+          "type": "number",
+          "default": 16
+        },
+        "rows": {
+          "type": "number",
+          "default": 9
+        },
+        "step": {
+          "type": "number",
+          "default": 120
+        },
+        "duration": {
+          "type": "number",
+          "default": 580
+        },
+        "from": {
+          "type": "string",
+          "default": "center",
+          "enum": [
+            "first",
+            "center",
+            "last",
+            "edges"
+          ]
+        },
+        "at": {
+          "type": "number",
+          "default": 0
+        },
+        "gap": {
+          "type": "number",
+          "default": 14
+        },
+        "radius": {
+          "type": "number",
+          "default": 2
+        },
+        "colorFrom": {
+          "type": "string",
+          "default": "#EDEDED"
+        },
+        "colorTo": {
+          "type": "string",
+          "default": "#E5251D"
+        },
+        "scale": {
+          "type": "array",
+          "default": [
+            0.4,
+            1.2
+          ]
+        },
+        "opacity": {
+          "type": "array",
+          "default": [
+            0.18,
+            1
+          ]
+        },
+        "loop": {
+          "type": "number",
+          "default": 16
+        },
+        "alternate": {
+          "type": "boolean",
+          "default": true
+        },
+        "ease": {
+          "type": "string",
+          "default": "inOutSine"
+        }
+      },
+      "example": "AnimeFX.grid.ripple('#target', {})",
+      "preview": "previews/grid.ripple.png",
+      "anchorCase": "案例/18-基础效果锚点.html"
+    },
+    {
+      "id": "hero.converge",
+      "role": "hero",
+      "temporal": "loop",
+      "weight": "heavy",
+      "mood": [
+        "粒子",
+        "汇聚",
+        "聚焦"
+      ],
+      "palette": "both",
+      "colorRoles": {
+        "color": "accent",
+        "linkColor": "muted",
+        "bg": "bg"
+      },
+      "preconditions": [
+        "canvas 必须设置 width/height 属性",
+        "渲染必须只由 driver.t 和 seed 决定"
+      ],
+      "antiPatterns": [
+        "禁止在渲染回调中使用 Math.random/Date.now"
+      ],
+      "pairsWith": [],
+      "conflictsWith": [
+        "hero.*"
+      ],
+      "params": {
+        "count": {
+          "type": "number",
+          "default": 130
+        },
+        "color": {
+          "type": "string",
+          "default": "#E5251D"
+        },
+        "radius": {
+          "type": "array",
+          "default": [
+            1,
+            3.4
+          ]
+        },
+        "shape": {
+          "type": "string",
+          "default": "disc",
+          "enum": [
+            "disc",
+            "ring"
+          ]
+        },
+        "seed": {
+          "type": "number",
+          "default": 5
+        },
+        "period": {
+          "type": "number",
+          "default": 2600
+        },
+        "mode": {
+          "type": "string",
+          "default": "breathe",
+          "enum": [
+            "breathe",
+            "assemble",
+            "disperse"
+          ]
+        },
+        "ease": {
+          "type": "string",
+          "default": "inOutQuint"
+        },
+        "link": {
+          "type": "boolean",
+          "default": false
+        },
+        "linkDist": {
+          "type": "number",
+          "default": 64
+        },
+        "linkColor": {
+          "type": "string",
+          "default": "rgba(229,37,29,.28)"
+        },
+        "bg": {
+          "type": "any",
+          "default": null
+        },
+        "at": {
+          "type": "number",
+          "default": 0
+        }
+      },
+      "example": "AnimeFX.hero.converge('#target', {})",
+      "preview": "previews/hero.converge.png",
+      "anchorCase": "案例/18-基础效果锚点.html"
+    },
+    {
+      "id": "hero.glassReveal",
+      "role": "hero",
+      "temporal": "loop",
+      "weight": "heavy",
+      "mood": [
+        "液态玻璃",
+        "折射",
+        "封面"
+      ],
+      "palette": "both",
+      "colorRoles": {},
+      "preconditions": [
+        "舞台必须有明确宽高",
+        "target 不得 overflow:hidden",
+        "lens 宽/标题 bbox 宽必须在 0.35~0.6"
+      ],
+      "antiPatterns": [
+        "一屏只能有一个 heavy 主视觉",
+        "glitch/扫描线语言禁用",
+        "静态封面禁用 drift，必须用 sweep"
+      ],
+      "pairsWith": [
+        "shader.meshGradient"
+      ],
+      "conflictsWith": [
+        "hero.*"
+      ],
+      "params": {
+        "preset": {
+          "type": "string",
+          "default": "vivid",
+          "enum": [
+            "vivid",
+            "apple"
+          ]
+        },
+        "mode": {
+          "type": "string",
+          "default": "drift",
+          "enum": [
+            "drift",
+            "sweep"
+          ]
+        },
+        "shape": {
+          "type": "string",
+          "default": "rect",
+          "enum": [
+            "rect",
+            "circle"
+          ]
+        },
+        "lensW": {
+          "type": "any",
+          "default": null
+        },
+        "lensH": {
+          "type": "any",
+          "default": null
+        },
+        "radius": {
+          "type": "any",
+          "default": null
+        },
+        "mapSize": {
+          "type": "number",
+          "default": 512
+        },
+        "dispScale": {
+          "type": "any",
+          "default": null
+        },
+        "dispersion": {
+          "type": "any",
+          "default": null
+        },
+        "frost": {
+          "type": "any",
+          "default": null
+        },
+        "specular": {
+          "type": "any",
+          "default": null
+        },
+        "puck": {
+          "type": "boolean",
+          "default": true
+        },
+        "driftX": {
+          "type": "number",
+          "default": 0.3
+        },
+        "driftY": {
+          "type": "number",
+          "default": 0.16
+        },
+        "period": {
+          "type": "number",
+          "default": 8000
+        },
+        "loop": {
+          "type": "number",
+          "default": 0
+        },
+        "at": {
+          "type": "number",
+          "default": 0
+        }
+      },
+      "example": "AnimeFX.hero.glassReveal('#target', {})",
+      "preview": "previews/hero.glassReveal.png",
+      "anchorCase": "案例/13-Hero·玻璃标题.html"
+    },
+    {
+      "id": "hero.gridDetonate",
+      "role": "hero",
+      "temporal": "once",
+      "weight": "heavy",
+      "mood": [
+        "网格爆破",
+        "3D",
+        "封面"
+      ],
+      "palette": "both",
+      "colorRoles": {
+        "baseColor": "bg"
+      },
+      "preconditions": [
+        "舞台必须有明确宽高",
+        "background 必须是有效 CSS 背景"
+      ],
+      "antiPatterns": [
+        "一屏只能有一个 heavy 主视觉"
+      ],
+      "pairsWith": [],
+      "conflictsWith": [
+        "hero.*"
+      ],
+      "params": {
+        "cols": {
+          "type": "number",
+          "default": 6
+        },
+        "rows": {
+          "type": "number",
+          "default": 8
+        },
+        "background": {
+          "type": "any",
+          "default": null
+        },
+        "baseColor": {
+          "type": "string",
+          "default": "#111"
+        },
+        "perspective": {
+          "type": "number",
+          "default": 1200
+        },
+        "tiltX": {
+          "type": "number",
+          "default": 0
+        },
+        "tiltY": {
+          "type": "number",
+          "default": 0
+        },
+        "spreadXY": {
+          "type": "number",
+          "default": 90
+        },
+        "spreadZ": {
+          "type": "number",
+          "default": 420
+        },
+        "rotRange": {
+          "type": "number",
+          "default": 62
+        },
+        "from": {
+          "type": "string",
+          "default": "center"
+        },
+        "step": {
+          "type": "number",
+          "default": 22
+        },
+        "duration": {
+          "type": "number",
+          "default": 1500
+        },
+        "ease": {
+          "type": "string",
+          "default": "inOutQuint"
+        },
+        "mode": {
+          "type": "string",
+          "default": "breathe",
+          "enum": [
+            "breathe",
+            "detonate",
+            "assemble"
+          ]
+        },
+        "loop": {
+          "type": "number",
+          "default": 0
+        },
+        "seed": {
+          "type": "number",
+          "default": 7
+        },
+        "at": {
+          "type": "number",
+          "default": 0
+        },
+        "dimOnBlow": {
+          "type": "number",
+          "default": 0.92
+        }
+      },
+      "example": "AnimeFX.hero.gridDetonate('#target', {})",
+      "preview": "previews/hero.gridDetonate.png",
+      "anchorCase": "案例/06-主视觉·网格爆破.html"
+    },
+    {
+      "id": "hero.irisBloom",
+      "role": "hero",
+      "temporal": "once",
+      "weight": "heavy",
+      "mood": [
+        "光圈",
+        "快门",
+        "转场"
+      ],
+      "palette": "both",
+      "colorRoles": {
+        "baseColor": "bg",
+        "bladeColor": "accent",
+        "bladeAltColor": "ink"
+      },
+      "preconditions": [
+        "舞台必须有明确宽高"
+      ],
+      "antiPatterns": [
+        "一屏只能有一个 heavy 主视觉"
+      ],
+      "pairsWith": [],
+      "conflictsWith": [
+        "hero.*"
+      ],
+      "pairRole": "both",
+      "params": {
+        "blades": {
+          "type": "number",
+          "default": 12
+        },
+        "background": {
+          "type": "any",
+          "default": null
+        },
+        "baseColor": {
+          "type": "string",
+          "default": "#08090b"
+        },
+        "bladeColor": {
+          "type": "string",
+          "default": "#E5251D"
+        },
+        "bladeAltColor": {
+          "type": "string",
+          "default": "rgba(255,255,255,.9)"
+        },
+        "center": {
+          "type": "array",
+          "default": [
+            0.5,
+            0.5
+          ]
+        },
+        "startAngle": {
+          "type": "number",
+          "default": -90
+        },
+        "twist": {
+          "type": "number",
+          "default": 22
+        },
+        "scaleFrom": {
+          "type": "number",
+          "default": 1.14
+        },
+        "scaleTo": {
+          "type": "number",
+          "default": 0.05
+        },
+        "step": {
+          "type": "number",
+          "default": 34
+        },
+        "duration": {
+          "type": "number",
+          "default": 980
+        },
+        "ease": {
+          "type": "string",
+          "default": "inOutQuint"
+        },
+        "mode": {
+          "type": "string",
+          "default": "reveal",
+          "enum": [
+            "reveal",
+            "cover",
+            "breathe"
+          ]
+        },
+        "from": {
+          "type": "string",
+          "default": "center"
+        },
+        "at": {
+          "type": "number",
+          "default": 0
+        }
+      },
+      "example": "AnimeFX.hero.irisBloom('#target', {})",
+      "preview": "previews/hero.irisBloom.png",
+      "anchorCase": "案例/07-主视觉·光圈绽放.html"
+    },
+    {
+      "id": "hero.matrixPulse",
+      "role": "hero",
+      "temporal": "loop",
+      "weight": "heavy",
+      "mood": [
+        "点阵",
+        "信号",
+        "系统"
+      ],
+      "palette": "both",
+      "colorRoles": {
+        "bg": "bg",
+        "color": "ink",
+        "accent": "accent",
+        "muted": "muted"
+      },
+      "preconditions": [
+        "舞台必须有明确宽高"
+      ],
+      "antiPatterns": [
+        "一屏只能有一个 heavy 主视觉"
+      ],
+      "pairsWith": [],
+      "conflictsWith": [
+        "hero.*"
+      ],
+      "params": {
+        "cols": {
+          "type": "number",
+          "default": 11
+        },
+        "rows": {
+          "type": "number",
+          "default": 7
+        },
+        "gap": {
+          "type": "number",
+          "default": 10
+        },
+        "dot": {
+          "type": "number",
+          "default": 22
+        },
+        "radius": {
+          "type": "number",
+          "default": 4
+        },
+        "roundRadius": {
+          "type": "string",
+          "default": "50%"
+        },
+        "bg": {
+          "type": "string",
+          "default": "#08090b"
+        },
+        "color": {
+          "type": "string",
+          "default": "#f4f3f0"
+        },
+        "accent": {
+          "type": "string",
+          "default": "#E5251D"
+        },
+        "muted": {
+          "type": "string",
+          "default": "#3b3d42"
+        },
+        "from": {
+          "type": "string",
+          "default": "center"
+        },
+        "axis": {
+          "type": "string",
+          "default": "x",
+          "enum": [
+            "x",
+            "y"
+          ]
+        },
+        "step": {
+          "type": "number",
+          "default": 32
+        },
+        "period": {
+          "type": "number",
+          "default": 4200
+        },
+        "ease": {
+          "type": "string",
+          "default": "inOut(3)"
+        },
+        "mode": {
+          "type": "string",
+          "default": "breathe",
+          "enum": [
+            "breathe",
+            "reveal",
+            "disperse"
+          ]
+        },
+        "loop": {
+          "type": "boolean",
+          "default": true
+        },
+        "at": {
+          "type": "number",
+          "default": 0
+        }
+      },
+      "example": "AnimeFX.hero.matrixPulse('#target', {})",
+      "preview": "previews/hero.matrixPulse.png",
+      "anchorCase": "案例/08-主视觉·点阵脉冲.html"
+    },
+    {
+      "id": "hero.slatReveal",
+      "role": "hero",
+      "temporal": "once",
+      "weight": "heavy",
+      "mood": [
+        "条板",
+        "揭幕",
+        "转场"
+      ],
+      "palette": "both",
+      "colorRoles": {
+        "baseColor": "bg"
+      },
+      "preconditions": [
+        "舞台必须有明确宽高"
+      ],
+      "antiPatterns": [
+        "一屏只能有一个 heavy 主视觉"
+      ],
+      "pairsWith": [],
+      "conflictsWith": [
+        "hero.*"
+      ],
+      "pairRole": "both",
+      "params": {
+        "count": {
+          "type": "number",
+          "default": 7
+        },
+        "orientation": {
+          "type": "string",
+          "default": "vertical",
+          "enum": [
+            "vertical",
+            "horizontal"
+          ]
+        },
+        "background": {
+          "type": "any",
+          "default": null
+        },
+        "baseColor": {
+          "type": "string",
+          "default": "#111"
+        },
+        "from": {
+          "type": "string",
+          "default": "first"
+        },
+        "step": {
+          "type": "number",
+          "default": 90
+        },
+        "duration": {
+          "type": "number",
+          "default": 760
+        },
+        "ease": {
+          "type": "string",
+          "default": "inOutQuint"
+        },
+        "mode": {
+          "type": "string",
+          "default": "reveal",
+          "enum": [
+            "reveal",
+            "cover",
+            "breathe"
+          ]
+        },
+        "at": {
+          "type": "number",
+          "default": 0
+        }
+      },
+      "example": "AnimeFX.hero.slatReveal('#target', {})",
+      "preview": "previews/hero.slatReveal.png",
+      "anchorCase": "案例/18-基础效果锚点.html"
+    },
+    {
+      "id": "hero.tunnel",
+      "role": "hero",
+      "temporal": "loop",
+      "weight": "heavy",
+      "mood": [
+        "隧道",
+        "缩放",
+        "穿越"
+      ],
+      "palette": "both",
+      "colorRoles": {
+        "color": "ink",
+        "accent": "accent",
+        "bg": "bg"
+      },
+      "preconditions": [
+        "舞台必须有明确宽高"
+      ],
+      "antiPatterns": [
+        "一屏只能有一个 heavy 主视觉"
+      ],
+      "pairsWith": [],
+      "conflictsWith": [
+        "hero.*"
+      ],
+      "params": {
+        "rings": {
+          "type": "number",
+          "default": 9
+        },
+        "base": {
+          "type": "number",
+          "default": 0.18
+        },
+        "maxScale": {
+          "type": "number",
+          "default": 7
+        },
+        "color": {
+          "type": "string",
+          "default": "rgba(255,255,255,.85)"
+        },
+        "accent": {
+          "type": "string",
+          "default": "#E5251D"
+        },
+        "shape": {
+          "type": "string",
+          "default": "rect",
+          "enum": [
+            "rect",
+            "circle"
+          ]
+        },
+        "thickness": {
+          "type": "number",
+          "default": 2
+        },
+        "period": {
+          "type": "number",
+          "default": 3600
+        },
+        "spin": {
+          "type": "number",
+          "default": 18
+        },
+        "seed": {
+          "type": "number",
+          "default": 7
+        },
+        "bg": {
+          "type": "any",
+          "default": null
+        },
+        "at": {
+          "type": "number",
+          "default": 0
+        }
+      },
+      "example": "AnimeFX.hero.tunnel('#target', {})",
+      "preview": "previews/hero.tunnel.png",
+      "anchorCase": "案例/18-基础效果锚点.html"
+    },
+    {
+      "id": "image.compareWipe",
+      "role": "component",
+      "temporal": "once",
+      "weight": "light",
+      "mood": [
+        "图片",
+        "前后对比",
+        "改造"
+      ],
+      "palette": "both",
+      "colorRoles": {},
+      "preconditions": [
+        "容器前两个子元素分别为 before/after"
+      ],
+      "antiPatterns": [],
+      "pairsWith": [],
+      "conflictsWith": [],
+      "params": {
+        "direction": {
+          "type": "string",
+          "default": "horizontal"
+        },
+        "handle": {
+          "type": "boolean",
+          "default": true
+        },
+        "percent": {
+          "type": "number",
+          "default": 72
+        },
+        "duration": {
+          "type": "number",
+          "default": 1400
+        },
+        "ease": {
+          "type": "string",
+          "default": "inOutQuad"
+        },
+        "at": {
+          "type": "number",
+          "default": 0
+        }
+      },
+      "example": "AnimeFX.image.compareWipe('#target', {})",
+      "preview": "previews/image.compareWipe.png",
+      "anchorCase": "案例/20-3.0·图文种草.html"
+    },
+    {
+      "id": "image.duotoneShift",
+      "role": "component",
+      "temporal": "once",
+      "weight": "light",
+      "mood": [
+        "图片",
+        "双色调",
+        "全彩"
+      ],
+      "palette": "both",
+      "colorRoles": {
+        "colorA": "ink",
+        "colorB": "accent"
+      },
+      "preconditions": [],
+      "antiPatterns": [],
+      "pairsWith": [],
+      "conflictsWith": [],
+      "params": {
+        "colorA": {
+          "type": "string",
+          "default": "#1a1d22"
+        },
+        "colorB": {
+          "type": "string",
+          "default": "#aeb5bd"
+        },
+        "duration": {
+          "type": "number",
+          "default": 1200
+        },
+        "ease": {
+          "type": "string",
+          "default": "inOutQuad"
+        },
+        "at": {
+          "type": "number",
+          "default": 0
+        }
+      },
+      "example": "AnimeFX.image.duotoneShift('#target', {})",
+      "preview": "previews/image.duotoneShift.png",
+      "anchorCase": "案例/21-3.0·Gamma效果.html"
+    },
+    {
+      "id": "image.focusPull",
+      "role": "component",
+      "temporal": "once",
+      "weight": "light",
+      "mood": [
+        "图片",
+        "对焦",
+        "模糊"
+      ],
+      "palette": "both",
+      "colorRoles": {},
+      "preconditions": [],
+      "antiPatterns": [
+        "大面积高 blur 在低端设备需降级"
+      ],
+      "pairsWith": [],
+      "conflictsWith": [],
+      "params": {
+        "blur": {
+          "type": "number",
+          "default": 18
+        },
+        "direction": {
+          "type": "string",
+          "default": "in"
+        },
+        "duration": {
+          "type": "number",
+          "default": 1000
+        },
+        "ease": {
+          "type": "string",
+          "default": "outQuart"
+        },
+        "at": {
+          "type": "number",
+          "default": 0
+        }
+      },
+      "example": "AnimeFX.image.focusPull('#target', {})",
+      "preview": "previews/image.focusPull.png",
+      "anchorCase": "案例/20-3.0·图文种草.html"
+    },
+    {
+      "id": "image.maskReveal",
+      "role": "component",
+      "temporal": "once",
+      "weight": "light",
+      "mood": [
+        "图片",
+        "遮罩",
+        "揭示"
+      ],
+      "palette": "both",
+      "colorRoles": {},
+      "preconditions": [
+        "目标必须是有明确尺寸的图片容器"
+      ],
+      "antiPatterns": [],
+      "pairsWith": [],
+      "conflictsWith": [],
+      "params": {
+        "mode": {
+          "type": "string",
+          "default": "circle"
+        },
+        "from": {
+          "type": "string",
+          "default": "center"
+        },
+        "duration": {
+          "type": "number",
+          "default": 1100
+        },
+        "ease": {
+          "type": "string",
+          "default": "outExpo"
+        },
+        "at": {
+          "type": "number",
+          "default": 0
+        }
+      },
+      "example": "AnimeFX.image.maskReveal('#target', {})",
+      "preview": "previews/image.maskReveal.png",
+      "anchorCase": "案例/19-3.0·App介绍.html"
+    },
+    {
+      "id": "image.parallaxLayers",
+      "role": "hero",
+      "temporal": "loop",
+      "weight": "medium",
+      "mood": [
+        "图片",
+        "分层",
+        "视差"
+      ],
+      "palette": "both",
+      "colorRoles": {},
+      "preconditions": [
+        "子层必须声明 data-depth"
+      ],
+      "antiPatterns": [
+        "不与另一个 hero 叠加"
+      ],
+      "pairsWith": [],
+      "conflictsWith": [
+        "hero.*"
+      ],
+      "params": {
+        "period": {
+          "type": "number",
+          "default": 5200
+        },
+        "amplitude": {
+          "type": "number",
+          "default": 28
+        },
+        "seed": {
+          "type": "number",
+          "default": 7
+        },
+        "ease": {
+          "type": "string",
+          "default": "inOutSine"
+        },
+        "loop": {
+          "type": "boolean",
+          "default": true
+        },
+        "at": {
+          "type": "number",
+          "default": 0
+        }
+      },
+      "example": "AnimeFX.image.parallaxLayers('#target', {})",
+      "preview": "previews/image.parallaxLayers.png",
+      "anchorCase": "案例/19-3.0·App介绍.html"
+    },
+    {
+      "id": "image.stackShuffle",
+      "role": "component",
+      "temporal": "once",
+      "weight": "medium",
+      "mood": [
+        "照片",
+        "拍立得",
+        "甩牌"
+      ],
+      "palette": "both",
+      "colorRoles": {},
+      "preconditions": [
+        "目标选择器至少命中两张堆叠图片"
+      ],
+      "antiPatterns": [],
+      "pairsWith": [],
+      "conflictsWith": [],
+      "params": {
+        "count": {
+          "type": "number",
+          "default": 4
+        },
+        "rotateSpread": {
+          "type": "number",
+          "default": 14
+        },
+        "step": {
+          "type": "number",
+          "default": 120
+        },
+        "distance": {
+          "type": "number",
+          "default": 90
+        },
+        "duration": {
+          "type": "number",
+          "default": 900
+        },
+        "ease": {
+          "type": "string",
+          "default": "outExpo"
+        },
+        "at": {
+          "type": "number",
+          "default": 0
+        }
+      },
+      "example": "AnimeFX.image.stackShuffle('#target', {})",
+      "preview": "previews/image.stackShuffle.png",
+      "anchorCase": "案例/20-3.0·图文种草.html"
+    },
+    {
+      "id": "shader.colorPanels",
+      "role": "bg",
+      "temporal": "loop",
+      "weight": "medium",
+      "mood": [
+        "色板",
+        "平面",
+        "扫过"
+      ],
+      "palette": "both",
+      "colorRoles": {
+        "colors": "palette",
+        "colorBack": "bg"
+      },
+      "preconditions": [
+        "目标必须有明确宽高",
+        "单页 WebGL context 总数不得超过 8"
+      ],
+      "antiPatterns": [
+        "不使用时必须 dispose",
+        "不要与另一个 heavy hero 叠加",
+        "单页常驻 shader 建议不超过 1 个"
+      ],
+      "pairsWith": [],
+      "conflictsWith": [
+        "hero.*"
+      ],
+      "params": {
+        "fit": {
+          "type": "string",
+          "default": "contain"
+        },
+        "scale": {
+          "type": "number",
+          "default": 0.8
+        },
+        "rotation": {
+          "type": "number",
+          "default": 0
+        },
+        "offsetX": {
+          "type": "number",
+          "default": 0
+        },
+        "offsetY": {
+          "type": "number",
+          "default": 0
+        },
+        "originX": {
+          "type": "number",
+          "default": 0.5
+        },
+        "originY": {
+          "type": "number",
+          "default": 0.5
+        },
+        "worldWidth": {
+          "type": "number",
+          "default": 0
+        },
+        "worldHeight": {
+          "type": "number",
+          "default": 0
+        },
+        "speed": {
+          "type": "number",
+          "default": 0.5
+        },
+        "frame": {
+          "type": "number",
+          "default": 0
+        },
+        "colors": {
+          "type": "array",
+          "default": [
+            "#76929C",
+            "#A89B82",
+            "#A89B82",
+            "#AFC6CF",
+            "#CFC3AC",
+            "#CFC3AC",
+            "#F0EBE0"
+          ]
+        },
+        "colorBack": {
+          "type": "string",
+          "default": "#1B2127"
+        },
+        "angle1": {
+          "type": "number",
+          "default": 0
+        },
+        "angle2": {
+          "type": "number",
+          "default": 0
+        },
+        "length": {
+          "type": "number",
+          "default": 1.1
+        },
+        "edges": {
+          "type": "boolean",
+          "default": false
+        },
+        "blur": {
+          "type": "number",
+          "default": 0
+        },
+        "fadeIn": {
+          "type": "number",
+          "default": 1
+        },
+        "fadeOut": {
+          "type": "number",
+          "default": 0.3
+        },
+        "gradient": {
+          "type": "number",
+          "default": 0
+        },
+        "density": {
+          "type": "number",
+          "default": 3
+        }
+      },
+      "preview": "previews/shader.colorPanels.png",
+      "example": "AnimeFX.shader.colorPanels('#bg', AnimeFX.shader.defaults('colorPanels'))",
+      "anchorCase": "案例/15-Shader·30风格总览.html"
+    },
+    {
+      "id": "shader.dithering",
+      "role": "bg",
+      "temporal": "loop",
+      "weight": "medium",
+      "mood": [
+        "抖动网点",
+        "像素"
+      ],
+      "palette": "both",
+      "colorRoles": {
+        "colorBack": "bg",
+        "colorFront": "accent"
+      },
+      "preconditions": [
+        "目标必须有明确宽高",
+        "单页 WebGL context 总数不得超过 8"
+      ],
+      "antiPatterns": [
+        "不使用时必须 dispose",
+        "不要与另一个 heavy hero 叠加",
+        "单页常驻 shader 建议不超过 1 个"
+      ],
+      "pairsWith": [],
+      "conflictsWith": [
+        "hero.*"
+      ],
+      "params": {
+        "fit": {
+          "type": "string",
+          "default": "none"
+        },
+        "scale": {
+          "type": "number",
+          "default": 0.6
+        },
+        "rotation": {
+          "type": "number",
+          "default": 0
+        },
+        "offsetX": {
+          "type": "number",
+          "default": 0
+        },
+        "offsetY": {
+          "type": "number",
+          "default": 0
+        },
+        "originX": {
+          "type": "number",
+          "default": 0.5
+        },
+        "originY": {
+          "type": "number",
+          "default": 0.5
+        },
+        "worldWidth": {
+          "type": "number",
+          "default": 0
+        },
+        "worldHeight": {
+          "type": "number",
+          "default": 0
+        },
+        "speed": {
+          "type": "number",
+          "default": 0.5
+        },
+        "frame": {
+          "type": "number",
+          "default": 0
+        },
+        "colorBack": {
+          "type": "string",
+          "default": "#1B2127"
+        },
+        "colorFront": {
+          "type": "string",
+          "default": "#F0EBE0"
+        },
+        "shape": {
+          "type": "string",
+          "default": "sphere"
+        },
+        "type": {
+          "type": "string",
+          "default": "4x4"
+        },
+        "size": {
+          "type": "number",
+          "default": 2
+        }
+      },
+      "preview": "previews/shader.dithering.png",
+      "example": "AnimeFX.shader.dithering('#bg', AnimeFX.shader.defaults('dithering'))",
+      "anchorCase": "案例/15-Shader·30风格总览.html"
+    },
+    {
+      "id": "shader.dotOrbit",
+      "role": "component",
+      "temporal": "loop",
+      "weight": "medium",
+      "mood": [
+        "轨道",
+        "点阵"
+      ],
+      "palette": "both",
+      "colorRoles": {
+        "colorBack": "bg",
+        "colors": "palette",
+        "stepsPerColor": "accent"
+      },
+      "preconditions": [
+        "目标必须有明确宽高",
+        "单页 WebGL context 总数不得超过 8"
+      ],
+      "antiPatterns": [
+        "不使用时必须 dispose",
+        "不要与另一个 heavy hero 叠加",
+        "单页常驻 shader 建议不超过 1 个"
+      ],
+      "pairsWith": [],
+      "conflictsWith": [
+        "hero.*"
+      ],
+      "params": {
+        "fit": {
+          "type": "string",
+          "default": "none"
+        },
+        "scale": {
+          "type": "number",
+          "default": 1
+        },
+        "rotation": {
+          "type": "number",
+          "default": 0
+        },
+        "offsetX": {
+          "type": "number",
+          "default": 0
+        },
+        "offsetY": {
+          "type": "number",
+          "default": 0
+        },
+        "originX": {
+          "type": "number",
+          "default": 0.5
+        },
+        "originY": {
+          "type": "number",
+          "default": 0.5
+        },
+        "worldWidth": {
+          "type": "number",
+          "default": 0
+        },
+        "worldHeight": {
+          "type": "number",
+          "default": 0
+        },
+        "speed": {
+          "type": "number",
+          "default": 0.5
+        },
+        "frame": {
+          "type": "number",
+          "default": 0
+        },
+        "colorBack": {
+          "type": "string",
+          "default": "#1B2127"
+        },
+        "colors": {
+          "type": "array",
+          "default": [
+            "#76929C",
+            "#A89B82",
+            "#AFC6CF",
+            "#CFC3AC",
+            "#F0EBE0"
+          ]
+        },
+        "size": {
+          "type": "number",
+          "default": 1
+        },
+        "sizeRange": {
+          "type": "number",
+          "default": 0
+        },
+        "spreading": {
+          "type": "number",
+          "default": 1
+        },
+        "stepsPerColor": {
+          "type": "number",
+          "default": 4
+        }
+      },
+      "preview": "previews/shader.dotOrbit.png",
+      "example": "AnimeFX.shader.dotOrbit('#bg', AnimeFX.shader.defaults('dotOrbit'))",
+      "anchorCase": "案例/15-Shader·30风格总览.html"
+    },
+    {
+      "id": "shader.gemSmoke",
+      "role": "component",
+      "temporal": "loop",
+      "weight": "medium",
+      "mood": [
+        "宝石",
+        "烟雾"
+      ],
+      "palette": "both",
+      "colorRoles": {
+        "colorBack": "bg",
+        "colorInner": "accent",
+        "colors": "palette"
+      },
+      "preconditions": [
+        "目标必须有明确宽高",
+        "单页 WebGL context 总数不得超过 8",
+        "image 必须是可访问 URL/Blob/图像元素"
+      ],
+      "antiPatterns": [
+        "不使用时必须 dispose",
+        "不要与另一个 heavy hero 叠加",
+        "单页常驻 shader 建议不超过 1 个"
+      ],
+      "pairsWith": [],
+      "conflictsWith": [
+        "hero.*"
+      ],
+      "params": {
+        "fit": {
+          "type": "string",
+          "default": "contain"
+        },
+        "scale": {
+          "type": "number",
+          "default": 0.6
+        },
+        "rotation": {
+          "type": "number",
+          "default": 0
+        },
+        "offsetX": {
+          "type": "number",
+          "default": 0
+        },
+        "offsetY": {
+          "type": "number",
+          "default": 0
+        },
+        "originX": {
+          "type": "number",
+          "default": 0.5
+        },
+        "originY": {
+          "type": "number",
+          "default": 0.5
+        },
+        "worldWidth": {
+          "type": "number",
+          "default": 0
+        },
+        "worldHeight": {
+          "type": "number",
+          "default": 0
+        },
+        "speed": {
+          "type": "number",
+          "default": 0.5
+        },
+        "frame": {
+          "type": "number",
+          "default": 0
+        },
+        "colorBack": {
+          "type": "string",
+          "default": "#1B2127"
+        },
+        "colorInner": {
+          "type": "string",
+          "default": "#CFC3AC"
+        },
+        "colors": {
+          "type": "array",
+          "default": [
+            "#76929C",
+            "#F0EBE0"
+          ]
+        },
+        "outerGlow": {
+          "type": "number",
+          "default": 0.55
+        },
+        "innerGlow": {
+          "type": "number",
+          "default": 1
+        },
+        "innerDistortion": {
+          "type": "number",
+          "default": 0.8
+        },
+        "outerDistortion": {
+          "type": "number",
+          "default": 0.6
+        },
+        "offset": {
+          "type": "number",
+          "default": 0
+        },
+        "angle": {
+          "type": "number",
+          "default": 0
+        },
+        "size": {
+          "type": "number",
+          "default": 0.8
+        },
+        "shape": {
+          "type": "string",
+          "default": "diamond"
+        }
+      },
+      "preview": "previews/shader.gemSmoke.png",
+      "example": "AnimeFX.shader.gemSmoke('#bg', AnimeFX.shader.defaults('gemSmoke'))",
+      "anchorCase": "案例/15-Shader·30风格总览.html"
+    },
+    {
+      "id": "shader.godRays",
+      "role": "component",
+      "temporal": "loop",
+      "weight": "medium",
+      "mood": [
+        "体积光",
+        "神圣"
+      ],
+      "palette": "both",
+      "colorRoles": {
+        "colorBack": "bg",
+        "colorBloom": "accent",
+        "colors": "palette"
+      },
+      "preconditions": [
+        "目标必须有明确宽高",
+        "单页 WebGL context 总数不得超过 8"
+      ],
+      "antiPatterns": [
+        "不使用时必须 dispose",
+        "不要与另一个 heavy hero 叠加",
+        "单页常驻 shader 建议不超过 1 个"
+      ],
+      "pairsWith": [],
+      "conflictsWith": [
+        "hero.*"
+      ],
+      "params": {
+        "fit": {
+          "type": "string",
+          "default": "contain"
+        },
+        "scale": {
+          "type": "number",
+          "default": 1
+        },
+        "rotation": {
+          "type": "number",
+          "default": 0
+        },
+        "offsetX": {
+          "type": "number",
+          "default": 0
+        },
+        "offsetY": {
+          "type": "number",
+          "default": -0.55
+        },
+        "originX": {
+          "type": "number",
+          "default": 0.5
+        },
+        "originY": {
+          "type": "number",
+          "default": 0.5
+        },
+        "worldWidth": {
+          "type": "number",
+          "default": 0
+        },
+        "worldHeight": {
+          "type": "number",
+          "default": 0
+        },
+        "colorBack": {
+          "type": "string",
+          "default": "#1B2127"
+        },
+        "colorBloom": {
+          "type": "string",
+          "default": "#76929C"
+        },
+        "colors": {
+          "type": "array",
+          "default": [
+            "#76929C6e",
+            "#A89B82f0",
+            "#CFC3AC",
+            "#F0EBE0"
+          ]
+        },
+        "density": {
+          "type": "number",
+          "default": 0.3
+        },
+        "spotty": {
+          "type": "number",
+          "default": 0.3
+        },
+        "midIntensity": {
+          "type": "number",
+          "default": 0.4
+        },
+        "midSize": {
+          "type": "number",
+          "default": 0.2
+        },
+        "intensity": {
+          "type": "number",
+          "default": 0.8
+        },
+        "bloom": {
+          "type": "number",
+          "default": 0.4
+        },
+        "speed": {
+          "type": "number",
+          "default": 0.5
+        },
+        "frame": {
+          "type": "number",
+          "default": 0
+        }
+      },
+      "preview": "previews/shader.godRays.png",
+      "example": "AnimeFX.shader.godRays('#bg', AnimeFX.shader.defaults('godRays'))",
+      "anchorCase": "案例/15-Shader·30风格总览.html"
+    },
+    {
+      "id": "shader.grainGradient",
+      "role": "bg",
+      "temporal": "loop",
+      "weight": "medium",
+      "mood": [
+        "颗粒",
+        "渐变"
+      ],
+      "palette": "both",
+      "colorRoles": {
+        "colorBack": "bg",
+        "colors": "palette"
+      },
+      "preconditions": [
+        "目标必须有明确宽高",
+        "单页 WebGL context 总数不得超过 8"
+      ],
+      "antiPatterns": [
+        "不使用时必须 dispose",
+        "不要与另一个 heavy hero 叠加",
+        "单页常驻 shader 建议不超过 1 个"
+      ],
+      "pairsWith": [],
+      "conflictsWith": [
+        "hero.*"
+      ],
+      "params": {
+        "fit": {
+          "type": "string",
+          "default": "contain"
+        },
+        "scale": {
+          "type": "number",
+          "default": 1
+        },
+        "rotation": {
+          "type": "number",
+          "default": 0
+        },
+        "offsetX": {
+          "type": "number",
+          "default": 0
+        },
+        "offsetY": {
+          "type": "number",
+          "default": 0
+        },
+        "originX": {
+          "type": "number",
+          "default": 0.5
+        },
+        "originY": {
+          "type": "number",
+          "default": 0.5
+        },
+        "worldWidth": {
+          "type": "number",
+          "default": 0
+        },
+        "worldHeight": {
+          "type": "number",
+          "default": 0
+        },
+        "speed": {
+          "type": "number",
+          "default": 0.5
+        },
+        "frame": {
+          "type": "number",
+          "default": 0
+        },
+        "colorBack": {
+          "type": "string",
+          "default": "#1B2127"
+        },
+        "colors": {
+          "type": "array",
+          "default": [
+            "#76929C",
+            "#A89B82",
+            "#CFC3AC",
+            "#F0EBE0"
+          ]
+        },
+        "softness": {
+          "type": "number",
+          "default": 0.5
+        },
+        "intensity": {
+          "type": "number",
+          "default": 0.5
+        },
+        "noise": {
+          "type": "number",
+          "default": 0.25
+        },
+        "shape": {
+          "type": "string",
+          "default": "corners"
+        }
+      },
+      "preview": "previews/shader.grainGradient.png",
+      "example": "AnimeFX.shader.grainGradient('#bg', AnimeFX.shader.defaults('grainGradient'))",
+      "anchorCase": "案例/15-Shader·30风格总览.html"
+    },
+    {
+      "id": "shader.heatmap",
+      "role": "bg",
+      "temporal": "loop",
+      "weight": "medium",
+      "mood": [
+        "热力",
+        "数据"
+      ],
+      "palette": "both",
+      "colorRoles": {
+        "colorBack": "bg",
+        "colors": "palette"
+      },
+      "preconditions": [
+        "目标必须有明确宽高",
+        "单页 WebGL context 总数不得超过 8",
+        "image 必须是可访问 URL/Blob/图像元素"
+      ],
+      "antiPatterns": [
+        "不使用时必须 dispose",
+        "不要与另一个 heavy hero 叠加",
+        "单页常驻 shader 建议不超过 1 个"
+      ],
+      "pairsWith": [],
+      "conflictsWith": [
+        "hero.*"
+      ],
+      "params": {
+        "fit": {
+          "type": "string",
+          "default": "contain"
+        },
+        "scale": {
+          "type": "number",
+          "default": 0.75
+        },
+        "rotation": {
+          "type": "number",
+          "default": 0
+        },
+        "offsetX": {
+          "type": "number",
+          "default": 0
+        },
+        "offsetY": {
+          "type": "number",
+          "default": 0
+        },
+        "originX": {
+          "type": "number",
+          "default": 0.5
+        },
+        "originY": {
+          "type": "number",
+          "default": 0.5
+        },
+        "worldWidth": {
+          "type": "number",
+          "default": 0
+        },
+        "worldHeight": {
+          "type": "number",
+          "default": 0
+        },
+        "speed": {
+          "type": "number",
+          "default": 0.5
+        },
+        "frame": {
+          "type": "number",
+          "default": 0
+        },
+        "contour": {
+          "type": "number",
+          "default": 0.5
+        },
+        "angle": {
+          "type": "number",
+          "default": 0
+        },
+        "noise": {
+          "type": "number",
+          "default": 0
+        },
+        "innerGlow": {
+          "type": "number",
+          "default": 0.5
+        },
+        "outerGlow": {
+          "type": "number",
+          "default": 0.5
+        },
+        "colorBack": {
+          "type": "string",
+          "default": "#1B2127"
+        },
+        "colors": {
+          "type": "array",
+          "default": [
+            "#76929C",
+            "#A89B82",
+            "#A89B82",
+            "#AFC6CF",
+            "#CFC3AC",
+            "#CFC3AC",
+            "#F0EBE0"
+          ]
+        }
+      },
+      "preview": "previews/shader.heatmap.png",
+      "example": "AnimeFX.shader.heatmap('#bg', AnimeFX.shader.defaults('heatmap'))",
+      "anchorCase": "案例/15-Shader·30风格总览.html"
+    },
+    {
+      "id": "shader.liquidMetal",
+      "role": "component",
+      "temporal": "loop",
+      "weight": "medium",
+      "mood": [
+        "液态金属",
+        "高光"
+      ],
+      "palette": "both",
+      "colorRoles": {
+        "colorBack": "bg",
+        "colorTint": "accent"
+      },
+      "preconditions": [
+        "目标必须有明确宽高",
+        "单页 WebGL context 总数不得超过 8",
+        "image 必须是可访问 URL/Blob/图像元素"
+      ],
+      "antiPatterns": [
+        "不使用时必须 dispose",
+        "不要与另一个 heavy hero 叠加",
+        "单页常驻 shader 建议不超过 1 个"
+      ],
+      "pairsWith": [],
+      "conflictsWith": [
+        "hero.*"
+      ],
+      "params": {
+        "fit": {
+          "type": "string",
+          "default": "contain"
+        },
+        "scale": {
+          "type": "number",
+          "default": 0.6
+        },
+        "rotation": {
+          "type": "number",
+          "default": 0
+        },
+        "offsetX": {
+          "type": "number",
+          "default": 0
+        },
+        "offsetY": {
+          "type": "number",
+          "default": 0
+        },
+        "originX": {
+          "type": "number",
+          "default": 0.5
+        },
+        "originY": {
+          "type": "number",
+          "default": 0.5
+        },
+        "worldWidth": {
+          "type": "number",
+          "default": 0
+        },
+        "worldHeight": {
+          "type": "number",
+          "default": 0
+        },
+        "speed": {
+          "type": "number",
+          "default": 0.5
+        },
+        "frame": {
+          "type": "number",
+          "default": 0
+        },
+        "colorBack": {
+          "type": "string",
+          "default": "#1B2127"
+        },
+        "colorTint": {
+          "type": "string",
+          "default": "#AFC6CF"
+        },
+        "distortion": {
+          "type": "number",
+          "default": 0.07
+        },
+        "repetition": {
+          "type": "number",
+          "default": 2
+        },
+        "shiftRed": {
+          "type": "number",
+          "default": 0.04
+        },
+        "shiftBlue": {
+          "type": "number",
+          "default": 0.04
+        },
+        "contour": {
+          "type": "number",
+          "default": 0.4
+        },
+        "softness": {
+          "type": "number",
+          "default": 0.1
+        },
+        "angle": {
+          "type": "number",
+          "default": 70
+        },
+        "shape": {
+          "type": "string",
+          "default": "diamond"
+        }
+      },
+      "preview": "previews/shader.liquidMetal.png",
+      "example": "AnimeFX.shader.liquidMetal('#bg', AnimeFX.shader.defaults('liquidMetal'))",
+      "anchorCase": "案例/15-Shader·30风格总览.html"
+    },
+    {
+      "id": "shader.meshGradient",
+      "role": "bg",
+      "temporal": "loop",
+      "weight": "medium",
+      "mood": [
+        "流体渐变",
+        "柔和"
+      ],
+      "palette": "both",
+      "colorRoles": {
+        "colors": "palette"
+      },
+      "preconditions": [
+        "目标必须有明确宽高",
+        "单页 WebGL context 总数不得超过 8"
+      ],
+      "antiPatterns": [
+        "不使用时必须 dispose",
+        "不要与另一个 heavy hero 叠加",
+        "单页常驻 shader 建议不超过 1 个"
+      ],
+      "pairsWith": [],
+      "conflictsWith": [
+        "hero.*"
+      ],
+      "params": {
+        "fit": {
+          "type": "string",
+          "default": "contain"
+        },
+        "scale": {
+          "type": "number",
+          "default": 1
+        },
+        "rotation": {
+          "type": "number",
+          "default": 0
+        },
+        "offsetX": {
+          "type": "number",
+          "default": 0
+        },
+        "offsetY": {
+          "type": "number",
+          "default": 0
+        },
+        "originX": {
+          "type": "number",
+          "default": 0.5
+        },
+        "originY": {
+          "type": "number",
+          "default": 0.5
+        },
+        "worldWidth": {
+          "type": "number",
+          "default": 0
+        },
+        "worldHeight": {
+          "type": "number",
+          "default": 0
+        },
+        "speed": {
+          "type": "number",
+          "default": 0.5
+        },
+        "frame": {
+          "type": "number",
+          "default": 0
+        },
+        "colors": {
+          "type": "array",
+          "default": [
+            "#76929C",
+            "#A89B82",
+            "#CFC3AC",
+            "#F0EBE0"
+          ]
+        },
+        "distortion": {
+          "type": "number",
+          "default": 0.8
+        },
+        "swirl": {
+          "type": "number",
+          "default": 0.1
+        },
+        "grainMixer": {
+          "type": "number",
+          "default": 0
+        },
+        "grainOverlay": {
+          "type": "number",
+          "default": 0
+        }
+      },
+      "preview": "previews/shader.meshGradient.png",
+      "example": "AnimeFX.shader.meshGradient('#bg', AnimeFX.shader.defaults('meshGradient'))",
+      "anchorCase": "案例/15-Shader·30风格总览.html"
+    },
+    {
+      "id": "shader.metaballs",
+      "role": "component",
+      "temporal": "loop",
+      "weight": "medium",
+      "mood": [
+        "融球",
+        "有机"
+      ],
+      "palette": "both",
+      "colorRoles": {
+        "colorBack": "bg",
+        "colors": "palette"
+      },
+      "preconditions": [
+        "目标必须有明确宽高",
+        "单页 WebGL context 总数不得超过 8"
+      ],
+      "antiPatterns": [
+        "不使用时必须 dispose",
+        "不要与另一个 heavy hero 叠加",
+        "单页常驻 shader 建议不超过 1 个"
+      ],
+      "pairsWith": [],
+      "conflictsWith": [
+        "hero.*"
+      ],
+      "params": {
+        "fit": {
+          "type": "string",
+          "default": "contain"
+        },
+        "scale": {
+          "type": "number",
+          "default": 1
+        },
+        "rotation": {
+          "type": "number",
+          "default": 0
+        },
+        "offsetX": {
+          "type": "number",
+          "default": 0
+        },
+        "offsetY": {
+          "type": "number",
+          "default": 0
+        },
+        "originX": {
+          "type": "number",
+          "default": 0.5
+        },
+        "originY": {
+          "type": "number",
+          "default": 0.5
+        },
+        "worldWidth": {
+          "type": "number",
+          "default": 0
+        },
+        "worldHeight": {
+          "type": "number",
+          "default": 0
+        },
+        "speed": {
+          "type": "number",
+          "default": 0.5
+        },
+        "frame": {
+          "type": "number",
+          "default": 0
+        },
+        "colorBack": {
+          "type": "string",
+          "default": "#1B2127"
+        },
+        "colors": {
+          "type": "array",
+          "default": [
+            "#76929C",
+            "#A89B82",
+            "#AFC6CF",
+            "#CFC3AC",
+            "#F0EBE0"
+          ]
+        },
+        "count": {
+          "type": "number",
+          "default": 10
+        },
+        "size": {
+          "type": "number",
+          "default": 0.83
+        }
+      },
+      "preview": "previews/shader.metaballs.png",
+      "example": "AnimeFX.shader.metaballs('#bg', AnimeFX.shader.defaults('metaballs'))",
+      "anchorCase": "案例/15-Shader·30风格总览.html"
+    },
+    {
+      "id": "shader.neuroNoise",
+      "role": "bg",
+      "temporal": "loop",
+      "weight": "medium",
+      "mood": [
+        "神经",
+        "噪声"
+      ],
+      "palette": "both",
+      "colorRoles": {
+        "colorFront": "accent",
+        "colorMid": "accent",
+        "colorBack": "bg"
+      },
+      "preconditions": [
+        "目标必须有明确宽高",
+        "单页 WebGL context 总数不得超过 8"
+      ],
+      "antiPatterns": [
+        "不使用时必须 dispose",
+        "不要与另一个 heavy hero 叠加",
+        "单页常驻 shader 建议不超过 1 个"
+      ],
+      "pairsWith": [],
+      "conflictsWith": [
+        "hero.*"
+      ],
+      "params": {
+        "fit": {
+          "type": "string",
+          "default": "none"
+        },
+        "scale": {
+          "type": "number",
+          "default": 1
+        },
+        "rotation": {
+          "type": "number",
+          "default": 0
+        },
+        "offsetX": {
+          "type": "number",
+          "default": 0
+        },
+        "offsetY": {
+          "type": "number",
+          "default": 0
+        },
+        "originX": {
+          "type": "number",
+          "default": 0.5
+        },
+        "originY": {
+          "type": "number",
+          "default": 0.5
+        },
+        "worldWidth": {
+          "type": "number",
+          "default": 0
+        },
+        "worldHeight": {
+          "type": "number",
+          "default": 0
+        },
+        "speed": {
+          "type": "number",
+          "default": 0.5
+        },
+        "frame": {
+          "type": "number",
+          "default": 0
+        },
+        "colorFront": {
+          "type": "string",
+          "default": "#F0EBE0"
+        },
+        "colorMid": {
+          "type": "string",
+          "default": "#AFC6CF"
+        },
+        "colorBack": {
+          "type": "string",
+          "default": "#1B2127"
+        },
+        "brightness": {
+          "type": "number",
+          "default": 0.05
+        },
+        "contrast": {
+          "type": "number",
+          "default": 0.3
+        }
+      },
+      "preview": "previews/shader.neuroNoise.png",
+      "example": "AnimeFX.shader.neuroNoise('#bg', AnimeFX.shader.defaults('neuroNoise'))",
+      "anchorCase": "案例/15-Shader·30风格总览.html"
+    },
+    {
+      "id": "shader.perlinNoise",
+      "role": "bg",
+      "temporal": "loop",
+      "weight": "medium",
+      "mood": [
+        "Perlin",
+        "噪声"
+      ],
+      "palette": "both",
+      "colorRoles": {
+        "colorBack": "bg",
+        "colorFront": "accent"
+      },
+      "preconditions": [
+        "目标必须有明确宽高",
+        "单页 WebGL context 总数不得超过 8"
+      ],
+      "antiPatterns": [
+        "不使用时必须 dispose",
+        "不要与另一个 heavy hero 叠加",
+        "单页常驻 shader 建议不超过 1 个"
+      ],
+      "pairsWith": [],
+      "conflictsWith": [
+        "hero.*"
+      ],
+      "params": {
+        "fit": {
+          "type": "string",
+          "default": "none"
+        },
+        "scale": {
+          "type": "number",
+          "default": 1
+        },
+        "rotation": {
+          "type": "number",
+          "default": 0
+        },
+        "offsetX": {
+          "type": "number",
+          "default": 0
+        },
+        "offsetY": {
+          "type": "number",
+          "default": 0
+        },
+        "originX": {
+          "type": "number",
+          "default": 0.5
+        },
+        "originY": {
+          "type": "number",
+          "default": 0.5
+        },
+        "worldWidth": {
+          "type": "number",
+          "default": 0
+        },
+        "worldHeight": {
+          "type": "number",
+          "default": 0
+        },
+        "speed": {
+          "type": "number",
+          "default": 0.5
+        },
+        "frame": {
+          "type": "number",
+          "default": 0
+        },
+        "colorBack": {
+          "type": "string",
+          "default": "#1B2127"
+        },
+        "colorFront": {
+          "type": "string",
+          "default": "#F0EBE0"
+        },
+        "proportion": {
+          "type": "number",
+          "default": 0.35
+        },
+        "softness": {
+          "type": "number",
+          "default": 0.1
+        },
+        "octaveCount": {
+          "type": "number",
+          "default": 1
+        },
+        "persistence": {
+          "type": "number",
+          "default": 1
+        },
+        "lacunarity": {
+          "type": "number",
+          "default": 1.5
+        }
+      },
+      "preview": "previews/shader.perlinNoise.png",
+      "example": "AnimeFX.shader.perlinNoise('#bg', AnimeFX.shader.defaults('perlinNoise'))",
+      "anchorCase": "案例/15-Shader·30风格总览.html"
+    },
+    {
+      "id": "shader.pulsingBorder",
+      "role": "component",
+      "temporal": "loop",
+      "weight": "medium",
+      "mood": [
+        "边框",
+        "脉冲"
+      ],
+      "palette": "both",
+      "colorRoles": {
+        "colorBack": "bg",
+        "colors": "palette"
+      },
+      "preconditions": [
+        "目标必须有明确宽高",
+        "单页 WebGL context 总数不得超过 8"
+      ],
+      "antiPatterns": [
+        "不使用时必须 dispose",
+        "不要与另一个 heavy hero 叠加",
+        "单页常驻 shader 建议不超过 1 个"
+      ],
+      "pairsWith": [],
+      "conflictsWith": [
+        "hero.*"
+      ],
+      "params": {
+        "fit": {
+          "type": "string",
+          "default": "contain"
+        },
+        "scale": {
+          "type": "number",
+          "default": 0.6
+        },
+        "rotation": {
+          "type": "number",
+          "default": 0
+        },
+        "offsetX": {
+          "type": "number",
+          "default": 0
+        },
+        "offsetY": {
+          "type": "number",
+          "default": 0
+        },
+        "originX": {
+          "type": "number",
+          "default": 0.5
+        },
+        "originY": {
+          "type": "number",
+          "default": 0.5
+        },
+        "worldWidth": {
+          "type": "number",
+          "default": 0
+        },
+        "worldHeight": {
+          "type": "number",
+          "default": 0
+        },
+        "speed": {
+          "type": "number",
+          "default": 0.5
+        },
+        "frame": {
+          "type": "number",
+          "default": 0
+        },
+        "colorBack": {
+          "type": "string",
+          "default": "#1B2127"
+        },
+        "colors": {
+          "type": "array",
+          "default": [
+            "#76929C",
+            "#AFC6CF",
+            "#F0EBE0cc"
+          ]
+        },
+        "roundness": {
+          "type": "number",
+          "default": 0.25
+        },
+        "thickness": {
+          "type": "number",
+          "default": 0.1
+        },
+        "margin": {
+          "type": "number",
+          "default": 0
+        },
+        "marginLeft": {
+          "type": "number",
+          "default": 0
+        },
+        "marginRight": {
+          "type": "number",
+          "default": 0
+        },
+        "marginTop": {
+          "type": "number",
+          "default": 0
+        },
+        "marginBottom": {
+          "type": "number",
+          "default": 0
+        },
+        "aspectRatio": {
+          "type": "string",
+          "default": "auto"
+        },
+        "softness": {
+          "type": "number",
+          "default": 0.75
+        },
+        "intensity": {
+          "type": "number",
+          "default": 0.2
+        },
+        "bloom": {
+          "type": "number",
+          "default": 0.25
+        },
+        "spots": {
+          "type": "number",
+          "default": 5
+        },
+        "spotSize": {
+          "type": "number",
+          "default": 0.5
+        },
+        "pulse": {
+          "type": "number",
+          "default": 0.25
+        },
+        "smoke": {
+          "type": "number",
+          "default": 0.3
+        },
+        "smokeSize": {
+          "type": "number",
+          "default": 0.6
+        }
+      },
+      "preview": "previews/shader.pulsingBorder.png",
+      "example": "AnimeFX.shader.pulsingBorder('#bg', AnimeFX.shader.defaults('pulsingBorder'))",
+      "anchorCase": "案例/15-Shader·30风格总览.html"
+    },
+    {
+      "id": "shader.simplexNoise",
+      "role": "bg",
+      "temporal": "loop",
+      "weight": "medium",
+      "mood": [
+        "Simplex",
+        "噪声"
+      ],
+      "palette": "both",
+      "colorRoles": {
+        "colors": "palette",
+        "stepsPerColor": "accent"
+      },
+      "preconditions": [
+        "目标必须有明确宽高",
+        "单页 WebGL context 总数不得超过 8"
+      ],
+      "antiPatterns": [
+        "不使用时必须 dispose",
+        "不要与另一个 heavy hero 叠加",
+        "单页常驻 shader 建议不超过 1 个"
+      ],
+      "pairsWith": [],
+      "conflictsWith": [
+        "hero.*"
+      ],
+      "params": {
+        "fit": {
+          "type": "string",
+          "default": "none"
+        },
+        "scale": {
+          "type": "number",
+          "default": 0.6
+        },
+        "rotation": {
+          "type": "number",
+          "default": 0
+        },
+        "offsetX": {
+          "type": "number",
+          "default": 0
+        },
+        "offsetY": {
+          "type": "number",
+          "default": 0
+        },
+        "originX": {
+          "type": "number",
+          "default": 0.5
+        },
+        "originY": {
+          "type": "number",
+          "default": 0.5
+        },
+        "worldWidth": {
+          "type": "number",
+          "default": 0
+        },
+        "worldHeight": {
+          "type": "number",
+          "default": 0
+        },
+        "speed": {
+          "type": "number",
+          "default": 0.5
+        },
+        "frame": {
+          "type": "number",
+          "default": 0
+        },
+        "colors": {
+          "type": "array",
+          "default": [
+            "#76929C",
+            "#A89B82",
+            "#AFC6CF",
+            "#CFC3AC",
+            "#F0EBE0"
+          ]
+        },
+        "stepsPerColor": {
+          "type": "number",
+          "default": 2
+        },
+        "softness": {
+          "type": "number",
+          "default": 0
+        }
+      },
+      "preview": "previews/shader.simplexNoise.png",
+      "example": "AnimeFX.shader.simplexNoise('#bg', AnimeFX.shader.defaults('simplexNoise'))",
+      "anchorCase": "案例/15-Shader·30风格总览.html"
+    },
+    {
+      "id": "shader.smokeRing",
+      "role": "component",
+      "temporal": "loop",
+      "weight": "medium",
+      "mood": [
+        "烟圈",
+        "氛围"
+      ],
+      "palette": "both",
+      "colorRoles": {
+        "colorBack": "bg",
+        "colors": "palette"
+      },
+      "preconditions": [
+        "目标必须有明确宽高",
+        "单页 WebGL context 总数不得超过 8"
+      ],
+      "antiPatterns": [
+        "不使用时必须 dispose",
+        "不要与另一个 heavy hero 叠加",
+        "单页常驻 shader 建议不超过 1 个"
+      ],
+      "pairsWith": [],
+      "conflictsWith": [
+        "hero.*"
+      ],
+      "params": {
+        "fit": {
+          "type": "string",
+          "default": "contain"
+        },
+        "scale": {
+          "type": "number",
+          "default": 0.8
+        },
+        "rotation": {
+          "type": "number",
+          "default": 0
+        },
+        "offsetX": {
+          "type": "number",
+          "default": 0
+        },
+        "offsetY": {
+          "type": "number",
+          "default": 0
+        },
+        "originX": {
+          "type": "number",
+          "default": 0.5
+        },
+        "originY": {
+          "type": "number",
+          "default": 0.5
+        },
+        "worldWidth": {
+          "type": "number",
+          "default": 0
+        },
+        "worldHeight": {
+          "type": "number",
+          "default": 0
+        },
+        "speed": {
+          "type": "number",
+          "default": 0.5
+        },
+        "frame": {
+          "type": "number",
+          "default": 0
+        },
+        "colorBack": {
+          "type": "string",
+          "default": "#1B2127"
+        },
+        "colors": {
+          "type": "array",
+          "default": [
+            "#AFC6CF"
+          ]
+        },
+        "noiseScale": {
+          "type": "number",
+          "default": 3
+        },
+        "noiseIterations": {
+          "type": "number",
+          "default": 8
+        },
+        "radius": {
+          "type": "number",
+          "default": 0.25
+        },
+        "thickness": {
+          "type": "number",
+          "default": 0.65
+        },
+        "innerShape": {
+          "type": "number",
+          "default": 0.7
+        }
+      },
+      "preview": "previews/shader.smokeRing.png",
+      "example": "AnimeFX.shader.smokeRing('#bg', AnimeFX.shader.defaults('smokeRing'))",
+      "anchorCase": "案例/15-Shader·30风格总览.html"
+    },
+    {
+      "id": "shader.spiral",
+      "role": "component",
+      "temporal": "loop",
+      "weight": "medium",
+      "mood": [
+        "螺旋",
+        "旋转"
+      ],
+      "palette": "both",
+      "colorRoles": {
+        "colorBack": "bg",
+        "colorFront": "accent"
+      },
+      "preconditions": [
+        "目标必须有明确宽高",
+        "单页 WebGL context 总数不得超过 8"
+      ],
+      "antiPatterns": [
+        "不使用时必须 dispose",
+        "不要与另一个 heavy hero 叠加",
+        "单页常驻 shader 建议不超过 1 个"
+      ],
+      "pairsWith": [],
+      "conflictsWith": [
+        "hero.*"
+      ],
+      "params": {
+        "fit": {
+          "type": "string",
+          "default": "none"
+        },
+        "scale": {
+          "type": "number",
+          "default": 1
+        },
+        "rotation": {
+          "type": "number",
+          "default": 0
+        },
+        "offsetX": {
+          "type": "number",
+          "default": 0
+        },
+        "offsetY": {
+          "type": "number",
+          "default": 0
+        },
+        "originX": {
+          "type": "number",
+          "default": 0.5
+        },
+        "originY": {
+          "type": "number",
+          "default": 0.5
+        },
+        "worldWidth": {
+          "type": "number",
+          "default": 0
+        },
+        "worldHeight": {
+          "type": "number",
+          "default": 0
+        },
+        "colorBack": {
+          "type": "string",
+          "default": "#1B2127"
+        },
+        "colorFront": {
+          "type": "string",
+          "default": "#F0EBE0"
+        },
+        "density": {
+          "type": "number",
+          "default": 1
+        },
+        "distortion": {
+          "type": "number",
+          "default": 0
+        },
+        "strokeWidth": {
+          "type": "number",
+          "default": 0.5
+        },
+        "strokeTaper": {
+          "type": "number",
+          "default": 0
+        },
+        "strokeCap": {
+          "type": "number",
+          "default": 0
+        },
+        "noise": {
+          "type": "number",
+          "default": 0
+        },
+        "noiseFrequency": {
+          "type": "number",
+          "default": 0
+        },
+        "softness": {
+          "type": "number",
+          "default": 0
+        },
+        "speed": {
+          "type": "number",
+          "default": 0.5
+        },
+        "frame": {
+          "type": "number",
+          "default": 0
+        }
+      },
+      "preview": "previews/shader.spiral.png",
+      "example": "AnimeFX.shader.spiral('#bg', AnimeFX.shader.defaults('spiral'))",
+      "anchorCase": "案例/15-Shader·30风格总览.html"
+    },
+    {
+      "id": "shader.swirl",
+      "role": "component",
+      "temporal": "loop",
+      "weight": "medium",
+      "mood": [
+        "漩涡",
+        "流体"
+      ],
+      "palette": "both",
+      "colorRoles": {
+        "colorBack": "bg",
+        "colors": "palette"
+      },
+      "preconditions": [
+        "目标必须有明确宽高",
+        "单页 WebGL context 总数不得超过 8"
+      ],
+      "antiPatterns": [
+        "不使用时必须 dispose",
+        "不要与另一个 heavy hero 叠加",
+        "单页常驻 shader 建议不超过 1 个"
+      ],
+      "pairsWith": [],
+      "conflictsWith": [
+        "hero.*"
+      ],
+      "params": {
+        "fit": {
+          "type": "string",
+          "default": "contain"
+        },
+        "scale": {
+          "type": "number",
+          "default": 1
+        },
+        "rotation": {
+          "type": "number",
+          "default": 0
+        },
+        "offsetX": {
+          "type": "number",
+          "default": 0
+        },
+        "offsetY": {
+          "type": "number",
+          "default": 0
+        },
+        "originX": {
+          "type": "number",
+          "default": 0.5
+        },
+        "originY": {
+          "type": "number",
+          "default": 0.5
+        },
+        "worldWidth": {
+          "type": "number",
+          "default": 0
+        },
+        "worldHeight": {
+          "type": "number",
+          "default": 0
+        },
+        "speed": {
+          "type": "number",
+          "default": 0.32
+        },
+        "frame": {
+          "type": "number",
+          "default": 0
+        },
+        "colorBack": {
+          "type": "string",
+          "default": "#1B2127"
+        },
+        "colors": {
+          "type": "array",
+          "default": [
+            "#76929C",
+            "#AFC6CF",
+            "#F0EBE0"
+          ]
+        },
+        "bandCount": {
+          "type": "number",
+          "default": 4
+        },
+        "twist": {
+          "type": "number",
+          "default": 0.1
+        },
+        "center": {
+          "type": "number",
+          "default": 0.2
+        },
+        "proportion": {
+          "type": "number",
+          "default": 0.5
+        },
+        "softness": {
+          "type": "number",
+          "default": 0
+        },
+        "noiseFrequency": {
+          "type": "number",
+          "default": 0.4
+        },
+        "noise": {
+          "type": "number",
+          "default": 0.2
+        }
+      },
+      "preview": "previews/shader.swirl.png",
+      "example": "AnimeFX.shader.swirl('#bg', AnimeFX.shader.defaults('swirl'))",
+      "anchorCase": "案例/15-Shader·30风格总览.html"
+    },
+    {
+      "id": "shader.voronoi",
+      "role": "bg",
+      "temporal": "loop",
+      "weight": "medium",
+      "mood": [
+        "Voronoi",
+        "晶胞"
+      ],
+      "palette": "both",
+      "colorRoles": {
+        "colors": "palette",
+        "stepsPerColor": "accent",
+        "colorGlow": "accent",
+        "colorGap": "accent"
+      },
+      "preconditions": [
+        "目标必须有明确宽高",
+        "单页 WebGL context 总数不得超过 8"
+      ],
+      "antiPatterns": [
+        "不使用时必须 dispose",
+        "不要与另一个 heavy hero 叠加",
+        "单页常驻 shader 建议不超过 1 个"
+      ],
+      "pairsWith": [],
+      "conflictsWith": [
+        "hero.*"
+      ],
+      "params": {
+        "fit": {
+          "type": "string",
+          "default": "none"
+        },
+        "scale": {
+          "type": "number",
+          "default": 0.5
+        },
+        "rotation": {
+          "type": "number",
+          "default": 0
+        },
+        "offsetX": {
+          "type": "number",
+          "default": 0
+        },
+        "offsetY": {
+          "type": "number",
+          "default": 0
+        },
+        "originX": {
+          "type": "number",
+          "default": 0.5
+        },
+        "originY": {
+          "type": "number",
+          "default": 0.5
+        },
+        "worldWidth": {
+          "type": "number",
+          "default": 0
+        },
+        "worldHeight": {
+          "type": "number",
+          "default": 0
+        },
+        "speed": {
+          "type": "number",
+          "default": 0.5
+        },
+        "frame": {
+          "type": "number",
+          "default": 0
+        },
+        "colors": {
+          "type": "array",
+          "default": [
+            "#76929C",
+            "#F0EBE0"
+          ]
+        },
+        "stepsPerColor": {
+          "type": "number",
+          "default": 3
+        },
+        "colorGlow": {
+          "type": "string",
+          "default": "#F0EBE0"
+        },
+        "colorGap": {
+          "type": "string",
+          "default": "#1B2127"
+        },
+        "distortion": {
+          "type": "number",
+          "default": 0.4
+        },
+        "gap": {
+          "type": "number",
+          "default": 0.04
+        },
+        "glow": {
+          "type": "number",
+          "default": 0
+        }
+      },
+      "preview": "previews/shader.voronoi.png",
+      "example": "AnimeFX.shader.voronoi('#bg', AnimeFX.shader.defaults('voronoi'))",
+      "anchorCase": "案例/15-Shader·30风格总览.html"
+    },
+    {
+      "id": "shader.warp",
+      "role": "bg",
+      "temporal": "loop",
+      "weight": "medium",
+      "mood": [
+        "扭曲",
+        "色场"
+      ],
+      "palette": "both",
+      "colorRoles": {
+        "colors": "palette"
+      },
+      "preconditions": [
+        "目标必须有明确宽高",
+        "单页 WebGL context 总数不得超过 8"
+      ],
+      "antiPatterns": [
+        "不使用时必须 dispose",
+        "不要与另一个 heavy hero 叠加",
+        "单页常驻 shader 建议不超过 1 个"
+      ],
+      "pairsWith": [],
+      "conflictsWith": [
+        "hero.*"
+      ],
+      "params": {
+        "fit": {
+          "type": "string",
+          "default": "none"
+        },
+        "scale": {
+          "type": "number",
+          "default": 1
+        },
+        "rotation": {
+          "type": "number",
+          "default": 0
+        },
+        "offsetX": {
+          "type": "number",
+          "default": 0
+        },
+        "offsetY": {
+          "type": "number",
+          "default": 0
+        },
+        "originX": {
+          "type": "number",
+          "default": 0.5
+        },
+        "originY": {
+          "type": "number",
+          "default": 0.5
+        },
+        "worldWidth": {
+          "type": "number",
+          "default": 0
+        },
+        "worldHeight": {
+          "type": "number",
+          "default": 0
+        },
+        "speed": {
+          "type": "number",
+          "default": 0.5
+        },
+        "frame": {
+          "type": "number",
+          "default": 0
+        },
+        "colors": {
+          "type": "array",
+          "default": [
+            "#76929C",
+            "#A89B82",
+            "#CFC3AC",
+            "#F0EBE0"
+          ]
+        },
+        "proportion": {
+          "type": "number",
+          "default": 0.45
+        },
+        "softness": {
+          "type": "number",
+          "default": 1
+        },
+        "distortion": {
+          "type": "number",
+          "default": 0.25
+        },
+        "swirl": {
+          "type": "number",
+          "default": 0.8
+        },
+        "swirlIterations": {
+          "type": "number",
+          "default": 10
+        },
+        "shapeScale": {
+          "type": "number",
+          "default": 0.1
+        },
+        "shape": {
+          "type": "string",
+          "default": "checks"
+        }
+      },
+      "preview": "previews/shader.warp.png",
+      "example": "AnimeFX.shader.warp('#bg', AnimeFX.shader.defaults('warp'))",
+      "anchorCase": "案例/15-Shader·30风格总览.html"
+    },
+    {
+      "id": "shader.water",
+      "role": "bg",
+      "temporal": "loop",
+      "weight": "medium",
+      "mood": [
+        "水面",
+        "焦散"
+      ],
+      "palette": "both",
+      "colorRoles": {
+        "colorBack": "bg",
+        "colorHighlight": "accent"
+      },
+      "preconditions": [
+        "目标必须有明确宽高",
+        "单页 WebGL context 总数不得超过 8",
+        "image 必须是可访问 URL/Blob/图像元素"
+      ],
+      "antiPatterns": [
+        "不使用时必须 dispose",
+        "不要与另一个 heavy hero 叠加",
+        "单页常驻 shader 建议不超过 1 个"
+      ],
+      "pairsWith": [],
+      "conflictsWith": [
+        "hero.*"
+      ],
+      "params": {
+        "fit": {
+          "type": "string",
+          "default": "contain"
+        },
+        "scale": {
+          "type": "number",
+          "default": 0.8
+        },
+        "rotation": {
+          "type": "number",
+          "default": 0
+        },
+        "offsetX": {
+          "type": "number",
+          "default": 0
+        },
+        "offsetY": {
+          "type": "number",
+          "default": 0
+        },
+        "originX": {
+          "type": "number",
+          "default": 0.5
+        },
+        "originY": {
+          "type": "number",
+          "default": 0.5
+        },
+        "worldWidth": {
+          "type": "number",
+          "default": 0
+        },
+        "worldHeight": {
+          "type": "number",
+          "default": 0
+        },
+        "speed": {
+          "type": "number",
+          "default": 0.5
+        },
+        "frame": {
+          "type": "number",
+          "default": 0
+        },
+        "colorBack": {
+          "type": "string",
+          "default": "#1B2127"
+        },
+        "colorHighlight": {
+          "type": "string",
+          "default": "#AFC6CF"
+        },
+        "highlights": {
+          "type": "number",
+          "default": 0.4
+        },
+        "layering": {
+          "type": "number",
+          "default": 0.5
+        },
+        "edges": {
+          "type": "number",
+          "default": 0.8
+        },
+        "waves": {
+          "type": "number",
+          "default": 0.3
+        },
+        "caustic": {
+          "type": "number",
+          "default": 0.25
+        },
+        "size": {
+          "type": "number",
+          "default": 1
+        }
+      },
+      "preview": "previews/shader.water.png",
+      "example": "AnimeFX.shader.water('#bg', AnimeFX.shader.defaults('water'))",
+      "anchorCase": "案例/15-Shader·30风格总览.html"
+    },
+    {
+      "id": "shape.morphSquareCircle",
+      "role": "component",
+      "temporal": "loop",
+      "weight": "light",
+      "mood": [
+        "方圆",
+        "形变",
+        "图标"
+      ],
+      "palette": "both",
+      "colorRoles": {},
+      "preconditions": [
+        "目标必须有明确宽高"
+      ],
+      "antiPatterns": [
+        "不当整页背景"
+      ],
+      "pairsWith": [],
+      "conflictsWith": [],
+      "params": {
+        "duration": {
+          "type": "number",
+          "default": 1300
+        },
+        "rotate": {
+          "type": "number",
+          "default": 90
+        },
+        "scale": {
+          "type": "number",
+          "default": 1.5
+        },
+        "ease": {
+          "type": "string",
+          "default": "inOutQuad"
+        },
+        "loop": {
+          "type": "number",
+          "default": 8
+        },
+        "alternate": {
+          "type": "boolean",
+          "default": true
+        },
+        "at": {
+          "type": "number",
+          "default": 0
+        }
+      },
+      "example": "AnimeFX.shape.morphSquareCircle('#target', {})",
+      "preview": "previews/shape.morphSquareCircle.png",
+      "anchorCase": "案例/18-基础效果锚点.html"
+    },
+    {
+      "id": "stagger.cardsSpring",
+      "role": "component",
+      "temporal": "once",
+      "weight": "medium",
+      "mood": [
+        "卡片",
+        "弹簧",
+        "错落"
+      ],
+      "palette": "both",
+      "colorRoles": {},
+      "preconditions": [
+        "目标元素必须存在且排版已完成"
+      ],
+      "antiPatterns": [
+        "不要让多个文字大招同时抢阅读顺序",
+        "庄重水墨场景禁用强回弹"
+      ],
+      "pairsWith": [],
+      "conflictsWith": [],
+      "params": {
+        "from": {
+          "type": "string",
+          "default": "center",
+          "enum": [
+            "first",
+            "center",
+            "last"
+          ]
+        },
+        "step": {
+          "type": "number",
+          "default": 130
+        },
+        "y": {
+          "type": "number",
+          "default": 60
+        },
+        "scale": {
+          "type": "number",
+          "default": 0.86
+        },
+        "stiffness": {
+          "type": "number",
+          "default": 120
+        },
+        "damping": {
+          "type": "number",
+          "default": 11
+        },
+        "mass": {
+          "type": "number",
+          "default": 1
+        },
+        "at": {
+          "type": "number",
+          "default": 0
+        }
+      },
+      "example": "AnimeFX.stagger.cardsSpring('#target', {})",
+      "preview": "previews/stagger.cardsSpring.png",
+      "anchorCase": "案例/05-数据·转场·图片.html"
+    },
+    {
+      "id": "stagger.cascadeOut",
+      "role": "text-exit",
+      "temporal": "once",
+      "weight": "light",
+      "mood": [
+        "清单",
+        "逆序",
+        "离场"
+      ],
+      "palette": "both",
+      "colorRoles": {},
+      "preconditions": [
+        "目标元素必须存在且排版已完成"
+      ],
+      "antiPatterns": [
+        "不要让多个文字大招同时抢阅读顺序"
+      ],
+      "pairsWith": [
+        "stagger.listCascade"
+      ],
+      "conflictsWith": [],
+      "params": {
+        "from": {
+          "type": "string",
+          "default": "last",
+          "enum": [
+            "first",
+            "center",
+            "last"
+          ]
+        },
+        "step": {
+          "type": "number",
+          "default": 110
+        },
+        "x": {
+          "type": "number",
+          "default": -30
+        },
+        "y": {
+          "type": "number",
+          "default": 0
+        },
+        "duration": {
+          "type": "number",
+          "default": 480
+        },
+        "ease": {
+          "type": "string",
+          "default": "inQuart"
+        },
+        "at": {
+          "type": "number",
+          "default": 0
+        }
+      },
+      "example": "AnimeFX.stagger.cascadeOut('#target', {})",
+      "preview": "previews/stagger.cascadeOut.png",
+      "anchorCase": "案例/16-文字·清单出场.html"
+    },
+    {
+      "id": "stagger.listCascade",
+      "role": "component",
+      "temporal": "once",
+      "weight": "light",
+      "mood": [
+        "清单",
+        "顺序",
+        "干货"
+      ],
+      "palette": "both",
+      "colorRoles": {},
+      "preconditions": [
+        "目标元素必须存在且排版已完成"
+      ],
+      "antiPatterns": [
+        "不要让多个文字大招同时抢阅读顺序"
+      ],
+      "pairsWith": [
+        "stagger.cascadeOut"
+      ],
+      "conflictsWith": [],
+      "params": {
+        "from": {
+          "type": "string",
+          "default": "first",
+          "enum": [
+            "first",
+            "center",
+            "last"
+          ]
+        },
+        "step": {
+          "type": "number",
+          "default": 110
+        },
+        "x": {
+          "type": "number",
+          "default": -30
+        },
+        "y": {
+          "type": "number",
+          "default": 0
+        },
+        "duration": {
+          "type": "number",
+          "default": 620
+        },
+        "ease": {
+          "type": "string",
+          "default": "outExpo"
+        },
+        "at": {
+          "type": "number",
+          "default": 0
+        }
+      },
+      "example": "AnimeFX.stagger.listCascade('#target', {})",
+      "preview": "previews/stagger.listCascade.png",
+      "anchorCase": "案例/05-数据·转场·图片.html"
+    },
+    {
+      "id": "stagger.wave",
+      "role": "bg",
+      "temporal": "loop",
+      "weight": "light",
+      "mood": [
+        "波浪",
+        "节奏",
+        "阵列"
+      ],
+      "palette": "both",
+      "colorRoles": {},
+      "preconditions": [
+        "目标元素必须存在且排版已完成"
+      ],
+      "antiPatterns": [
+        "不要让多个文字大招同时抢阅读顺序"
+      ],
+      "pairsWith": [],
+      "conflictsWith": [],
+      "params": {
+        "prop": {
+          "type": "string",
+          "default": "y"
+        },
+        "range": {
+          "type": "array",
+          "default": [
+            0,
+            -28
+          ]
+        },
+        "waveEase": {
+          "type": "string",
+          "default": "inOutSine"
+        },
+        "from": {
+          "type": "string",
+          "default": "center"
+        },
+        "step": {
+          "type": "number",
+          "default": 60
+        },
+        "duration": {
+          "type": "number",
+          "default": 700
+        },
+        "loop": {
+          "type": "number",
+          "default": 14
+        },
+        "alternate": {
+          "type": "boolean",
+          "default": true
+        },
+        "ease": {
+          "type": "string",
+          "default": "inOutSine"
+        },
+        "at": {
+          "type": "number",
+          "default": 0
+        }
+      },
+      "example": "AnimeFX.stagger.wave('#target', {})",
+      "preview": "previews/stagger.wave.png",
+      "anchorCase": "案例/05-数据·转场·图片.html"
+    },
+    {
+      "id": "sticker.arrowDraw",
+      "role": "text-emphasis",
+      "temporal": "once",
+      "weight": "light",
+      "mood": [
+        "手绘",
+        "箭头",
+        "指向"
+      ],
+      "palette": "both",
+      "colorRoles": {
+        "color": "accent"
+      },
+      "preconditions": [],
+      "antiPatterns": [],
+      "pairsWith": [
+        "text.annotate"
+      ],
+      "conflictsWith": [],
+      "params": {
+        "from": {
+          "type": "array",
+          "default": [
+            8,
+            82
+          ]
+        },
+        "to": {
+          "type": "array",
+          "default": [
+            90,
+            18
+          ]
+        },
+        "curve": {
+          "type": "number",
+          "default": 36
+        },
+        "color": {
+          "type": "string",
+          "default": "#536170"
+        },
+        "seed": {
+          "type": "number",
+          "default": 7
+        },
+        "duration": {
+          "type": "number",
+          "default": 900
+        },
+        "at": {
+          "type": "number",
+          "default": 0
+        }
+      },
+      "example": "AnimeFX.sticker.arrowDraw('#target', {})",
+      "preview": "previews/sticker.arrowDraw.png",
+      "anchorCase": "案例/19-3.0·App介绍.html"
+    },
+    {
+      "id": "sticker.emojiBurst",
+      "role": "text-emphasis",
+      "temporal": "once",
+      "weight": "medium",
+      "mood": [
+        "表情",
+        "庆祝",
+        "粒子"
+      ],
+      "palette": "both",
+      "colorRoles": {},
+      "preconditions": [
+        "canvas 必须设置 width/height 属性",
+        "渲染必须只由 driver.t 和 seed 决定",
+        "目标必须是带 width/height 的 canvas"
+      ],
+      "antiPatterns": [
+        "禁止在渲染回调中使用 Math.random/Date.now"
+      ],
+      "pairsWith": [],
+      "conflictsWith": [],
+      "params": {
+        "emojis": {
+          "type": "array",
+          "default": [
+            "★",
+            "●",
+            "✦",
+            "＋"
+          ]
+        },
+        "count": {
+          "type": "number",
+          "default": 22
+        },
+        "seed": {
+          "type": "number",
+          "default": 7
+        },
+        "duration": {
+          "type": "number",
+          "default": 1400
+        },
+        "gravity": {
+          "type": "number",
+          "default": 120
+        },
+        "color": {
+          "type": "string",
+          "default": "#111"
+        },
+        "size": {
+          "type": "array",
+          "default": [
+            10,
+            24
+          ]
+        },
+        "at": {
+          "type": "number",
+          "default": 0
+        }
+      },
+      "example": "AnimeFX.sticker.emojiBurst('#target', {})",
+      "preview": "previews/sticker.emojiBurst.png",
+      "anchorCase": "案例/20-3.0·图文种草.html"
+    },
+    {
+      "id": "sticker.popIn",
+      "role": "text-emphasis",
+      "temporal": "once",
+      "weight": "light",
+      "mood": [
+        "贴纸",
+        "弹跳",
+        "果冻"
+      ],
+      "palette": "both",
+      "colorRoles": {},
+      "preconditions": [
+        "目标元素必须存在"
+      ],
+      "antiPatterns": [],
+      "pairsWith": [],
+      "conflictsWith": [],
+      "params": {
+        "rotate": {
+          "type": "number",
+          "default": -8
+        },
+        "overshoot": {
+          "type": "number",
+          "default": 1.18
+        },
+        "duration": {
+          "type": "number",
+          "default": 760
+        },
+        "ease": {
+          "type": "string",
+          "default": "outBack(1.8)"
+        },
+        "at": {
+          "type": "number",
+          "default": 0
+        }
+      },
+      "example": "AnimeFX.sticker.popIn('#target', {})",
+      "preview": "previews/sticker.popIn.png",
+      "anchorCase": "案例/19-3.0·App介绍.html"
+    },
+    {
+      "id": "sticker.stampPunch",
+      "role": "text-emphasis",
+      "temporal": "once",
+      "weight": "medium",
+      "mood": [
+        "印章",
+        "砸下",
+        "冲击"
+      ],
+      "palette": "both",
+      "colorRoles": {},
+      "preconditions": [],
+      "antiPatterns": [],
+      "pairsWith": [
+        "camera.shake"
+      ],
+      "conflictsWith": [],
+      "params": {
+        "rotate": {
+          "type": "number",
+          "default": -10
+        },
+        "impact": {
+          "type": "number",
+          "default": 1.16
+        },
+        "duration": {
+          "type": "number",
+          "default": 720
+        },
+        "shake": {
+          "type": "boolean",
+          "default": true
+        },
+        "at": {
+          "type": "number",
+          "default": 0
+        }
+      },
+      "example": "AnimeFX.sticker.stampPunch('#target', {})",
+      "preview": "previews/sticker.stampPunch.png",
+      "anchorCase": "案例/20-3.0·图文种草.html"
+    },
+    {
+      "id": "sticker.tapeStick",
+      "role": "component",
+      "temporal": "once",
+      "weight": "light",
+      "mood": [
+        "胶带",
+        "手帐",
+        "图片"
+      ],
+      "palette": "both",
+      "colorRoles": {
+        "texture": "muted"
+      },
+      "preconditions": [],
+      "antiPatterns": [],
+      "pairsWith": [],
+      "conflictsWith": [],
+      "params": {
+        "angle": {
+          "type": "number",
+          "default": -8
+        },
+        "texture": {
+          "type": "string",
+          "default": "#c7ccd2"
+        },
+        "width": {
+          "type": "number",
+          "default": 110
+        },
+        "height": {
+          "type": "number",
+          "default": 28
+        },
+        "duration": {
+          "type": "number",
+          "default": 700
+        },
+        "at": {
+          "type": "number",
+          "default": 0
+        }
+      },
+      "example": "AnimeFX.sticker.tapeStick('#target', {})",
+      "preview": "previews/sticker.tapeStick.png",
+      "anchorCase": "案例/21-3.0·Gamma效果.html"
+    },
+    {
+      "id": "svg.draw",
+      "role": "component",
+      "temporal": "once",
+      "weight": "light",
+      "mood": [
+        "手写",
+        "线条",
+        "图标"
+      ],
+      "palette": "both",
+      "colorRoles": {},
+      "preconditions": [
+        "目标必须是带 stroke 的 SVG path/line"
+      ],
+      "antiPatterns": [
+        "无描边形状禁用"
+      ],
+      "pairsWith": [],
+      "conflictsWith": [],
+      "params": {
+        "at": {
+          "type": "number",
+          "default": 0
+        },
+        "duration": {
+          "type": "number",
+          "default": 720
+        },
+        "ease": {
+          "type": "string",
+          "default": "inOutQuad"
+        }
+      },
+      "example": "AnimeFX.svg.draw('#target', {})",
+      "preview": "previews/svg.draw.png",
+      "anchorCase": "案例/18-基础效果锚点.html"
+    },
+    {
+      "id": "svg.morph",
+      "role": "component",
+      "temporal": "loop",
+      "weight": "medium",
+      "mood": [
+        "形变",
+        "SVG",
+        "图标"
+      ],
+      "palette": "both",
+      "colorRoles": {},
+      "preconditions": [
+        "源/目标 path 必须兼容 morph"
+      ],
+      "antiPatterns": [
+        "路径拓扑差异过大时会穿帮"
+      ],
+      "pairsWith": [],
+      "conflictsWith": [],
+      "params": {
+        "at": {
+          "type": "number",
+          "default": 0
+        },
+        "duration": {
+          "type": "number",
+          "default": 1400
+        },
+        "ease": {
+          "type": "string",
+          "default": "inOutQuad"
+        },
+        "loop": {
+          "type": "number",
+          "default": 8
+        },
+        "alternate": {
+          "type": "boolean",
+          "default": true
+        }
+      },
+      "example": "AnimeFX.svg.morph('#from', '#to', {})",
+      "preview": "previews/svg.morph.png",
+      "anchorCase": "案例/18-基础效果锚点.html"
+    },
+    {
+      "id": "text.annotate",
+      "role": "text-emphasis",
+      "temporal": "once",
+      "weight": "light",
+      "mood": [
+        "圈注",
+        "手绘",
+        "下划线"
+      ],
+      "palette": "both",
+      "colorRoles": {
+        "color": "accent"
+      },
+      "preconditions": [
+        "目标元素必须存在且排版已完成"
+      ],
+      "antiPatterns": [
+        "不要让多个文字大招同时抢阅读顺序"
+      ],
+      "pairsWith": [
+        "sticker.arrowDraw"
+      ],
+      "conflictsWith": [],
+      "params": {
+        "style": {
+          "type": "string",
+          "default": "circle"
+        },
+        "color": {
+          "type": "string",
+          "default": "#536170"
+        },
+        "roughness": {
+          "type": "number",
+          "default": 7
+        },
+        "seed": {
+          "type": "number",
+          "default": 7
+        },
+        "duration": {
+          "type": "number",
+          "default": 900
+        },
+        "at": {
+          "type": "number",
+          "default": 0
+        }
+      },
+      "example": "AnimeFX.text.annotate('#target', {})",
+      "preview": "previews/text.annotate.png",
+      "anchorCase": "案例/19-3.0·App介绍.html"
+    },
+    {
+      "id": "text.charsReveal",
+      "role": "text-enter",
+      "temporal": "once",
+      "weight": "light",
+      "mood": [
+        "中文",
+        "逐字",
+        "精致"
+      ],
+      "palette": "both",
+      "colorRoles": {},
+      "preconditions": [
+        "目标元素必须存在且排版已完成",
+        "目标必须包含可拆分字符"
+      ],
+      "antiPatterns": [
+        "不要让多个文字大招同时抢阅读顺序"
+      ],
+      "pairsWith": [],
+      "conflictsWith": [],
+      "params": {
+        "from": {
+          "type": "string",
+          "default": "center",
+          "enum": [
+            "first",
+            "center",
+            "last"
+          ]
+        },
+        "step": {
+          "type": "number",
+          "default": 34
+        },
+        "duration": {
+          "type": "number",
+          "default": 760
+        },
+        "ease": {
+          "type": "string",
+          "default": "outExpo"
+        },
+        "y": {
+          "type": "number",
+          "default": 44
+        },
+        "rotate": {
+          "type": "number",
+          "default": 6
+        },
+        "at": {
+          "type": "number",
+          "default": 0
+        }
+      },
+      "example": "AnimeFX.text.charsReveal('#target', {})",
+      "preview": "previews/text.charsReveal.png",
+      "anchorCase": "案例/01-效果总览画廊.html"
+    },
+    {
+      "id": "text.countUp",
+      "role": "text-emphasis",
+      "temporal": "once",
+      "weight": "light",
+      "mood": [
+        "数据",
+        "增长",
+        "指标"
+      ],
+      "palette": "both",
+      "colorRoles": {},
+      "preconditions": [
+        "目标元素必须存在且排版已完成"
+      ],
+      "antiPatterns": [
+        "不要让多个文字大招同时抢阅读顺序",
+        "非数值文案禁用"
+      ],
+      "pairsWith": [
+        "chart.donutDraw",
+        "chart.barGrow"
+      ],
+      "conflictsWith": [],
+      "params": {
+        "from": {
+          "type": "number",
+          "default": 0
+        },
+        "to": {
+          "type": "number",
+          "default": 100
+        },
+        "duration": {
+          "type": "number",
+          "default": 1600
+        },
+        "ease": {
+          "type": "string",
+          "default": "out(3)"
+        },
+        "decimals": {
+          "type": "number",
+          "default": 0
+        },
+        "prefix": {
+          "type": "string",
+          "default": ""
+        },
+        "suffix": {
+          "type": "string",
+          "default": ""
+        },
+        "separator": {
+          "type": "boolean",
+          "default": false
+        },
+        "at": {
+          "type": "number",
+          "default": 0
+        }
+      },
+      "example": "AnimeFX.text.countUp('#target', {})",
+      "preview": "previews/text.countUp.png",
+      "anchorCase": "案例/01-效果总览画廊.html"
+    },
+    {
+      "id": "text.exitFade",
+      "role": "text-exit",
+      "temporal": "once",
+      "weight": "light",
+      "mood": [
+        "通用",
+        "淡出",
+        "离场"
+      ],
+      "palette": "both",
+      "colorRoles": {},
+      "preconditions": [
+        "目标元素必须存在且排版已完成"
+      ],
+      "antiPatterns": [
+        "不要让多个文字大招同时抢阅读顺序"
+      ],
+      "pairsWith": [],
+      "conflictsWith": [],
+      "params": {
+        "y": {
+          "type": "number",
+          "default": -24
+        },
+        "duration": {
+          "type": "number",
+          "default": 480
+        },
+        "ease": {
+          "type": "string",
+          "default": "inQuart"
+        },
+        "step": {
+          "type": "number",
+          "default": 0
+        },
+        "from": {
+          "type": "string",
+          "default": "first",
+          "enum": [
+            "first",
+            "center",
+            "last"
+          ]
+        },
+        "at": {
+          "type": "number",
+          "default": 0
+        }
+      },
+      "example": "AnimeFX.text.exitFade('#target', {})",
+      "preview": "previews/text.exitFade.png",
+      "anchorCase": "案例/16-文字·清单出场.html"
+    },
+    {
+      "id": "text.highlightSweep",
+      "role": "text-emphasis",
+      "temporal": "once",
+      "weight": "light",
+      "mood": [
+        "高亮",
+        "标注",
+        "重点"
+      ],
+      "palette": "both",
+      "colorRoles": {
+        "color": "accent"
+      },
+      "preconditions": [
+        "目标元素必须存在且排版已完成"
+      ],
+      "antiPatterns": [
+        "不要让多个文字大招同时抢阅读顺序",
+        "一页最多强调一处主句"
+      ],
+      "pairsWith": [],
+      "conflictsWith": [],
+      "params": {
+        "color": {
+          "type": "string",
+          "default": "#FFE14D"
+        },
+        "height": {
+          "type": "string",
+          "default": "42%"
+        },
+        "vpos": {
+          "type": "string",
+          "default": "86%"
+        },
+        "duration": {
+          "type": "number",
+          "default": 560
+        },
+        "ease": {
+          "type": "string",
+          "default": "inOutQuad"
+        },
+        "at": {
+          "type": "number",
+          "default": 0
+        }
+      },
+      "example": "AnimeFX.text.highlightSweep('#target', {})",
+      "preview": "previews/text.highlightSweep.png",
+      "anchorCase": "案例/01-效果总览画廊.html"
+    },
+    {
+      "id": "text.kineticBeat",
+      "role": "text-emphasis",
+      "temporal": "once",
+      "weight": "medium",
+      "mood": [
+        "卡点",
+        "放大",
+        "节拍"
+      ],
+      "palette": "both",
+      "colorRoles": {},
+      "preconditions": [
+        "目标元素必须存在且排版已完成"
+      ],
+      "antiPatterns": [
+        "不要让多个文字大招同时抢阅读顺序"
+      ],
+      "pairsWith": [],
+      "conflictsWith": [],
+      "params": {
+        "beats": {
+          "type": "array",
+          "default": [
+            0,
+            420,
+            840,
+            1260
+          ]
+        },
+        "scale": {
+          "type": "number",
+          "default": 1.32
+        },
+        "duration": {
+          "type": "number",
+          "default": 1650
+        },
+        "at": {
+          "type": "number",
+          "default": 0
+        }
+      },
+      "example": "AnimeFX.text.kineticBeat('#target', {})",
+      "preview": "previews/text.kineticBeat.png",
+      "anchorCase": "案例/20-3.0·图文种草.html"
+    },
+    {
+      "id": "text.linesReveal",
+      "role": "text-enter",
+      "temporal": "once",
+      "weight": "light",
+      "mood": [
+        "字幕",
+        "段落",
+        "逐行"
+      ],
+      "palette": "both",
+      "colorRoles": {},
+      "preconditions": [
+        "目标元素必须存在且排版已完成"
+      ],
+      "antiPatterns": [
+        "不要让多个文字大招同时抢阅读顺序"
+      ],
+      "pairsWith": [],
+      "conflictsWith": [],
+      "params": {
+        "step": {
+          "type": "number",
+          "default": 130
+        },
+        "mask": {
+          "type": "boolean",
+          "default": true
+        },
+        "y": {
+          "type": "number",
+          "default": 24
+        },
+        "duration": {
+          "type": "number",
+          "default": 720
+        },
+        "ease": {
+          "type": "string",
+          "default": "outExpo"
+        },
+        "at": {
+          "type": "number",
+          "default": 0
+        }
+      },
+      "example": "AnimeFX.text.linesReveal('#target', {})",
+      "preview": "previews/text.linesReveal.png",
+      "anchorCase": "案例/20-3.0·图文种草.html"
+    },
+    {
+      "id": "text.numberOdometer",
+      "role": "component",
+      "temporal": "once",
+      "weight": "light",
+      "mood": [
+        "数字",
+        "滚轮",
+        "金融"
+      ],
+      "palette": "both",
+      "colorRoles": {},
+      "preconditions": [
+        "目标元素必须存在且排版已完成"
+      ],
+      "antiPatterns": [
+        "不要让多个文字大招同时抢阅读顺序"
+      ],
+      "pairsWith": [],
+      "conflictsWith": [],
+      "params": {
+        "from": {
+          "type": "number",
+          "default": 0
+        },
+        "to": {
+          "type": "number",
+          "default": 1280
+        },
+        "duration": {
+          "type": "number",
+          "default": 1600
+        },
+        "decimals": {
+          "type": "number",
+          "default": 0
+        },
+        "ease": {
+          "type": "string",
+          "default": "out(3)"
+        },
+        "at": {
+          "type": "number",
+          "default": 0
+        }
+      },
+      "example": "AnimeFX.text.numberOdometer('#target', {})",
+      "preview": "previews/text.numberOdometer.png",
+      "anchorCase": "案例/21-3.0·Gamma效果.html"
+    },
+    {
+      "id": "text.scrambleCycle",
+      "role": "text-emphasis",
+      "temporal": "loop",
+      "weight": "medium",
+      "mood": [
+        "词语轮播",
+        "解码"
+      ],
+      "palette": "both",
+      "colorRoles": {},
+      "preconditions": [
+        "目标元素必须存在且排版已完成",
+        "words 必须是非空字符串数组",
+        "seed 必须明确传入"
+      ],
+      "antiPatterns": [
+        "不要让多个文字大招同时抢阅读顺序",
+        "不用于长段中文阅读"
+      ],
+      "pairsWith": [],
+      "conflictsWith": [],
+      "params": {
+        "chars": {
+          "type": "string",
+          "default": "01#%＠ABXKQΔΣ力效感速势率"
+        },
+        "revealRate": {
+          "type": "number",
+          "default": 16
+        },
+        "seed": {
+          "type": "number",
+          "default": 7
+        },
+        "scrambleDur": {
+          "type": "number",
+          "default": 1200
+        },
+        "hold": {
+          "type": "number",
+          "default": 900
+        },
+        "at": {
+          "type": "number",
+          "default": 0
+        },
+        "loop": {
+          "type": "boolean",
+          "default": true
+        }
+      },
+      "example": "AnimeFX.text.scrambleCycle('#text', ['A','B'], {seed:7})",
+      "preview": "previews/text.scrambleCycle.png",
+      "anchorCase": "案例/01-效果总览画廊.html"
+    },
+    {
+      "id": "text.scrambleIn",
+      "role": "text-enter",
+      "temporal": "once",
+      "weight": "medium",
+      "mood": [
+        "解码",
+        "科技",
+        "数字"
+      ],
+      "palette": "both",
+      "colorRoles": {},
+      "preconditions": [
+        "目标元素必须存在且排版已完成",
+        "seed 必须明确传入"
+      ],
+      "antiPatterns": [
+        "不要让多个文字大招同时抢阅读顺序",
+        "水墨/玻璃套系禁用 glitch 乱码"
+      ],
+      "pairsWith": [
+        "canvas.particles"
+      ],
+      "conflictsWith": [],
+      "params": {
+        "chars": {
+          "type": "string",
+          "default": "01#%＠ABXKQΔΣ力效感速势率"
+        },
+        "revealRate": {
+          "type": "number",
+          "default": 14
+        },
+        "settleDuration": {
+          "type": "number",
+          "default": 420
+        },
+        "seed": {
+          "type": "number",
+          "default": 7
+        },
+        "duration": {
+          "type": "number",
+          "default": 2000
+        },
+        "at": {
+          "type": "number",
+          "default": 0
+        },
+        "loop": {
+          "type": "number",
+          "default": 0
+        },
+        "loopDelay": {
+          "type": "number",
+          "default": 700
+        },
+        "text": {
+          "type": "undefined"
+        }
+      },
+      "example": "AnimeFX.text.scrambleIn('#target', {})",
+      "preview": "previews/text.scrambleIn.png",
+      "anchorCase": "案例/01-效果总览画廊.html"
+    },
+    {
+      "id": "text.scrambleOut",
+      "role": "text-exit",
+      "temporal": "once",
+      "weight": "medium",
+      "mood": [
+        "解码",
+        "信号终止",
+        "科技"
+      ],
+      "palette": "both",
+      "colorRoles": {},
+      "preconditions": [
+        "目标元素必须存在且排版已完成",
+        "seed 必传"
+      ],
+      "antiPatterns": [
+        "不要让多个文字大招同时抢阅读顺序",
+        "水墨/玻璃套系禁用"
+      ],
+      "pairsWith": [],
+      "conflictsWith": [],
+      "params": {
+        "chars": {
+          "type": "string",
+          "default": "01#%＠ABXKQΔΣ力效感速势率"
+        },
+        "seed": {
+          "type": "any",
+          "default": null
+        },
+        "duration": {
+          "type": "number",
+          "default": 1200
+        },
+        "ease": {
+          "type": "string",
+          "default": "linear"
+        },
+        "at": {
+          "type": "number",
+          "default": 0
+        },
+        "text": {
+          "type": "undefined"
+        }
+      },
+      "example": "AnimeFX.text.scrambleOut('#text', {seed:7})",
+      "preview": "previews/text.scrambleOut.png",
+      "anchorCase": "案例/16-文字·清单出场.html"
+    },
+    {
+      "id": "text.typeCursor",
+      "role": "text-enter",
+      "temporal": "once",
+      "weight": "light",
+      "mood": [
+        "打字机",
+        "光标",
+        "键入"
+      ],
+      "palette": "both",
+      "colorRoles": {},
+      "preconditions": [
+        "目标元素必须存在且排版已完成"
+      ],
+      "antiPatterns": [
+        "不要让多个文字大招同时抢阅读顺序"
+      ],
+      "pairsWith": [],
+      "conflictsWith": [],
+      "params": {
+        "speed": {
+          "type": "number",
+          "default": 70
+        },
+        "cursor": {
+          "type": "string",
+          "default": "▋"
+        },
+        "deleteTo": {
+          "type": "number",
+          "default": 0
+        },
+        "hold": {
+          "type": "number",
+          "default": 600
+        },
+        "duration": {
+          "type": "number",
+          "default": 2200
+        },
+        "at": {
+          "type": "number",
+          "default": 0
+        }
+      },
+      "example": "AnimeFX.text.typeCursor('#target', {})",
+      "preview": "previews/text.typeCursor.png",
+      "anchorCase": "案例/19-3.0·App介绍.html"
+    },
+    {
+      "id": "text.wordsAppear",
+      "role": "text-enter",
+      "temporal": "once",
+      "weight": "light",
+      "mood": [
+        "标题",
+        "逐词",
+        "克制"
+      ],
+      "palette": "both",
+      "colorRoles": {},
+      "preconditions": [
+        "目标元素必须存在且排版已完成",
+        "目标必须包含可拆分词组"
+      ],
+      "antiPatterns": [
+        "不要让多个文字大招同时抢阅读顺序"
+      ],
+      "pairsWith": [],
+      "conflictsWith": [],
+      "params": {
+        "step": {
+          "type": "number",
+          "default": 75
+        },
+        "duration": {
+          "type": "number",
+          "default": 900
+        },
+        "ease": {
+          "type": "string",
+          "default": "outQuint"
+        },
+        "y": {
+          "type": "number",
+          "default": 18
+        },
+        "at": {
+          "type": "number",
+          "default": 0
+        }
+      },
+      "example": "AnimeFX.text.wordsAppear('#target', {})",
+      "preview": "previews/text.wordsAppear.png",
+      "anchorCase": "案例/01-效果总览画廊.html"
+    },
+    {
+      "id": "three.inkFluid",
+      "role": "bg",
+      "temporal": "loop",
+      "weight": "heavy",
+      "mood": [
+        "GPU 流体",
+        "水墨",
+        "扩散"
+      ],
+      "palette": "light",
+      "colorRoles": {
+        "bg": "bg",
+        "color": "ink"
+      },
+      "preconditions": [
+        "目标必须有明确宽高",
+        "单页 WebGL context 总数不得超过 8"
+      ],
+      "antiPatterns": [
+        "不使用时必须 dispose",
+        "不要与另一个 heavy hero 叠加"
+      ],
+      "pairsWith": [],
+      "conflictsWith": [],
+      "params": {
+        "bg": {
+          "type": "string",
+          "default": "#f4f3f0"
+        },
+        "color": {
+          "type": "string",
+          "default": "#0b0b0d"
+        },
+        "curl": {
+          "type": "number",
+          "default": 26
+        },
+        "ink": {
+          "type": "number",
+          "default": 0.16
+        },
+        "fade": {
+          "type": "number",
+          "default": 1
+        },
+        "velFade": {
+          "type": "number",
+          "default": 0.45
+        },
+        "flow": {
+          "type": "number",
+          "default": 0.85
+        },
+        "splatForce": {
+          "type": "number",
+          "default": 6000
+        },
+        "fps": {
+          "type": "number",
+          "default": 60
+        },
+        "simRes": {
+          "type": "number",
+          "default": 128
+        },
+        "dyeRes": {
+          "type": "number",
+          "default": 512
+        },
+        "pressIter": {
+          "type": "number",
+          "default": 22
+        },
+        "seed": {
+          "type": "number",
+          "default": 19
+        },
+        "period": {
+          "type": "number",
+          "default": 9000
+        },
+        "pixelRatio": {
+          "type": "number",
+          "default": 1.5
+        },
+        "interactive": {
+          "type": "boolean",
+          "default": false
+        },
+        "at": {
+          "type": "number",
+          "default": 0
+        }
+      },
+      "example": "AnimeFX.three.inkFluid('#canvas', THREE, {})",
+      "preview": "previews/three.inkFluid.png",
+      "anchorCase": "案例/12-背景·墨流漂移.html"
+    },
+    {
+      "id": "three.orbitGrid",
+      "role": "bg",
+      "temporal": "loop",
+      "weight": "heavy",
+      "mood": [
+        "3D",
+        "晶格",
+        "轨道"
+      ],
+      "palette": "both",
+      "colorRoles": {
+        "bg": "bg",
+        "color": "ink",
+        "accent": "accent",
+        "muted": "muted"
+      },
+      "preconditions": [
+        "目标必须有明确宽高",
+        "单页 WebGL context 总数不得超过 8"
+      ],
+      "antiPatterns": [
+        "不使用时必须 dispose",
+        "不要与另一个 heavy hero 叠加"
+      ],
+      "pairsWith": [],
+      "conflictsWith": [],
+      "params": {
+        "cols": {
+          "type": "number",
+          "default": 11
+        },
+        "rows": {
+          "type": "number",
+          "default": 7
+        },
+        "depth": {
+          "type": "number",
+          "default": 3
+        },
+        "spacing": {
+          "type": "number",
+          "default": 1.08
+        },
+        "cube": {
+          "type": "number",
+          "default": 0.62
+        },
+        "bg": {
+          "type": "string",
+          "default": "#08090b"
+        },
+        "color": {
+          "type": "string",
+          "default": "#f4f3f0"
+        },
+        "accent": {
+          "type": "string",
+          "default": "#E5251D"
+        },
+        "muted": {
+          "type": "string",
+          "default": "#3b3d42"
+        },
+        "cameraZ": {
+          "type": "number",
+          "default": 10.5
+        },
+        "fov": {
+          "type": "number",
+          "default": 42
+        },
+        "period": {
+          "type": "number",
+          "default": 5200
+        },
+        "seed": {
+          "type": "number",
+          "default": 7
+        },
+        "pixelRatio": {
+          "type": "number",
+          "default": 1
+        },
+        "at": {
+          "type": "number",
+          "default": 0
+        }
+      },
+      "example": "AnimeFX.three.orbitGrid('#canvas', THREE, {})",
+      "preview": "previews/three.orbitGrid.png",
+      "anchorCase": "案例/09-Three·轨道晶格.html"
+    },
+    {
+      "id": "three.particleMorph",
+      "role": "bg",
+      "temporal": "loop",
+      "weight": "heavy",
+      "mood": [
+        "3D",
+        "粒子",
+        "形态"
+      ],
+      "palette": "both",
+      "colorRoles": {
+        "bg": "bg",
+        "color": "ink",
+        "accent": "accent"
+      },
+      "preconditions": [
+        "目标必须有明确宽高",
+        "单页 WebGL context 总数不得超过 8"
+      ],
+      "antiPatterns": [
+        "不使用时必须 dispose",
+        "不要与另一个 heavy hero 叠加"
+      ],
+      "pairsWith": [],
+      "conflictsWith": [],
+      "params": {
+        "count": {
+          "type": "number",
+          "default": 3200
+        },
+        "size": {
+          "type": "number",
+          "default": 0.028
+        },
+        "bg": {
+          "type": "string",
+          "default": "#f4f3f0"
+        },
+        "color": {
+          "type": "string",
+          "default": "#0a0a0a"
+        },
+        "accent": {
+          "type": "string",
+          "default": "#E5251D"
+        },
+        "cameraZ": {
+          "type": "number",
+          "default": 7
+        },
+        "fov": {
+          "type": "number",
+          "default": 55
+        },
+        "period": {
+          "type": "number",
+          "default": 9600
+        },
+        "spin": {
+          "type": "number",
+          "default": 0.26
+        },
+        "seed": {
+          "type": "number",
+          "default": 1
+        },
+        "pixelRatio": {
+          "type": "number",
+          "default": 1
+        },
+        "at": {
+          "type": "number",
+          "default": 0
+        }
+      },
+      "example": "AnimeFX.three.particleMorph('#canvas', THREE, {})",
+      "preview": "previews/three.particleMorph.png",
+      "anchorCase": "案例/10-Three·粒子形态场.html"
+    },
+    {
+      "id": "three.waveField",
+      "role": "bg",
+      "temporal": "loop",
+      "weight": "heavy",
+      "mood": [
+        "3D",
+        "点阵",
+        "地形波"
+      ],
+      "palette": "both",
+      "colorRoles": {
+        "bg": "bg",
+        "color": "ink",
+        "accent": "accent"
+      },
+      "preconditions": [
+        "目标必须有明确宽高",
+        "单页 WebGL context 总数不得超过 8"
+      ],
+      "antiPatterns": [
+        "不使用时必须 dispose",
+        "不要与另一个 heavy hero 叠加"
+      ],
+      "pairsWith": [],
+      "conflictsWith": [],
+      "params": {
+        "cols": {
+          "type": "number",
+          "default": 100
+        },
+        "rows": {
+          "type": "number",
+          "default": 48
+        },
+        "gap": {
+          "type": "number",
+          "default": 0.34
+        },
+        "size": {
+          "type": "number",
+          "default": 0.028
+        },
+        "bg": {
+          "type": "string",
+          "default": "#f4f3f0"
+        },
+        "color": {
+          "type": "string",
+          "default": "#0a0a0a"
+        },
+        "accent": {
+          "type": "string",
+          "default": "#E5251D"
+        },
+        "camera": {
+          "type": "array",
+          "default": [
+            0,
+            2.2,
+            9
+          ]
+        },
+        "fov": {
+          "type": "number",
+          "default": 60
+        },
+        "amp": {
+          "type": "number",
+          "default": 0.58
+        },
+        "period": {
+          "type": "number",
+          "default": 9000
+        },
+        "fog": {
+          "type": "number",
+          "default": 0.085
+        },
+        "pixelRatio": {
+          "type": "number",
+          "default": 1
+        },
+        "at": {
+          "type": "number",
+          "default": 0
+        }
+      },
+      "example": "AnimeFX.three.waveField('#canvas', THREE, {})",
+      "preview": "previews/three.waveField.png",
+      "anchorCase": "案例/11-Three·点阵波场.html"
+    },
+    {
+      "id": "transition.blurDissolve",
+      "role": "transition",
+      "temporal": "once",
+      "weight": "light",
+      "mood": [
+        "模糊",
+        "溶解",
+        "安静"
+      ],
+      "palette": "both",
+      "colorRoles": {},
+      "preconditions": [
+        "容器前两个子元素为前后页面"
+      ],
+      "antiPatterns": [],
+      "pairsWith": [],
+      "conflictsWith": [],
+      "params": {
+        "blur": {
+          "type": "number",
+          "default": 18
+        },
+        "overlap": {
+          "type": "number",
+          "default": 0.35
+        },
+        "duration": {
+          "type": "number",
+          "default": 1000
+        },
+        "ease": {
+          "type": "string",
+          "default": "inOutQuad"
+        },
+        "at": {
+          "type": "number",
+          "default": 0
+        }
+      },
+      "example": "AnimeFX.transition.blurDissolve('#target', {})",
+      "preview": "previews/transition.blurDissolve.png",
+      "anchorCase": "案例/20-3.0·图文种草.html"
+    },
+    {
+      "id": "transition.glassRise",
+      "role": "transition",
+      "temporal": "once",
+      "weight": "heavy",
+      "mood": [
+        "液态玻璃",
+        "卡片",
+        "苹果感"
+      ],
+      "palette": "both",
+      "colorRoles": {
+        "tint": "accent"
+      },
+      "preconditions": [
+        "舞台必须有明确宽高",
+        "舞台背后必须有可折射内容"
+      ],
+      "antiPatterns": [
+        "一屏只能有一个 heavy 主视觉",
+        "glitch/扫描线语言禁用"
+      ],
+      "pairsWith": [
+        "shader.meshGradient"
+      ],
+      "conflictsWith": [
+        "hero.*"
+      ],
+      "pairRole": "in",
+      "params": {
+        "preset": {
+          "type": "string",
+          "default": "apple",
+          "enum": [
+            "apple",
+            "vivid"
+          ]
+        },
+        "from": {
+          "type": "string",
+          "default": "bottom",
+          "enum": [
+            "bottom",
+            "top"
+          ]
+        },
+        "cardW": {
+          "type": "any",
+          "default": null
+        },
+        "cardH": {
+          "type": "any",
+          "default": null
+        },
+        "radius": {
+          "type": "any",
+          "default": null
+        },
+        "frost": {
+          "type": "number",
+          "default": 8
+        },
+        "saturate": {
+          "type": "number",
+          "default": 1.15
+        },
+        "tint": {
+          "type": "string",
+          "default": "rgba(255,255,255,.06)"
+        },
+        "dispScale": {
+          "type": "number",
+          "default": 34
+        },
+        "dispersion": {
+          "type": "any",
+          "default": null
+        },
+        "specular": {
+          "type": "number",
+          "default": 0.7
+        },
+        "content": {
+          "type": "string",
+          "default": ""
+        },
+        "contentClass": {
+          "type": "string",
+          "default": ""
+        },
+        "align": {
+          "type": "string",
+          "default": "flex-start"
+        },
+        "pad": {
+          "type": "string",
+          "default": "0 56px"
+        },
+        "period": {
+          "type": "number",
+          "default": 1200
+        },
+        "ease": {
+          "type": "string",
+          "default": "outExpo"
+        },
+        "mode": {
+          "type": "string",
+          "default": "rise",
+          "enum": [
+            "rise",
+            "breathe"
+          ]
+        },
+        "loop": {
+          "type": "number",
+          "default": 0
+        },
+        "restX": {
+          "type": "number",
+          "default": 0
+        },
+        "restY": {
+          "type": "number",
+          "default": 0
+        },
+        "at": {
+          "type": "number",
+          "default": 0
+        }
+      },
+      "example": "AnimeFX.transition.glassRise('#target', {})",
+      "preview": "previews/transition.glassRise.png",
+      "anchorCase": "案例/14-转场·玻璃卡片.html"
+    },
+    {
+      "id": "transition.maskMorph",
+      "role": "transition",
+      "temporal": "once",
+      "weight": "medium",
+      "mood": [
+        "遮罩",
+        "形变",
+        "SVG"
+      ],
+      "palette": "both",
+      "colorRoles": {},
+      "preconditions": [
+        "shapeFrom/shapeTo 必须是兼容 clip-path"
+      ],
+      "antiPatterns": [],
+      "pairsWith": [],
+      "conflictsWith": [],
+      "params": {
+        "shapeFrom": {
+          "type": "string",
+          "default": "circle(0% at 50% 50%)"
+        },
+        "shapeTo": {
+          "type": "string",
+          "default": "circle(120% at 50% 50%)"
+        },
+        "duration": {
+          "type": "number",
+          "default": 1100
+        },
+        "ease": {
+          "type": "string",
+          "default": "inOutQuad"
+        },
+        "at": {
+          "type": "number",
+          "default": 0
+        }
+      },
+      "example": "AnimeFX.transition.maskMorph('#target', {})",
+      "preview": "previews/transition.maskMorph.png",
+      "anchorCase": "案例/20-3.0·图文种草.html"
+    },
+    {
+      "id": "transition.slatSweep",
+      "role": "transition",
+      "temporal": "once",
+      "weight": "light",
+      "mood": [
+        "百叶窗",
+        "扫过",
+        "切页"
+      ],
+      "palette": "both",
+      "colorRoles": {
+        "cover": "bg"
+      },
+      "preconditions": [],
+      "antiPatterns": [],
+      "pairsWith": [],
+      "conflictsWith": [],
+      "params": {
+        "count": {
+          "type": "number",
+          "default": 8
+        },
+        "direction": {
+          "type": "string",
+          "default": "left"
+        },
+        "cover": {
+          "type": "string",
+          "default": "#536170"
+        },
+        "step": {
+          "type": "number",
+          "default": 55
+        },
+        "duration": {
+          "type": "number",
+          "default": 620
+        },
+        "ease": {
+          "type": "string",
+          "default": "inOutQuad"
+        },
+        "at": {
+          "type": "number",
+          "default": 0
+        }
+      },
+      "example": "AnimeFX.transition.slatSweep('#target', {})",
+      "preview": "previews/transition.slatSweep.png",
+      "anchorCase": "案例/21-3.0·Gamma效果.html"
+    },
+    {
+      "id": "transition.swipePush",
+      "role": "transition",
+      "temporal": "once",
+      "weight": "light",
+      "mood": [
+        "滑动",
+        "推屏",
+        "手势"
+      ],
+      "palette": "both",
+      "colorRoles": {},
+      "preconditions": [
+        "容器前两个子元素为前后页面"
+      ],
+      "antiPatterns": [],
+      "pairsWith": [
+        "ui.gestureSwipe"
+      ],
+      "conflictsWith": [],
+      "pairRole": "both",
+      "params": {
+        "direction": {
+          "type": "string",
+          "default": "left"
+        },
+        "overshoot": {
+          "type": "number",
+          "default": 0.04
+        },
+        "duration": {
+          "type": "number",
+          "default": 900
+        },
+        "ease": {
+          "type": "string",
+          "default": "outExpo"
+        },
+        "at": {
+          "type": "number",
+          "default": 0
+        }
+      },
+      "example": "AnimeFX.transition.swipePush('#target', {})",
+      "preview": "previews/transition.swipePush.png",
+      "anchorCase": "案例/19-3.0·App介绍.html"
+    },
+    {
+      "id": "transition.whipPan",
+      "role": "transition",
+      "temporal": "once",
+      "weight": "medium",
+      "mood": [
+        "甩镜",
+        "运动模糊",
+        "卡点"
+      ],
+      "palette": "both",
+      "colorRoles": {},
+      "preconditions": [
+        "容器前两个子元素为前后页面"
+      ],
+      "antiPatterns": [],
+      "pairsWith": [],
+      "conflictsWith": [],
+      "params": {
+        "direction": {
+          "type": "string",
+          "default": "left"
+        },
+        "smear": {
+          "type": "number",
+          "default": 18
+        },
+        "duration": {
+          "type": "number",
+          "default": 620
+        },
+        "ease": {
+          "type": "string",
+          "default": "inOutQuart"
+        },
+        "at": {
+          "type": "number",
+          "default": 0
+        }
+      },
+      "example": "AnimeFX.transition.whipPan('#target', {})",
+      "preview": "previews/transition.whipPan.png",
+      "anchorCase": "案例/21-3.0·Gamma效果.html"
+    },
+    {
+      "id": "transition.wipe",
+      "role": "transition",
+      "temporal": "once",
+      "weight": "medium",
+      "mood": [
+        "擦除",
+        "揭示",
+        "干净"
+      ],
+      "palette": "both",
+      "colorRoles": {
+        "cover": "bg"
+      },
+      "preconditions": [
+        "cover 必须与卡片底色一致"
+      ],
+      "antiPatterns": [
+        "深色卡禁用默认白色 cover"
+      ],
+      "pairsWith": [],
+      "conflictsWith": [],
+      "pairRole": "both",
+      "params": {
+        "dir": {
+          "type": "string",
+          "default": "left",
+          "enum": [
+            "left",
+            "right",
+            "up",
+            "down"
+          ]
+        },
+        "duration": {
+          "type": "number",
+          "default": 700
+        },
+        "ease": {
+          "type": "string",
+          "default": "inOutQuad"
+        },
+        "at": {
+          "type": "number",
+          "default": 0
+        },
+        "cover": {
+          "type": "string",
+          "default": "#fff"
+        }
+      },
+      "example": "AnimeFX.transition.wipe('#target', {})",
+      "preview": "previews/transition.wipe.png",
+      "anchorCase": "案例/05-数据·转场·图片.html"
+    },
+    {
+      "id": "transition.zoomThrough",
+      "role": "transition",
+      "temporal": "once",
+      "weight": "medium",
+      "mood": [
+        "缩放",
+        "穿越",
+        "镜头"
+      ],
+      "palette": "both",
+      "colorRoles": {},
+      "preconditions": [
+        "舞台必须有明确宽高"
+      ],
+      "antiPatterns": [],
+      "pairsWith": [
+        "camera.zoomPan"
+      ],
+      "conflictsWith": [],
+      "pairRole": "both",
+      "params": {
+        "anchor": {
+          "type": "any",
+          "default": null
+        },
+        "scale": {
+          "type": "number",
+          "default": 4
+        },
+        "duration": {
+          "type": "number",
+          "default": 1000
+        },
+        "ease": {
+          "type": "string",
+          "default": "inExpo"
+        },
+        "at": {
+          "type": "number",
+          "default": 0
+        }
+      },
+      "example": "AnimeFX.transition.zoomThrough('#target', {})",
+      "preview": "previews/transition.zoomThrough.png",
+      "anchorCase": "案例/19-3.0·App介绍.html"
+    },
+    {
+      "id": "ui.chatPlayback",
+      "role": "component",
+      "temporal": "once",
+      "weight": "medium",
+      "mood": [
+        "聊天",
+        "气泡",
+        "回放"
+      ],
+      "palette": "both",
+      "colorRoles": {},
+      "preconditions": [
+        "messages 必须是字符串数组"
+      ],
+      "antiPatterns": [],
+      "pairsWith": [],
+      "conflictsWith": [],
+      "params": {
+        "messages": {
+          "type": "array",
+          "default": [
+            "你好，欢迎体验",
+            "向左滑动即可继续",
+            "一切都已准备好"
+          ]
+        },
+        "typing": {
+          "type": "boolean",
+          "default": true
+        },
+        "step": {
+          "type": "number",
+          "default": 620
+        },
+        "duration": {
+          "type": "number",
+          "default": 720
+        },
+        "at": {
+          "type": "number",
+          "default": 0
+        }
+      },
+      "example": "AnimeFX.ui.chatPlayback('#target', {})",
+      "preview": "previews/ui.chatPlayback.png",
+      "anchorCase": "案例/20-3.0·图文种草.html"
+    },
+    {
+      "id": "ui.cursorClick",
+      "role": "text-emphasis",
+      "temporal": "once",
+      "weight": "light",
+      "mood": [
+        "光标",
+        "点击",
+        "网页演示"
+      ],
+      "palette": "both",
+      "colorRoles": {
+        "color": "ink"
+      },
+      "preconditions": [],
+      "antiPatterns": [],
+      "pairsWith": [],
+      "conflictsWith": [],
+      "params": {
+        "path": {
+          "type": "array",
+          "default": [
+            [
+              15,
+              20
+            ],
+            [
+              70,
+              62
+            ]
+          ]
+        },
+        "clicks": {
+          "type": "array",
+          "default": [
+            0.72
+          ]
+        },
+        "duration": {
+          "type": "number",
+          "default": 1600
+        },
+        "color": {
+          "type": "string",
+          "default": "#171a1f"
+        },
+        "at": {
+          "type": "number",
+          "default": 0
+        }
+      },
+      "example": "AnimeFX.ui.cursorClick('#target', {})",
+      "preview": "previews/ui.cursorClick.png",
+      "anchorCase": "案例/21-3.0·Gamma效果.html"
+    },
+    {
+      "id": "ui.gestureSwipe",
+      "role": "text-emphasis",
+      "temporal": "once",
+      "weight": "light",
+      "mood": [
+        "手势",
+        "滑动",
+        "触点"
+      ],
+      "palette": "both",
+      "colorRoles": {
+        "color": "accent"
+      },
+      "preconditions": [],
+      "antiPatterns": [],
+      "pairsWith": [
+        "transition.swipePush"
+      ],
+      "conflictsWith": [],
+      "params": {
+        "path": {
+          "type": "array",
+          "default": [
+            [
+              18,
+              72
+            ],
+            [
+              82,
+              28
+            ]
+          ]
+        },
+        "repeat": {
+          "type": "number",
+          "default": 2
+        },
+        "duration": {
+          "type": "number",
+          "default": 1100
+        },
+        "color": {
+          "type": "string",
+          "default": "#536170"
+        },
+        "at": {
+          "type": "number",
+          "default": 0
+        }
+      },
+      "example": "AnimeFX.ui.gestureSwipe('#target', {})",
+      "preview": "previews/ui.gestureSwipe.png",
+      "anchorCase": "案例/19-3.0·App介绍.html"
+    },
+    {
+      "id": "ui.notifyDrop",
+      "role": "component",
+      "temporal": "once",
+      "weight": "light",
+      "mood": [
+        "通知",
+        "横幅",
+        "掉落"
+      ],
+      "palette": "both",
+      "colorRoles": {},
+      "preconditions": [
+        "舞台必须有明确宽高"
+      ],
+      "antiPatterns": [],
+      "pairsWith": [],
+      "conflictsWith": [],
+      "params": {
+        "hold": {
+          "type": "number",
+          "default": 1200
+        },
+        "icon": {
+          "type": "string",
+          "default": "●"
+        },
+        "text": {
+          "type": "string",
+          "default": "新消息已到达"
+        },
+        "duration": {
+          "type": "number",
+          "default": 700
+        },
+        "at": {
+          "type": "number",
+          "default": 0
+        }
+      },
+      "example": "AnimeFX.ui.notifyDrop('#target', {})",
+      "preview": "previews/ui.notifyDrop.png",
+      "anchorCase": "案例/20-3.0·图文种草.html"
+    },
+    {
+      "id": "ui.phoneFrame",
+      "role": "hero",
+      "temporal": "once",
+      "weight": "medium",
+      "mood": [
+        "手机框",
+        "App",
+        "产品演示"
+      ],
+      "palette": "both",
+      "colorRoles": {},
+      "preconditions": [
+        "目标必须有明确宽高"
+      ],
+      "antiPatterns": [],
+      "pairsWith": [],
+      "conflictsWith": [
+        "hero.*"
+      ],
+      "params": {
+        "screens": {
+          "type": "array",
+          "default": []
+        },
+        "switchFx": {
+          "type": "string",
+          "default": "fade"
+        },
+        "radius": {
+          "type": "number",
+          "default": 34
+        },
+        "duration": {
+          "type": "number",
+          "default": 1000
+        },
+        "at": {
+          "type": "number",
+          "default": 0
+        }
+      },
+      "example": "AnimeFX.ui.phoneFrame('#target', {})",
+      "preview": "previews/ui.phoneFrame.png",
+      "anchorCase": "案例/19-3.0·App介绍.html"
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+interface:
+  display_name: "AnimeFX Reference"
+  short_description: "为网页与视频检索、复用经过验证的 AnimeFX 动效"
+  default_prompt: "Use $anime-fx-reference to find and adapt a verified AnimeFX effect for this project."

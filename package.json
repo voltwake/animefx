@@ -1,0 +1,97 @@
+{
+  "name": "animefx",
+  "version": "3.1.0",
+  "description": "88 个经过验证的动效与 16 个页面编排配方，支持 design.md 设计规范注入。",
+  "license": "MIT",
+  "author": "Voltwake",
+  "homepage": "https://animefx.voltwake.com",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/voltwake/animefx.git"
+  },
+  "bugs": {
+    "url": "https://github.com/voltwake/animefx/issues"
+  },
+  "main": "./index.mjs",
+  "module": "./index.mjs",
+  "exports": {
+    ".": "./index.mjs",
+    "./design": "./design.mjs",
+    "./browser": "./lib/anime-fx.js",
+    "./manifest": "./manifest/effects.json",
+    "./recipes": "./manifest/recipes.json",
+    "./design.md": "./design.md"
+  },
+  "bin": {
+    "animefx": "skills/anime-fx-reference/scripts/search-effects.mjs"
+  },
+  "files": [
+    "index.mjs",
+    "design.mjs",
+    "design.md",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE",
+    "lib/",
+    "licenses/",
+    "manifest/effects.json",
+    "manifest/recipes.json",
+    "manifest/ai-catalog.json",
+    "skills/anime-fx-reference/"
+  ],
+  "keywords": [
+    "animation",
+    "animejs",
+    "motion-design",
+    "design-system",
+    "design-md",
+    "webgl",
+    "threejs"
+  ],
+  "scripts": {
+    "build:shaders": "node tools/build-shaders.mjs",
+    "capture:frame": "node tools/capture-frame.mjs",
+    "check:syntax": "node tools/check-syntax.mjs",
+    "check:shaders": "node tools/check-shaders.mjs",
+    "check:shader-motion": "node tools/test-shader-motion.mjs",
+    "build:manifest": "node tools/build-manifest.mjs --write --emit-doc",
+    "check:manifest": "node tools/build-manifest.mjs --check",
+    "build:ai-catalog": "node tools/build-ai-catalog.mjs --write",
+    "check:ai-catalog": "node tools/build-ai-catalog.mjs --check",
+    "build:gallery": "node tools/build-gallery.mjs --write",
+    "check:gallery": "node tools/check-gallery.mjs",
+    "build:i18n": "node tools/build-i18n.mjs",
+    "check:i18n": "node tools/check-i18n.mjs",
+    "check:file-data": "node tools/test-file-data.mjs",
+    "check:detail": "node tools/test-effect-detail.mjs",
+    "check:package": "node tools/test-package.mjs",
+    "check:previews": "node tools/test-preview-runner.mjs",
+    "check:3-runtime": "node tools/test-3-runtime.mjs",
+    "search:effects": "node skills/anime-fx-reference/scripts/search-effects.mjs",
+    "check:reference": "node tools/test-ai-reference.mjs",
+    "check:plugin": "node tools/check-plugin.mjs",
+    "shoot:previews": "node tools/shoot-previews.mjs",
+    "shoot:recipe-previews": "node tools/shoot-recipe-previews.mjs",
+    "compile:recipes": "node tools/compile-composition.mjs --all-recipes",
+    "validate:composition": "node tools/validate-composition.mjs",
+    "render:composition": "node tools/render-composition.mjs",
+    "check:rules": "node tools/test-rules.mjs",
+    "check:runtime": "node tools/test-runtime.mjs",
+    "check:contracts": "node tools/check-contracts.mjs"
+  },
+  "devDependencies": {
+    "@paper-design/shaders": "0.0.77",
+    "@paper-design/shaders-react": "^0.0.77",
+    "animejs": "^4.5.0",
+    "esbuild": "^0.28.1",
+    "ffmpeg-static": "5.3.0",
+    "puppeteer-core": "^25.3.0"
+  },
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "peerDependencies": {
+    "animejs": "^4.5.0"
+  },
+  "sideEffects": true
+}
