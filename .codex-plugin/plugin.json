@@ -1,0 +1,28 @@
+{
+  "name": "anime-fx-reference",
+  "version": "3.1.0",
+  "description": "A curated AnimeFX reference plugin that helps AI agents discover, understand, reuse, and adapt verified motion code in web and video projects.",
+  "author": {
+    "name": "AnimeFX Library"
+  },
+  "keywords": [
+    "animation",
+    "animejs",
+    "motion-design",
+    "web",
+    "video"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "AnimeFX Reference",
+    "shortDescription": "Find and adapt verified motion effects for web and video projects.",
+    "longDescription": "Search 88 curated AnimeFX effects, inspect their source code, previews, examples, constraints, and reuse or adapt them inside the user's current project.",
+    "developerName": "AnimeFX Library",
+    "category": "Productivity",
+    "capabilities": [
+      "Reference",
+      "Code"
+    ],
+    "defaultPrompt": "Find a suitable verified AnimeFX effect for this project and adapt it to the current stack."
+  }
+}

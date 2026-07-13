@@ -43,6 +43,8 @@ AnimeFX.finalize();
 npx animefx --query "高级但克制的标题揭晓" --limit 3
 ```
 
+> 交给 AI 编程助手：安装完成后，让你的 AI 先读 `node_modules/animefx/AGENTS.md`（进场指南：检索 → 使用 → 角色注入 → 规则），或直接运行 `npx animefx --query "<动效意图>"` 检索。
+
 ## design.md 与 Design by Curio
 
 接入顺序是：安装库 → 导入项目的 `design.md` → 映射 `bg / ink / accent / muted` → 调用效果。直接导入已有设计系统；如果还没有，可以去 [Design by Curio](https://designbycurio.com) 从 1000+ 设计系统中挑选并下载完整 `design.md`，也可以在 [Curio MCP 接入页](https://designbycurio.com/mcp) 让 AI 获取。
