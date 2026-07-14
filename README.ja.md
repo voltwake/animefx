@@ -2,7 +2,7 @@
 
 [English](README.md) | [简体中文](README.zh-CN.md) | 日本語
 
-> [anime.js](https://animejs.com) をベースにした無料・オープンソースのウェブモーションライブラリ —— **検証済みの 88 エフェクト**と **8 つの実シナリオデモ**。ウェブ制作にも、プログラマティック動画（Hyperframe / Remotion）にも使えます。
+> [anime.js](https://animejs.com) をコアに WebGL シェーダーと three.js を統合した無料・オープンソースのウェブモーションライブラリ —— **検証済みの 88 エフェクト**と **8 つの実シナリオデモ**。ウェブ制作にも、プログラマティック動画（Hyperframe / Remotion）にも使えます。
 
 [![npm version](https://img.shields.io/npm/v/animefx.svg)](https://www.npmjs.com/package/animefx)
 [![License: MIT](https://img.shields.io/badge/License-MIT-informational.svg)](LICENSE)

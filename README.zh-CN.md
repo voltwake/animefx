@@ -2,7 +2,7 @@
 
 [English](README.md) | 简体中文 | [日本語](README.ja.md)
 
-> 基于 [anime.js](https://animejs.com) 的免费开源网页动效库 —— **88 个经过验证的动效**与 **8 个真实场景 Demo**，用于网页项目，也能用进 Hyperframe、Remotion 这样的程序化视频。
+> 以 [anime.js](https://animejs.com) 为核心、集成 WebGL 着色器与 three.js 的免费开源网页动效库 —— **88 个经过验证的动效**与 **8 个真实场景 Demo**，用于网页项目，也能用进 Hyperframe、Remotion 这样的程序化视频。
 
 [![npm version](https://img.shields.io/npm/v/animefx.svg)](https://www.npmjs.com/package/animefx)
 [![License: MIT](https://img.shields.io/badge/License-MIT-informational.svg)](LICENSE)

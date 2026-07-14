@@ -1,7 +1,7 @@
 {
   "name": "animefx",
   "version": "4.0.0",
-  "description": "88 个经过验证的动效与 8 个真实场景编排配方，支持 design.md 设计规范注入。",
+  "description": "以 anime.js 为核心、集成 WebGL 着色器与 three.js 的网页动效库：88 个经过验证的动效与 8 个真实场景编排配方，支持 design.md 设计规范注入。",
   "license": "MIT",
   "author": "Voltwake",
   "homepage": "https://animefx.voltwake.com",

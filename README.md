@@ -2,7 +2,7 @@
 
 English | [简体中文](README.zh-CN.md) | [日本語](README.ja.md)
 
-> Free & open-source web motion library built on [anime.js](https://animejs.com) — **88 verified effects** and **8 real-scenario demos**, for web projects and programmatic video (Hyperframe / Remotion).
+> Free & open-source web motion library built on [anime.js](https://animejs.com) and extended with WebGL shaders and three.js — **88 verified effects** and **8 real-scenario demos**, for web projects and programmatic video (Hyperframe / Remotion).
 
 [![npm version](https://img.shields.io/npm/v/animefx.svg)](https://www.npmjs.com/package/animefx)
 [![License: MIT](https://img.shields.io/badge/License-MIT-informational.svg)](LICENSE)
