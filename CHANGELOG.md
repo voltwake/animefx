@@ -2,6 +2,11 @@
 
 本项目采用语义化版本记录。2.0 之前的里程碑根据仓库历史补记。
 
+## 4.0.2 — npm 包名定为 @voltwake/animefx
+
+- npm 拒绝注册 `animefx`（与 `animejs` 相似度保护），按官方建议改为作用域包 **`@voltwake/animefx`**；bin 名保留 `animefx`（安装后 `npx animefx --query` 不变）。
+- 全量替换安装/导入/npx/node_modules 路径与 npm 链接（README×3、AGENTS、llms.txt、三语门户与词典、docs、校验脚本）。品牌名、网站域名不变。
+
 ## 4.0.1 — 文案口径修正
 
 - README×3 / AGENTS.md / package.json 描述统一为「以 anime.js 为核心、集成 WebGL 着色器与 three.js」，对齐站点 metadata；npm 首发实际以此版本发出。

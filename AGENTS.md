@@ -1,6 +1,6 @@
 # AGENTS.md — AnimeFX for AI coding agents
 
-You are working in a project that has already run `npm install animefx`. This file tells you how to use the library. Read it before adding any animation.
+You are working in a project that has already run `npm install @voltwake/animefx`. This file tells you how to use the library. Read it before adding any animation.
 
 ## What this is
 
@@ -14,28 +14,28 @@ Never invent an effect ID or a parameter. Search first, then look up the exact c
 
 ```bash
 # find effects by motion intent (role + mood + stack + constraints in the query)
-npx animefx --query "restrained but premium heading reveal" --limit 3
+npx @voltwake/animefx --query "restrained but premium heading reveal" --limit 3
 
 # find a whole-page arrangement instead of one primitive
-npx animefx --query "data page with animated stats" --type recipe --limit 3
+npx @voltwake/animefx --query "data page with animated stats" --type recipe --limit 3
 
 # exact contract for one effect or recipe (authoritative params)
-npx animefx --id text.charsReveal --format json
+npx @voltwake/animefx --id text.charsReveal --format json
 
 # filters: --role bg|hero|component|text-enter|text-exit|text-emphasis|transition
 #          --runtime dom|svg|canvas|three|shader|webgl   --target html|video|react|vue|svelte|canvas-video
 #          --weight light|medium|heavy   --limit 1..10   --list
 ```
 
-If `npx animefx` is unavailable, call the bundled script directly:
+If `npx @voltwake/animefx` is unavailable, call the bundled script directly:
 
 ```bash
-node node_modules/animefx/skills/anime-fx-reference/scripts/search-effects.mjs --query "<motion intent>" --limit 3
+node node_modules/@voltwake/animefx/skills/anime-fx-reference/scripts/search-effects.mjs --query "<motion intent>" --limit 3
 ```
 
-Compact retrieval index (fast to scan): `node_modules/animefx/manifest/ai-catalog.json`.
-Full parameter contracts (authoritative): `node_modules/animefx/manifest/effects.json`.
-Recipes: `node_modules/animefx/manifest/recipes.json`.
+Compact retrieval index (fast to scan): `node_modules/@voltwake/animefx/manifest/ai-catalog.json`.
+Full parameter contracts (authoritative): `node_modules/@voltwake/animefx/manifest/effects.json`.
+Recipes: `node_modules/@voltwake/animefx/manifest/recipes.json`.
 
 Treat `high` search confidence as a strong candidate, `medium` as a comparison, `low` as only the nearest motion principle. If nothing fits, say so and label any new code as derived — do not claim it is a library effect.
 
@@ -44,7 +44,7 @@ Treat `high` search confidence as a strong candidate, `medium` as a comparison, 
 **ESM / bundlers / Node:**
 
 ```js
-import AnimeFX, { defineMotionRoles } from 'animefx';
+import AnimeFX, { defineMotionRoles } from '@voltwake/animefx';
 
 AnimeFX.init('hero', 7);                 // (compositionId, seed) — once, before any effect
 AnimeFX.text.charsReveal('#title', { at: 300 });
@@ -54,16 +54,16 @@ AnimeFX.finalize();                      // pin all registered instances to fram
 **Browser (plain `<script>`):** load anime.js v4 first, then the runtime.
 
 ```html
-<script src="node_modules/animefx/lib/anime.v4.umd.min.js"></script>
-<script src="node_modules/animefx/lib/anime-fx.js"></script>
+<script src="node_modules/@voltwake/animefx/lib/anime.v4.umd.min.js"></script>
+<script src="node_modules/@voltwake/animefx/lib/anime-fx.js"></script>
 <!-- AnimeFX is now on window.AnimeFX -->
 ```
 
 **Shader effects (`shader.*`, WebGL)** need two extra files loaded before `anime-fx.js`:
 
 ```html
-<script src="node_modules/animefx/lib/afx-shaders.umd.js"></script>
-<script src="node_modules/animefx/lib/shader-fx-config.js"></script>
+<script src="node_modules/@voltwake/animefx/lib/afx-shaders.umd.js"></script>
+<script src="node_modules/@voltwake/animefx/lib/shader-fx-config.js"></script>
 ```
 
 DOM / SVG / Canvas / Three / Shader effects must run in a browser; the library can still be imported and searched in Node.
@@ -91,7 +91,7 @@ const roles = defineMotionRoles({
 - **Style comes from the project, not from AnimeFX.** Bind colors/typography via the four roles above.
 - **Honor `prefers-reduced-motion`** in interactive output unless the project already defines an accessibility policy.
 - **Dispose** Canvas/WebGL/Three resources and detach listeners on unmount; in `adapt` mode preserve the motion principle, timings, and deterministic driver while handing DOM ownership to the framework.
-- **Full workflow, selection guide, and integration guide** live in `node_modules/animefx/skills/anime-fx-reference/SKILL.md` — read it for anything beyond a single primitive.
+- **Full workflow, selection guide, and integration guide** live in `node_modules/@voltwake/animefx/skills/anime-fx-reference/SKILL.md` — read it for anything beyond a single primitive.
 
 ## 5. Using AnimeFX in programmatic video (Hyperframe / Remotion)
 
@@ -101,4 +101,4 @@ AnimeFX is built for deterministic, seek-driven rendering, so it composes with f
 - Randomness is seeded per `init` (deterministic PRNG), so seeking to the same time always reproduces the same frame. Do **not** introduce `Math.random()` or `Date.now()` into render callbacks — that breaks reproducibility.
 - Instances created outside the standard effect calls can be handed to the same seek contract with `AnimeFX.register(instance)`.
 
-See the register/finalize contract and per-runtime notes at the top of `node_modules/animefx/lib/anime-fx.js` and in the integration guide under `skills/anime-fx-reference/`. If a detail is not documented there, verify it against `manifest/effects.json` rather than guessing.
+See the register/finalize contract and per-runtime notes at the top of `node_modules/@voltwake/animefx/lib/anime-fx.js` and in the integration guide under `skills/anime-fx-reference/`. If a detail is not documented there, verify it against `manifest/effects.json` rather than guessing.

@@ -4,7 +4,7 @@ English | [简体中文](README.zh-CN.md) | [日本語](README.ja.md)
 
 > Free & open-source web motion library built on [anime.js](https://animejs.com) and extended with WebGL shaders and three.js — **88 verified effects** and **8 real-scenario demos**, for web projects and programmatic video (Hyperframe / Remotion).
 
-[![npm version](https://img.shields.io/npm/v/animefx.svg)](https://www.npmjs.com/package/animefx)
+[![npm version](https://img.shields.io/npm/v/%40voltwake%2Fanimefx.svg)](https://www.npmjs.com/package/@voltwake/animefx)
 [![License: MIT](https://img.shields.io/badge/License-MIT-informational.svg)](LICENSE)
 [![Node](https://img.shields.io/badge/node-%3E%3D22.12-brightgreen.svg)](https://nodejs.org)
 
@@ -17,13 +17,13 @@ AnimeFX is not a video generator. It is a reference-and-reuse library: **see the
 - **Verified & deterministic.** Every effect is a seek-driven timeline validated by an automated check suite — the same input frame always reproduces the same output, so it composes cleanly with frame-exact video hosts.
 - **Documented parameter contracts.** Each effect ships an authoritative contract (name, type, default, range, pairs, constraints) in `manifest/effects.json`; the retrieval CLI returns it verbatim so you never invent an ID or a param.
 - **Style stays yours.** AnimeFX ships no palette. Colors are injected from your project's `design.md` through four semantic motion roles — `bg / ink / accent / muted`. AnimeFX never overrides your design spec.
-- **AI-ready.** A drop-in [`AGENTS.md`](AGENTS.md), a deterministic natural-language retrieval CLI (`npx animefx --query`), and a compact `manifest/ai-catalog.json` let coding agents find the closest real effect instead of hallucinating one.
+- **AI-ready.** A drop-in [`AGENTS.md`](AGENTS.md), a deterministic natural-language retrieval CLI (`npx @voltwake/animefx --query`), and a compact `manifest/ai-catalog.json` let coding agents find the closest real effect instead of hallucinating one.
 - **Free for commercial use.** All shipped code is MIT-licensed — free in personal and commercial projects.
 
 ## Install
 
 ```bash
-npm install animefx
+npm install @voltwake/animefx
 ```
 
 Requires Node.js ≥ 22.12.
@@ -33,7 +33,7 @@ Requires Node.js ≥ 22.12.
 **ESM / bundlers / Node:**
 
 ```js
-import AnimeFX, { defineMotionRoles } from 'animefx';
+import AnimeFX, { defineMotionRoles } from '@voltwake/animefx';
 
 const roles = defineMotionRoles({
   bg: '#1B2127',
@@ -53,8 +53,8 @@ AnimeFX.finalize();                      // pin all registered instances to fram
 **Browser (plain `<script>`):** load anime.js v4 first, then the runtime.
 
 ```html
-<script src="node_modules/animefx/lib/anime.v4.umd.min.js"></script>
-<script src="node_modules/animefx/lib/anime-fx.js"></script>
+<script src="node_modules/@voltwake/animefx/lib/anime.v4.umd.min.js"></script>
+<script src="node_modules/@voltwake/animefx/lib/anime-fx.js"></script>
 <script>
   AnimeFX.init('scene-id', 6);
   AnimeFX.text.charsReveal('#title', { at: 300 });
@@ -67,16 +67,16 @@ Shader effects (`shader.*`, WebGL) need two extra files loaded before `anime-fx.
 Without installing anything, you can also just search:
 
 ```bash
-npx animefx --query "restrained but premium heading reveal" --limit 3
+npx @voltwake/animefx --query "restrained but premium heading reveal" --limit 3
 ```
 
 ## For AI agents
 
-Point your coding agent at [`AGENTS.md`](AGENTS.md) — it documents the full discover → use → style-inject → rules loop. After `npm install animefx`, paste this prompt:
+Point your coding agent at [`AGENTS.md`](AGENTS.md) — it documents the full discover → use → style-inject → rules loop. After `npm install @voltwake/animefx`, paste this prompt:
 
 ```text
-Use animefx in this project (run `npm install animefx` first if it isn't installed):
-read node_modules/animefx/AGENTS.md and follow it to search for the right motion
+Use animefx in this project (run `npm install @voltwake/animefx` first if it isn't installed):
+read node_modules/@voltwake/animefx/AGENTS.md and follow it to search for the right motion
 effect and apply it to my needs.
 ```
 
@@ -84,9 +84,9 @@ The agent should search before implementing:
 
 ```bash
 # find effects by motion intent
-npx animefx --query "data page with animated stats" --type recipe --limit 3
+npx @voltwake/animefx --query "data page with animated stats" --type recipe --limit 3
 # read the authoritative contract for one effect
-npx animefx --id text.charsReveal --format json
+npx @voltwake/animefx --id text.charsReveal --format json
 ```
 
 `high` search confidence is a strong candidate, `medium` a comparison, `low` only the nearest motion principle — new code must be labelled as derived, never as a fabricated AnimeFX API.
@@ -113,7 +113,7 @@ Browse everything with live previews at **[animefx.voltwake.com](https://animefx
 
 **Code is free for commercial use (MIT). Brand & website assets are all rights reserved.**
 
-- The runtime, effect data, AI skill, tooling and demo code — everything shipped in the [`animefx`](https://www.npmjs.com/package/animefx) npm package — is licensed under the [MIT License](LICENSE). Use it in personal or commercial projects, no permission or payment required; just keep the copyright notice with your distribution (third-party notices live in [`licenses/`](licenses/)).
+- The runtime, effect data, AI skill, tooling and demo code — everything shipped in the [`@voltwake/animefx`](https://www.npmjs.com/package/@voltwake/animefx) npm package — is licensed under the [MIT License](LICENSE). Use it in personal or commercial projects, no permission or payment required; just keep the copyright notice with your distribution (third-party notices live in [`licenses/`](licenses/)).
 - The AnimeFX name and logo, the design and copy of animefx.voltwake.com, and the preview imagery (`assets/`, `previews/`) are © Voltwake, all rights reserved.
 
 For commercial licensing of the reserved assets, custom motion work or support, DM [@voltwake](https://x.com/voltwake) on X — see [docs/商业使用说明.md](docs/商业使用说明.md).

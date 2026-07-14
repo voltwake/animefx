@@ -14,7 +14,7 @@ AnimeFX 只规范“怎么动”，不覆盖产品自己的颜色、字体、间
 | `muted` | 次要文字或低对比前景 | 辅助文字、网格、轨道、装饰线 |
 
 ```js
-import { defineMotionRoles } from 'animefx/design';
+import { defineMotionRoles } from '@voltwake/animefx/design';
 
 const roles = defineMotionRoles({
   bg: design.colors.background.primary,
