@@ -2,7 +2,7 @@
 
 English | [简体中文](README.zh-CN.md) | [日本語](README.ja.md)
 
-> Free & open-source web motion library built on [anime.js](https://animejs.com) — **88 verified effects** and **16 complete page demos**, for web projects and programmatic video (Hyperframe / Remotion).
+> Free & open-source web motion library built on [anime.js](https://animejs.com) — **88 verified effects** and **8 real-scenario demos**, for web projects and programmatic video (Hyperframe / Remotion).
 
 [![npm version](https://img.shields.io/npm/v/animefx.svg)](https://www.npmjs.com/package/animefx)
 [![License: MIT](https://img.shields.io/badge/License-MIT-informational.svg)](LICENSE)
@@ -97,7 +97,7 @@ npx animefx --id text.charsReveal --format json
 |---|---|---|
 | ![Effects catalog](https://raw.githubusercontent.com/voltwake/animefx/master/assets/readme/effects-grid.jpg) | ![Effect detail](https://raw.githubusercontent.com/voltwake/animefx/master/assets/readme/effect-detail.png) | ![Demo modal](https://raw.githubusercontent.com/voltwake/animefx/master/assets/readme/demo-modal.png) |
 
-Browse all 88 effects with in-card playback; open any effect's detail page to tune every parameter live and copy the call; play any of the 16 page demos in place.
+Browse all 88 effects with in-card playback; open any effect's detail page to tune every parameter live and copy the call; play any of the 8 scenario demos in place.
 
 ## design.md & Design by Curio
 

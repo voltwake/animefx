@@ -2,6 +2,19 @@
 
 本项目采用语义化版本记录。2.0 之前的里程碑根据仓库历史补记。
 
+## 4.0.0 — Demo 案例全面场景化
+
+> ⚠️ **Breaking**：`manifest/recipes.json`（npm `exports["./recipes"]`）的 16 条幻灯片式 recipe 全部移除，替换为 8 条真实场景 recipe；旧 recipe id 与旧 demo URL 不再保留（尚无外部使用者，不做兼容层）。CLI `--type recipe` 的类型词表随之更新。
+
+### 8 个真实场景 Demo（替代原 16 个中性幻灯片 Demo）
+
+- 新场景：`saas.launchHero`（SaaS 首屏）、`dashboard.opsConsole`（运维仪表盘）、`mobile.appPromo`（App 宣传页）、`commerce.productDrop`（电商详情）、`portfolio.photoStory`（摄影作品集）、`event.keynote`（大会落地页）、`ai.chatProduct`（AI 助手页）、`fintech.marketPulse`（行情数据页）。文案全英文；门户卡片新增 Web / Video 用途标签。
+- **展示夹具层** `demos/fixtures/`：每个 demo 一份独立夹具（配色 + 字体 + 内容），语义为"模拟一位使用方的 design.md 注入"，不进 npm 包、不参与 suite 白名单与 AI 检索加分；recipe 的 `exampleTheme` 统一为 `neutral`，保持编排合同风格无关。
+- **模板注册表** `tools/templates/`：场景模板（HTML/CSS/机器合同）从 `compile-composition.mjs` 外移；模板 CSS 按需注入，`requiredTargets`/DOM 断言纳入验证。
+- **新验证入口** `npm run validate:recipes`：全量 recipe 编译 → 静态规则 → 浏览器挂载规则 → 模板 DOM 合同 → 效果空返回与 console error 计为失败。
+- 配图素材（AI 生成）：`assets/demos/product-chair.jpg`、`assets/demos/portfolio-arctic.jpg`（站点资产，不进 npm）。
+- 联动更新：门户三语文案与 sitemap、README×3、AGENTS.md、llms.txt、检索 CLI 场景词表、`check:contracts`/`check:reference`/`check:3-runtime` 断言。
+
 ## 3.1.0 — 网站打磨与 Demo 横屏化
 
 > ⚠️ **Breaking**：shader 资产文件名与全局变量更名，旧路径/旧全局不再保留兼容别名（npm 尚未发布首个版本，无既有安装用户；GitHub 直连用户需按新文件名更新 script 引用）。

@@ -224,28 +224,28 @@ function printText(results) {
 }
 
 const recipeTypeLabels = {
-  cover: '封面',
-  coverHero: '主视觉封面',
-  data: '数据页',
-  list: '列表页',
-  end: '结尾页',
-  copy: '文案页'
+  hero: '产品首屏',
+  dashboard: '数据仪表盘',
+  showcase: 'App 展示页',
+  product: '商品详情页',
+  gallery: '作品集页',
+  landing: '活动落地页',
+  conversation: '对话演示页',
+  data: '数据页'
 };
 
 const recipeTypeTerms = {
-  cover: ['封面', '开场', '标题页', '发布页'],
-  coverHero: ['主视觉', 'hero', '强封面', '发布主视觉'],
-  data: ['数据', '指标', '百分比', '数字', '图表', '数据页'],
-  list: ['列表', '清单', '步骤', '要点', '功能'],
-  end: ['结尾', '收尾', '结束', 'cta', '关注'],
-  copy: ['文案', '正文', '内容', '说明', '玻璃卡片']
+  hero: ['首屏', 'hero', '发布', 'saas', '落地页首屏', '官网头图', 'landing hero'],
+  dashboard: ['仪表盘', 'dashboard', '监控', '运维', '控制台', '指标面板', 'metrics', '状态页'],
+  showcase: ['app', '手机', '应用', 'mobile', '宣传页', 'showcase', '真机', '下载页'],
+  product: ['商品', '电商', '产品页', 'product', '详情页', '价格', 'ecommerce', '上新', '发售'],
+  gallery: ['作品集', '摄影', '图库', 'portfolio', 'gallery', '照片', '画廊'],
+  landing: ['活动', '大会', '发布会', '倒计时', 'event', 'conference', 'keynote', '峰会'],
+  conversation: ['对话', '聊天', 'chat', 'assistant', 'ai 助手', '客服', '问答'],
+  data: ['数据', '指标', '百分比', '数字', '图表', '数据页', '行情', '市场', '金融', 'markets', 'fintech']
 };
 
-const recipeSuiteTerms = {
-  techNoir: ['科技', '未来', '系统', '信号', '黑红', '故障'],
-  inkPaper: ['水墨', '文化', '纸张', '中文', '文学', '留白'],
-  appleGlass: ['高级', '产品', '玻璃', '空间ui', '通透', '苹果']
-};
+
 
 function recipeDetail(recipe) {
   return {
@@ -272,9 +272,6 @@ function scoreRecipe(recipe, query) {
   if (normalized === normalize(recipe.id)) { score += 1000; reasons.push('精确 ID'); }
   if ((recipeTypeTerms[recipe.type] || []).some((term) => normalized.includes(normalize(term)))) {
     score += 36; reasons.push(`匹配${recipeTypeLabels[recipe.type] || recipe.type}任务`);
-  }
-  if ((recipeSuiteTerms[recipe.exampleTheme] || []).some((term) => normalized.includes(normalize(term)))) {
-    score += 8; reasons.push(`demo 夹具与查询语境相近（不作为风格推荐）`);
   }
   const queryGrams = grams(query);
   const effectHits = recipe.effects.filter((use) => normalized.includes(normalize(use.fx)) || queryGrams.has(use.fx.split('.')[1].toLowerCase())).length;

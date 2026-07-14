@@ -2,7 +2,7 @@
 
 [English](README.md) | 简体中文 | [日本語](README.ja.md)
 
-> 基于 [anime.js](https://animejs.com) 的免费开源网页动效库 —— **88 个经过验证的动效**与 **16 个完整页面 Demo**，用于网页项目，也能用进 Hyperframe、Remotion 这样的程序化视频。
+> 基于 [anime.js](https://animejs.com) 的免费开源网页动效库 —— **88 个经过验证的动效**与 **8 个真实场景 Demo**，用于网页项目，也能用进 Hyperframe、Remotion 这样的程序化视频。
 
 [![npm version](https://img.shields.io/npm/v/animefx.svg)](https://www.npmjs.com/package/animefx)
 [![License: MIT](https://img.shields.io/badge/License-MIT-informational.svg)](LICENSE)
@@ -85,7 +85,7 @@ npx animefx --query "高级但克制的标题揭晓" --limit 3
 |---|---|---|
 | ![效果目录](https://raw.githubusercontent.com/voltwake/animefx/master/assets/readme/effects-grid.jpg) | ![效果详情](https://raw.githubusercontent.com/voltwake/animefx/master/assets/readme/effect-detail.png) | ![Demo 弹窗](https://raw.githubusercontent.com/voltwake/animefx/master/assets/readme/demo-modal.png) |
 
-卡片内快速播放全部 88 个效果；进入任一效果详情页可实时调节全部参数并复制调用代码；点击任意 Demo 缩略图即可在弹窗内播放 16 个完整页面示例。
+卡片内快速播放全部 88 个效果；进入任一效果详情页可实时调节全部参数并复制调用代码；点击任意 Demo 缩略图即可在弹窗内播放 8 个真实场景示例。
 
 ## design.md 与 Design by Curio
 

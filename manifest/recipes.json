@@ -1,238 +1,135 @@
 {
-  "schemaVersion": 1,
-  "roleReference": "参数值 {$role:'accent'} 由使用方设计系统注入；demo 编译时从 exampleTheme 夹具机械代入。{$roles:[...]} 生成角色色数组；禁止裸 hex。",
+  "schemaVersion": 2,
+  "roleReference": "参数值 {$role:'accent'} 由使用方设计系统注入；demo 编译时从 demos/fixtures/ 的展示夹具机械代入。{$roles:[...]} 生成角色色数组；禁止裸 hex。exampleTheme 一律为 neutral：recipe 是风格无关的编排合同，demo 观感来自展示夹具，不构成风格推荐。",
   "recipes": [
     {
-      "id": "cover.particleScramble",
-      "exampleTheme": "techNoir",
+      "id": "saas.launchHero",
+      "exampleTheme": "neutral",
       "roles": ["bg", "ink", "accent", "muted"],
-      "contentSlots": ["title", "subtitle", "badge"],
-      "type": "cover",
-      "duration": 5000,
-      "template": "cover-text",
+      "contentSlots": ["title", "subtitle", "badge", "items"],
+      "type": "hero",
+      "duration": 7000,
+      "template": "saas-hero",
       "effects": [
-        {"fx": "canvas.particles", "target": "bg", "at": 0, "params": {"link": true, "count": 60, "color": {"$role": "accent"}, "linkColor": {"$role": "muted", "alpha": 0.32}, "bg": {"$role": "bg"}, "drift": 30, "seed": 7, "period": 5000}},
-        {"fx": "text.scrambleIn", "target": "title", "at": 300, "params": {"seed": 7, "duration": 1800}},
-        {"fx": "text.charsReveal", "target": "sub", "at": 1100, "params": {"from": "first"}},
-        {"fx": "svg.draw", "target": "ruleLine", "at": 1600, "params": {}},
-        {"fx": "text.highlightSweep", "target": "badge", "at": 2000, "params": {"color": {"$role": "accent"}}}
+        {"fx": "shader.meshGradient", "target": "shader", "at": 0, "params": {"speed": 0.22, "colors": {"$roles": ["bg", "bg", "accent", "muted"]}, "distortion": 0.16, "swirl": 0.025}},
+        {"fx": "stagger.cardsSpring", "target": "foreground", "at": 120, "params": {"from": "first", "step": 120, "y": 28, "scale": 0.98, "damping": 18}},
+        {"fx": "text.wordsAppear", "target": "title", "at": 300, "params": {"duration": 780, "y": 24}},
+        {"fx": "text.highlightSweep", "target": "titleFocus", "at": 2100, "params": {"color": {"$role": "accent", "alpha": 0.28}, "height": "18%", "vpos": "96%", "duration": 620}},
+        {"fx": "ui.notifyDrop", "target": "deployNotify", "at": 2850, "params": {"icon": "✓", "text": "Deploy complete · pulse-web is live", "hold": 1400, "duration": 650}}
       ]
     },
     {
-      "id": "coverHero.gridAssemble",
-      "exampleTheme": "techNoir",
+      "id": "dashboard.opsConsole",
+      "exampleTheme": "neutral",
       "roles": ["bg", "ink", "accent", "muted"],
-      "contentSlots": ["title", "subtitle", "badge", "imageBackground"],
-      "type": "coverHero",
-      "duration": 6000,
-      "template": "cover-hero",
+      "contentSlots": ["title", "badge", "value", "decimals", "suffix", "caption", "items"],
+      "type": "dashboard",
+      "duration": 7000,
+      "template": "dashboard",
       "effects": [
-        {"fx": "hero.gridDetonate", "target": "hero", "at": 0, "params": {"mode": "assemble", "background": {"$content": "imageBackground", "fallback": {"$gradient": ["bg", "accent"]}}, "baseColor": {"$role": "bg"}, "seed": 7, "duration": 1500}},
-        {"fx": "text.scrambleIn", "target": "title", "at": 1900, "params": {"seed": 7}},
-        {"fx": "text.wordsAppear", "target": "sub", "at": 2600, "params": {}}
+        {"fx": "grid.ripple", "target": "bgGrid", "at": 0, "params": {"cols": 24, "rows": 14, "colorFrom": {"$role": "muted"}, "colorTo": {"$role": "accent"}, "step": 78, "duration": 820, "gap": 28, "radius": 4, "scale": [0.52, 1.18], "opacity": [0.12, 0.68], "loop": 18}},
+        {"fx": "stagger.cardsSpring", "target": "dashboardEntrance", "at": 120, "params": {"from": "first", "step": 100, "y": 24, "scale": 0.985, "damping": 20}},
+        {"fx": "chart.donutDraw", "target": "ring", "at": 900, "params": {"percent": {"$content": "value", "fallback": 99.98}, "duration": 1500}},
+        {"fx": "text.countUp", "target": "num", "at": 900, "params": {"to": {"$content": "value", "fallback": 99.98}, "decimals": {"$content": "decimals", "fallback": 2}, "suffix": {"$content": "suffix", "fallback": "%"}, "duration": 1500}},
+        {"fx": "chart.lineDraw", "target": "lineChart", "at": 1050, "params": {"color": {"$role": "accent"}, "duration": 1650, "dotStep": 130, "points": [[6, 78], [22, 62], [38, 70], [54, 40], [70, 48], [86, 22], [96, 28]]}}
       ]
     },
     {
-      "id": "data.ringFocus",
-      "exampleTheme": "techNoir",
+      "id": "mobile.appPromo",
+      "exampleTheme": "neutral",
       "roles": ["bg", "ink", "accent", "muted"],
-      "contentSlots": ["value", "decimals", "suffix", "caption", "badge"],
-      "type": "data",
-      "duration": 5000,
-      "template": "data",
+      "contentSlots": ["title", "subtitle", "badge", "screens", "notification"],
+      "type": "showcase",
+      "duration": 7000,
+      "template": "app-promo",
       "effects": [
-        {"fx": "grid.ripple", "target": "bgGrid", "at": 0, "params": {"cols": 12, "rows": 7, "colorFrom": {"$role": "muted"}, "colorTo": {"$role": "accent"}, "step": 130}},
-        {"fx": "chart.donutDraw", "target": "ring", "at": 400, "params": {"percent": {"$content": "value", "fallback": 72.5}, "duration": 1400}},
-        {"fx": "text.countUp", "target": "num", "at": 400, "params": {"to": {"$content": "value", "fallback": 72.5}, "decimals": {"$content": "decimals", "fallback": 1}, "suffix": {"$content": "suffix", "fallback": "%"}, "duration": 1400}},
-        {"fx": "text.wordsAppear", "target": "caption", "at": 1500, "params": {}},
-        {"fx": "text.highlightSweep", "target": "captionStrong", "at": 2300, "params": {"color": {"$role": "accent"}}}
+        {"fx": "shader.grainGradient", "target": "shader", "at": 0, "params": {"speed": 0.18, "colorBack": {"$role": "bg"}, "colors": {"$roles": ["bg", "accent", "bg", "muted"]}, "softness": 0.72, "intensity": 0.32, "noise": 0.07, "shape": "corners"}},
+        {"fx": "stagger.cardsSpring", "target": "appEntrance", "at": 120, "params": {"from": "first", "step": 100, "y": 24, "scale": 0.985, "damping": 20}},
+        {"fx": "ui.gestureSwipe", "target": "phone", "at": 2050, "params": {"path": [[24, 72], [76, 30]], "repeat": 1, "duration": 900, "color": {"$role": "accent"}}},
+        {"fx": "transition.swipePush", "target": "phone", "at": 2800, "params": {"direction": "left", "overshoot": 0.025, "duration": 900}},
+        {"fx": "ui.notifyDrop", "target": "phone", "at": 4100, "params": {"icon": "+", "text": {"$content": "notification", "fallback": "You received $24.50"}, "hold": 1500, "duration": 650}}
       ]
     },
     {
-      "id": "list.cascadeFlow",
-      "exampleTheme": "techNoir",
+      "id": "commerce.productDrop",
+      "exampleTheme": "neutral",
       "roles": ["bg", "ink", "accent", "muted"],
-      "contentSlots": ["title", "items", "badge"],
-      "type": "list",
-      "duration": 6000,
-      "template": "list",
+      "contentSlots": ["title", "subtitle", "badge", "value", "prefix", "items", "sticker"],
+      "type": "product",
+      "duration": 6500,
+      "template": "product",
       "effects": [
-        {"fx": "canvas.flowField", "target": "bg", "at": 0, "params": {"lines": 7, "color": {"$role": "accent", "alpha": 0.35}, "bg": {"$role": "bg"}, "seed": 7, "period": 6000}},
-        {"fx": "text.charsReveal", "target": "title", "at": 200, "params": {"from": "first"}},
-        {"fx": "stagger.listCascade", "target": "items", "at": 700, "params": {"step": 120}},
-        {"fx": "text.highlightSweep", "target": "itemLastStrong", "at": {"$formula": "700 + itemCount * 120 + 800"}, "params": {"color": {"$role": "accent"}}}
+        {"fx": "stagger.cardsSpring", "target": "productEntrance", "at": 120, "params": {"from": "first", "step": 80, "y": 28, "scale": 0.985, "stiffness": 112, "damping": 20, "mass": 0.9}},
+        {"fx": "card.kenBurns", "target": "photoImg", "at": 180, "params": {"scaleFrom": 1.04, "scaleTo": 1.13, "panX": -18, "panY": -10, "duration": 6320}},
+        {"fx": "text.linesReveal", "target": "titleLines", "at": 440, "params": {"step": 135, "y": 34, "duration": 900}},
+        {"fx": "text.numberOdometer", "target": "num", "at": 1120, "params": {"from": 0, "to": {"$content": "value", "fallback": 489}, "duration": 1350}},
+        {"fx": "sticker.popIn", "target": "sticker", "at": 760, "params": {"rotate": -4, "overshoot": 1.08, "duration": 680}}
       ]
     },
     {
-      "id": "end.tunnelCta",
-      "exampleTheme": "techNoir",
+      "id": "portfolio.photoStory",
+      "exampleTheme": "neutral",
       "roles": ["bg", "ink", "accent", "muted"],
-      "contentSlots": ["cta", "subtitle", "badge"],
-      "type": "end",
-      "duration": 4000,
-      "template": "end",
-      "effects": [
-        {"fx": "hero.tunnel", "target": "hero", "at": 0, "params": {"rings": 7, "color": {"$role": "ink"}, "accent": {"$role": "accent"}, "bg": {"$role": "bg"}, "period": 4200, "seed": 7}},
-        {"fx": "text.charsReveal", "target": "cta", "at": 400, "params": {"from": "first"}},
-        {"fx": "text.highlightSweep", "target": "ctaStrong", "at": 1400, "params": {"color": {"$role": "accent"}}}
-      ],
-      "transition": {"out": {"fx": "hero.irisBloom", "atBeforeEnd": 800, "params": {"mode": "cover", "bladeColor": {"$role": "accent"}, "baseColor": {"$role": "bg"}}}}
-    },
-    {
-      "id": "cover.inkCalm",
-      "exampleTheme": "inkPaper",
-      "roles": ["bg", "ink", "accent", "muted"],
-      "contentSlots": ["title", "subtitle", "badge"],
-      "type": "cover",
-      "duration": 6000,
-      "template": "cover-text",
-      "effects": [
-        {"fx": "text.charsReveal", "target": "title", "at": 500, "params": {"step": 50, "duration": 988, "ease": "inOutSine", "from": "first", "rotate": 0}},
-        {"fx": "svg.draw", "target": "sealLine", "at": 1800, "params": {"duration": 936, "ease": "inOutSine"}}
-      ]
-    },
-    {
-      "id": "data.waveRing",
-      "exampleTheme": "inkPaper",
-      "roles": ["bg", "ink", "accent", "muted"],
-      "contentSlots": ["value", "decimals", "suffix", "caption", "badge"],
-      "type": "data",
-      "duration": 6000,
-      "template": "data",
+      "contentSlots": ["title", "badge", "caption", "credit"],
+      "type": "gallery",
+      "duration": 7000,
+      "template": "portfolio",
       "requires": ["THREE"],
       "effects": [
-        {"fx": "three.waveField", "target": "bg", "at": 0, "params": {"bg": {"$role": "bg"}, "color": {"$role": "muted"}, "accent": {"$role": "ink"}, "amp": 0.22, "period": 6000}},
-        {"fx": "chart.donutDraw", "target": "ring", "at": 600, "params": {"percent": {"$content": "value", "fallback": 64}, "duration": 1820, "ease": "inOutSine"}},
-        {"fx": "text.countUp", "target": "num", "at": 600, "params": {"to": {"$content": "value", "fallback": 64}, "decimals": {"$content": "decimals", "fallback": 0}, "suffix": {"$content": "suffix", "fallback": "%"}, "duration": 1820, "ease": "inOutSine"}},
-        {"fx": "text.wordsAppear", "target": "caption", "at": 1900, "params": {"duration": 1170, "ease": "inOutSine"}}
+        {"fx": "three.waveField", "target": "bg", "at": 0, "params": {"cols": 120, "rows": 56, "gap": 0.3, "size": 0.052, "bg": {"$role": "bg"}, "color": {"$role": "ink"}, "accent": {"$role": "accent"}, "camera": [0, 2.6, 9], "fov": 58, "amp": 0.76, "period": 7000, "fog": 0.075, "pixelRatio": 1}},
+        {"fx": "image.maskReveal", "target": "photo", "at": 320, "params": {"mode": "diagonal", "duration": 1500}},
+        {"fx": "card.kenBurns", "target": "photoImg", "at": 360, "params": {"scaleFrom": 1.03, "scaleTo": 1.15, "panX": 16, "panY": -20, "duration": 6640}},
+        {"fx": "stagger.cardsSpring", "target": "portfolioEntrance", "at": 640, "params": {"from": "first", "step": 110, "y": 24, "scale": 0.99, "stiffness": 110, "damping": 22, "mass": 0.9}},
+        {"fx": "text.charsReveal", "target": "title", "at": 1080, "params": {"from": "first", "step": 26, "duration": 950, "y": 58, "rotate": 3}}
       ]
     },
     {
-      "id": "list.inkCascade",
-      "exampleTheme": "inkPaper",
+      "id": "event.keynote",
+      "exampleTheme": "neutral",
       "roles": ["bg", "ink", "accent", "muted"],
-      "contentSlots": ["title", "items", "badge"],
-      "type": "list",
-      "duration": 6000,
-      "template": "list",
+      "contentSlots": ["title", "subtitle", "badge", "value", "caption", "items"],
+      "type": "landing",
+      "duration": 7500,
+      "template": "event",
       "effects": [
-        {"fx": "text.charsReveal", "target": "title", "at": 400, "params": {"duration": 988, "ease": "inOutSine", "rotate": 0, "from": "first"}},
-        {"fx": "stagger.listCascade", "target": "items", "at": 900, "params": {"step": 160, "duration": 806, "ease": "inOutSine", "x": -18}},
-        {"fx": "text.highlightSweep", "target": "itemLastStrong", "at": {"$formula": "900 + itemCount * 160 + 800"}, "params": {"color": {"$role": "accent", "alpha": 0.25}, "duration": 728, "ease": "inOutSine"}}
-      ],
-      "transition": {"out": {"fx": "transition.wipe", "atBeforeEnd": 900, "params": {"cover": {"$role": "bg"}, "duration": 900, "ease": "inOutSine"}}}
-    },
-    {
-      "id": "cover.glassLens",
-      "exampleTheme": "appleGlass",
-      "roles": ["bg", "ink", "accent", "muted"],
-      "contentSlots": ["title", "subtitle", "badge"],
-      "type": "cover",
-      "duration": 6000,
-      "template": "glass-cover",
-      "effects": [
-        {"fx": "shader.meshGradient", "target": "shader", "at": 0, "params": {"speed": 0.5, "colors": {"$roles": ["bg", "accent", "muted", "ink"]}, "distortion": 0.35, "swirl": 0.08}},
-        {"fx": "hero.glassReveal", "target": "glassLayer", "at": 600, "params": {"mode": "sweep", "preset": "apple", "period": 1800, "lensW": 420, "lensH": 240}},
-        {"fx": "text.wordsAppear", "target": "sub", "at": 2400, "params": {}}
+        {"fx": "hero.tunnel", "target": "hero", "at": 0, "params": {"rings": 12, "base": 0.14, "maxScale": 8.5, "color": {"$role": "ink", "alpha": 0.42}, "accent": {"$role": "accent"}, "shape": "rect", "thickness": 2, "period": 3300, "spin": 14, "seed": 7}},
+        {"fx": "text.charsReveal", "target": "title", "at": 560, "params": {"from": "center", "step": 34, "duration": 940, "y": 62, "rotate": 3}},
+        {"fx": "stagger.cardsSpring", "target": "eventEntrance", "at": 900, "params": {"from": "first", "step": 90, "y": 26, "scale": 0.99, "stiffness": 118, "damping": 21, "mass": 0.9}},
+        {"fx": "text.numberOdometer", "target": "num", "at": 1220, "params": {"from": 0, "to": {"$content": "value", "fallback": 1280}, "duration": 1550}},
+        {"fx": "text.wordsAppear", "target": "sub", "at": 1380, "params": {"step": 72, "duration": 820, "y": 22}}
       ]
     },
     {
-      "id": "copy.glassCard",
-      "exampleTheme": "appleGlass",
+      "id": "ai.chatProduct",
+      "exampleTheme": "neutral",
       "roles": ["bg", "ink", "accent", "muted"],
-      "contentSlots": ["title", "body", "badge"],
-      "type": "copy",
-      "duration": 5000,
-      "template": "glass-copy",
+      "contentSlots": ["title", "subtitle", "badge", "messages"],
+      "type": "conversation",
+      "duration": 8000,
+      "template": "chat-product",
+      "requires": ["THREE"],
       "effects": [
-        {"fx": "shader.meshGradient", "target": "shader", "at": 0, "params": {"speed": 0.5, "colors": {"$roles": ["bg", "accent", "muted", "ink"]}, "distortion": 0.28, "swirl": 0.06}},
-        {"fx": "transition.glassRise", "target": "glassCard", "at": 300, "params": {"preset": "apple", "content": {"$contentHtml": "body"}, "tint": {"$role": "ink", "alpha": 0.06}, "period": 1200, "mode": "rise"}}
+        {"fx": "three.orbitGrid", "target": "bg", "at": 0, "params": {"cols": 14, "rows": 8, "depth": 4, "spacing": 0.92, "cube": 0.48, "bg": {"$role": "bg"}, "color": {"$role": "ink"}, "accent": {"$role": "accent"}, "muted": {"$role": "muted"}, "cameraZ": 11.8, "fov": 48, "period": 6400, "seed": 13, "pixelRatio": 1}},
+        {"fx": "stagger.cardsSpring", "target": "chatEntrance", "at": 260, "params": {"from": "first", "step": 90, "y": 24, "scale": 0.99, "stiffness": 118, "damping": 22, "mass": 0.9}},
+        {"fx": "text.charsReveal", "target": "title", "at": 520, "params": {"from": "first", "step": 24, "duration": 1120, "y": 52, "rotate": 2}},
+        {"fx": "text.typeCursor", "target": "sub", "at": 1500, "params": {"speed": 45, "cursor": "▌", "hold": 4900, "duration": 1400}},
+        {"fx": "ui.chatPlayback", "target": "chat", "at": 2500, "params": {"messages": {"$content": "messages", "fallback": ["Summarize this 40-page contract", "On it — reading all 40 pages now.", "Done. 3 clauses need your attention.", "Want the redlines as a doc?"]}, "typing": true, "step": 560, "duration": 720}}
       ]
     },
     {
-      "id": "data.radialRing",
-      "exampleTheme": "appleGlass",
+      "id": "fintech.marketPulse",
+      "exampleTheme": "neutral",
       "roles": ["bg", "ink", "accent", "muted"],
-      "contentSlots": ["value", "decimals", "suffix", "caption", "badge"],
+      "contentSlots": ["title", "badge", "value", "decimals", "prefix", "suffix", "caption", "items", "rankLabels"],
       "type": "data",
-      "duration": 5000,
-      "template": "data",
+      "duration": 7000,
+      "template": "market",
       "effects": [
-        {"fx": "shader.meshGradient", "target": "shader", "at": 0, "params": {"speed": 0.25, "colors": {"$roles": ["bg", "accent", "muted", "ink"]}, "distortion": 0.16, "swirl": 0.04}},
-        {"fx": "chart.donutDraw", "target": "ring", "at": 500, "params": {"percent": {"$content": "value", "fallback": 72.5}, "duration": 1400}},
-        {"fx": "text.countUp", "target": "num", "at": 500, "params": {"to": {"$content": "value", "fallback": 72.5}, "decimals": {"$content": "decimals", "fallback": 1}, "suffix": {"$content": "suffix", "fallback": "%"}, "duration": 1400}},
-        {"fx": "text.wordsAppear", "target": "caption", "at": 1800, "params": {}}
-      ]
-    },
-    {
-      "id": "coverHero.appShowcase",
-      "exampleTheme": "techNoir",
-      "roles": ["bg", "ink", "accent", "muted"],
-      "contentSlots": ["title", "subtitle", "badge", "screens"],
-      "type": "coverHero",
-      "duration": 6000,
-      "template": "app-showcase",
-      "effects": [
-        {"fx": "ui.phoneFrame", "target": "phone", "at": 200, "params": {"screens": {"$content": "screens", "fallback": ["DISCOVER", "NEXT"]}, "duration": 1000}},
-        {"fx": "ui.gestureSwipe", "target": "phone", "at": 1800, "params": {"path": [[20, 72], [78, 30]], "repeat": 2, "color": {"$role": "accent"}}},
-        {"fx": "transition.swipePush", "target": "phone", "at": 2600, "params": {"direction": "left", "duration": 900}},
-        {"fx": "text.charsReveal", "target": "title", "at": 700, "params": {"from": "first"}},
-        {"fx": "text.wordsAppear", "target": "sub", "at": 1400, "params": {}}
-      ]
-    },
-    {
-      "id": "cover.photoReveal",
-      "exampleTheme": "inkPaper",
-      "roles": ["bg", "ink", "accent", "muted"],
-      "contentSlots": ["title", "subtitle", "badge"],
-      "type": "cover",
-      "duration": 5000,
-      "template": "photo-cover",
-      "effects": [
-        {"fx": "image.maskReveal", "target": "photo", "at": 200, "params": {"mode": "diagonal", "duration": 1200}},
-        {"fx": "sticker.tapeStick", "target": "photo", "at": 1100, "params": {"texture": {"$role": "muted"}}},
-        {"fx": "text.linesReveal", "target": "titleLines", "at": 700, "params": {"step": 180}}
-      ]
-    },
-    {
-      "id": "data.lineTrend",
-      "exampleTheme": "appleGlass",
-      "roles": ["bg", "ink", "accent", "muted"],
-      "contentSlots": ["value", "decimals", "suffix", "caption", "badge"],
-      "type": "data",
-      "duration": 5000,
-      "template": "line-data",
-      "effects": [
-        {"fx": "chart.lineDraw", "target": "lineChart", "at": 300, "params": {"color": {"$role": "accent"}, "duration": 1400}},
-        {"fx": "text.countUp", "target": "num", "at": 800, "params": {"to": {"$content": "value", "fallback": 86}, "suffix": {"$content": "suffix", "fallback": "%"}, "duration": 1400}},
-        {"fx": "sticker.arrowDraw", "target": "lineWrap", "at": 1700, "params": {"color": {"$role": "ink"}, "seed": 7}}
-      ]
-    },
-    {
-      "id": "list.progressMetrics",
-      "exampleTheme": "techNoir",
-      "roles": ["bg", "ink", "accent", "muted"],
-      "contentSlots": ["title", "items", "values", "badge"],
-      "type": "list",
-      "duration": 5000,
-      "template": "progress-list",
-      "effects": [
-        {"fx": "text.linesReveal", "target": "titleLines", "at": 200, "params": {"step": 140}},
-        {"fx": "chart.progressStack", "target": "progressBars", "at": 900, "params": {"values": {"$content": "values", "fallback": [88, 72, 56]}, "duration": 1300}}
-      ]
-    },
-    {
-      "id": "copy.chatStory",
-      "exampleTheme": "appleGlass",
-      "roles": ["bg", "ink", "accent", "muted"],
-      "contentSlots": ["title", "messages", "badge"],
-      "type": "copy",
-      "duration": 6000,
-      "template": "chat-copy",
-      "effects": [
-        {"fx": "text.typeCursor", "target": "title", "at": 200, "params": {"duration": 1600}},
-        {"fx": "ui.chatPlayback", "target": "chat", "at": 1000, "params": {"messages": {"$content": "messages", "fallback": ["你好，欢迎体验", "向左滑动即可继续", "一切都已准备好"]}, "step": 700}},
-        {"fx": "ui.notifyDrop", "target": "chatStage", "at": 3600, "params": {"text": "新消息已到达", "hold": 900}}
+        {"fx": "shader.neuroNoise", "target": "shader", "at": 0, "params": {"scale": 1.12, "speed": 0.32, "colorFront": {"$role": "accent"}, "colorMid": {"$role": "muted"}, "colorBack": {"$role": "bg"}, "brightness": 0.04, "contrast": 0.52}},
+        {"fx": "stagger.cardsSpring", "target": "marketEntrance", "at": 220, "params": {"from": "first", "step": 80, "y": 20, "scale": 0.995, "stiffness": 116, "damping": 24, "mass": 0.9}},
+        {"fx": "text.numberOdometer", "target": "num", "at": 900, "params": {"from": 0, "to": {"$content": "value", "fallback": 84.2}, "decimals": {"$content": "decimals", "fallback": 1}, "duration": 1900}},
+        {"fx": "image.maskReveal", "target": "marketLine", "at": 1350, "params": {"mode": "slat", "from": "first", "duration": 2400, "ease": "linear"}},
+        {"fx": "chart.rankRace", "target": "rank", "at": 1250, "params": {"frames": [[82, 66, 48, 31, 82, 66, 48, 31], [58, 92, 72, 44, 58, 92, 72, 44], [74, 68, 96, 61, 74, 68, 96, 61], [66, 80, 58, 92, 66, 80, 58, 92]], "duration": 4000, "step": 1000}}
       ]
     }
   ]

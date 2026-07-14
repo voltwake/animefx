@@ -1,7 +1,7 @@
 {
   "name": "animefx",
-  "version": "3.1.0",
-  "description": "88 个经过验证的动效与 16 个页面编排配方，支持 design.md 设计规范注入。",
+  "version": "4.0.0",
+  "description": "88 个经过验证的动效与 8 个真实场景编排配方，支持 design.md 设计规范注入。",
   "license": "MIT",
   "author": "Voltwake",
   "homepage": "https://animefx.voltwake.com",
@@ -80,7 +80,8 @@
     "render:composition": "node tools/render-composition.mjs",
     "check:rules": "node tools/test-rules.mjs",
     "check:runtime": "node tools/test-runtime.mjs",
-    "check:contracts": "node tools/check-contracts.mjs"
+    "check:contracts": "node tools/check-contracts.mjs",
+    "validate:recipes": "node tools/validate-recipes.mjs"
   },
   "devDependencies": {
     "@paper-design/shaders": "0.0.77",

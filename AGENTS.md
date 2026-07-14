@@ -4,7 +4,7 @@ You are working in a project that has already run `npm install animefx`. This fi
 
 ## What this is
 
-AnimeFX is a reference library of **88 verified motion effects** and **16 page recipes** built on [anime.js](https://animejs.com) v4. Every effect ships a deterministic timeline and a documented parameter contract (name, type, default, range, pairs, constraints). It is a *reference-and-reuse* library, not a video generator — you build in the current project, you do not migrate the project into AnimeFX.
+AnimeFX is a reference library of **88 verified motion effects** and **8 scenario recipes** built on [anime.js](https://animejs.com) v4. Every effect ships a deterministic timeline and a documented parameter contract (name, type, default, range, pairs, constraints). It is a *reference-and-reuse* library, not a video generator — you build in the current project, you do not migrate the project into AnimeFX.
 
 Requires Node.js ≥ 22.12.
 
