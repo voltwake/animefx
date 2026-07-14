@@ -2,6 +2,10 @@
 
 本项目采用语义化版本记录。2.0 之前的里程碑根据仓库历史补记。
 
+## 4.0.1 — 文案口径修正
+
+- README×3 / AGENTS.md / package.json 描述统一为「以 anime.js 为核心、集成 WebGL 着色器与 three.js」，对齐站点 metadata；npm 首发实际以此版本发出。
+
 ## 4.0.0 — Demo 案例全面场景化
 
 > ⚠️ **Breaking**：`manifest/recipes.json`（npm `exports["./recipes"]`）的 16 条幻灯片式 recipe 全部移除，替换为 8 条真实场景 recipe；旧 recipe id 与旧 demo URL 不再保留（尚无外部使用者，不做兼容层）。CLI `--type recipe` 的类型词表随之更新。
